@@ -10,8 +10,8 @@ try:
 except ImportError:
     in_colab = False
 
-# if in_colab:
-#     print("Running in Google Colab")
+if in_colab:
+    print("Running in Google Colab")
 
 
 # print("in_colab",in_colab)
@@ -48,8 +48,8 @@ def display_markdown(file_path):
     #     print(md.plain)
     # else:
         # Print the formatted Markdown in the terminal
-    # console.print(md)
-    print(md)
+    console.print(md)
+    # print(md)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Display markdown file in the terminal.')
