@@ -5,7 +5,7 @@ Amanda is an AI assistant that answers questions about the Namada blockchain. It
 
 ## Install
 
-Tested on Ubuntu Linux and MacOS.
+Tested on Ubuntu Linux, to be tested on MacOS.
 
 ```bash
 git clone https://github.com/ibmua/amanda.git
@@ -73,10 +73,11 @@ You can use Claude AI API either directly, or use it via Google Cloud (at the mo
 ### Claude.ai API
 
 ```bash
+export AMANDA_API="anthropic"
 export CLAUDE_API_KEY="sk-ant-api03-Fp1uQ...."
 ```
 
-and the scripts will use your API key to perform the AI queries. AI queries cost some money - pricing here: https://www.anthropic.com/api , so your Claude API account should be funded. Free 5$ credits Claude.ai offers as an incentive is fine, if they still do.
+and the scripts will use your API key to perform the AI queries. AI queries cost some money - pricing here: https://www.anthropic.com/api , so your Claude API account should be funded. Free $5 credits Claude.ai offers as an incentive is fine, if they still do.
 
 
 ### Google Compute Platform
@@ -255,7 +256,14 @@ python3 AI-request.py --model haiku --max-tokens 4096 --temperature 0.1 --system
 
 
 ### Example 1
-![image](https://hackmd.io/_uploads/H1M4cuSx0.png)
+```bash
+amanda Is voting twice on same proposal safe? Or will I get punished?
+```
+
+![Is voting twice on same proposal safe? Or will I get punished?](Screenshot-double-voting.png "Is voting twice on same proposal safe? Or will I get punished?")
+
+#### Answer:
+
 
 ### Example 2
 ```bash
@@ -343,5 +351,4 @@ Sources:
 # License
 
 Standart MIT License.
-
 
