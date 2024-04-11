@@ -11,7 +11,8 @@ Tested on Ubuntu Linux, to be tested on MacOS.
 git clone https://github.com/ibmua/amanda.git
 cd amanda
 export AMANDA_FOLDER=$(pwd)
-chmod +x amanda-install.sh
+chmod +x *.sh
+
 ```
 if using claude.ai API:
 ```bash
