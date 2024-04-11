@@ -14,7 +14,6 @@ def process_file(i):
     if os.path.isfile(f"{FILENAME}.{i}"):
         with open(f"outputs/response-of-the-file-filter.{i}", "w") as f:
             f.write(open("response-start-json").read())
-        
         subprocess.run([
             "python3", "AI-request.py",
             "--model", "sonnet",
@@ -24,22 +23,31 @@ def process_file(i):
             "--message-user", f"outputs/file-filter.prompt.{i}",
             "--message-assistant", "response-start-json"
         ], stdout=open(f"outputs/response-of-the-file-filter.{i}", "a"))
-        
-        # print(i)
 
 def main():
-    with ThreadPoolExecutor() as executor:
-        futures = []
+    amanda_api = os.getenv("AMANDA_API")
+    
+    if amanda_api == "google":
+        with ThreadPoolExecutor() as executor:
+            futures = []
+            i = 0
+            while True:
+                if os.path.isfile(f"{FILENAME}.{i}"):
+                    futures.append(executor.submit(process_file, i))
+                    i += 1
+                else:
+                    break
+            
+            for future in futures:
+                future.result()
+    else:
         i = 0
         while True:
             if os.path.isfile(f"{FILENAME}.{i}"):
-                futures.append(executor.submit(process_file, i))
+                process_file(i)
                 i += 1
             else:
                 break
-        
-        for future in futures:
-            future.result()
 
 if __name__ == "__main__":
     main()
