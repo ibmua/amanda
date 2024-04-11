@@ -11,6 +11,7 @@ Tested on Ubuntu Linux, to be tested on MacOS.
 git clone https://github.com/ibmua/amanda.git
 cd amanda
 export AMANDA_FOLDER=$(pwd)
+chmod +x amanda-install.sh
 ```
 if using claude.ai API:
 ```bash
@@ -27,7 +28,7 @@ export GOOGLE_PROJECT_ID="...your-google-cloud-project-ID"
 And then after after API settings, we install amanda:
 
 ```bash
-./amanda-install.sh
+sudo ./amanda-install.sh
 ```
 
 The script will create `amanda` executable and make it accessible via `amanda` command from anywhere inside the terminal. It will remember current folder as `AMANDA_FOLDER` environment variable and remember currently set API env variables `AMANDA_API`, `CLAUDE_API_KEY` and `GOOGLE_PROJECT_ID`.
