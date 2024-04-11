@@ -1,0 +1,219 @@
+Understanding Namada Governance
+Published 
+May 11, 2023
+Bengt Lofgren
+
+We (should) live in a society (inspired by https://www.eff.org/cyberspace-independence)
+Motivation
+"Governments derive their just powers from the consent of the governed" - source
+
+Brian Goetz once said "Immutable objects are simple." However, Governance is not simple, and by the deductive rules of logic, it can therefore not be immutable. Because Namada exists as a protocol to last for years, and foster generations of users to come, it only makes sense for it to change along with the people who make it up.
+
+For this reason, Namada employs an expressive form of Governance that gives governance participants almost full flexibility as to what can be changed. This article attempts to explain the capabilities of what Governance on Namada has to offer.
+
+Namada governance is built with the principle in mind that it should be flexible enough to support protocol changes without the need for a hard-fork, but also have sufficient means in place to act as a place by which participants can signal their approval or disapproval of proposed hard-forks.
+
+Ultimately, the social governance - of what software people choose to run - is both the final and most important layer for coordination. For this reason, Namada supports off-chain signal voting in order to give users the ability of posting the history of such decisions on-chain.
+
+Outline
+This article aims to outline the features of governance on Namada that give it this flexibility.
+
+We begin by describing who makes up governance. We then describe the voting mechanism for governance participants, and finish up by describing what types of proposals governance are able to vote on.
+
+Who is governance?
+
+We are all responsible
+Governance on Namada consists of 2 separate participants:
+
+Delegators - those who bond tokens but delegate their voting-power to another address
+Delegates - those who vote on Governance proposals on the behalf of delegators
+Governance participation is dictated through the allocation of bonded native NAM tokens. Bonded NAM gives the governance participant voting-power proportional to the NAM they have bonded.
+
+When a non-validator address bonds tokens, they do so towards a validator address. This validator is then responsible of voting on blocks on the behalf of this user.
+
+By default, the validator to which a user has bonded her tokens, becomes the delegate of that account. This delegation implies that the validator is also able to vote on governance proposals on the behalf of the user (whom is now a delegator).
+
+Nonetheless, the delegator's vote always takes precedence over the delegate's vote.
+
+For example, assume delegator Bob (voting-power = 1) has delegated voting-power to delegate Alice (voting-power = 3 including Bob's delegation).
+
+Then if Alice votes yay on Proposal A, and Bob subsequently votes nay on Proposal A, the total Tally of Yay votes is only 2. The proposal also now has 1 nay vote.
+
+The delay in voting
+In order to give delegator's the option to always override the vote of their delegate, the delegates are required to vote for proposals within the first 
+ 
+ 
+3
+2
+​
+  epochs of its voting-period.
+
+If this stop was not in place, a malicious delegate is incentivised to vote (or change their vote) at the very end of any proposal, against the interest of their delegator.
+
+Consensus or Governance?
+Voting-power has two use-cases.
+
+For proof of stake consensus, voting-power influences the likelihood of being selected as a block-proposer as well as the weight of a validators signature relative to other validators' signatures when signing a valid block. When a non-validating account bonds NAM tokens to a validator, the validator's voting-power is increased in proportion to the bonding amount.
+
+When a delegator "delegates" bonded NAM tokens to a delegate, the delegate's voting power is increased in proportion to the delegation amount.
+
+Submitting proposals
+"Proposals" are meant to define objects which governance participants vote on, and "propose" a particular change to social consensus. The change to social consensus is usually a state change to some part of the Namada protocol.
+
+Examples include changing various protocol parameters such as the token supply inflation rate, the PoS reward rate, the whitelisting of various assets, etc. All of these changes are easily interpreted by the ledger and can be proposed alongside a "payload" which changes these parameters in storage and have effect immediately once altered.
+
+Other examples may include fixing a fundamental bug in the codebase, adding some functionality that requires a change to the architecture or upgrading some part of the Namada stack. This may require a hard-fork and installing a new "version" of Namada.
+
+For all participants in our public testnets, this should be well practiced ;).
+
+Voting on Proposals
+Once a proposal is out and about, all governance participants are able to vote on the proposal by submitting Yay or Nay votes through a voting transaction.
+
+Example Proposal: The PGF Stewards Election
+A good example to grasp a better understanding of Namada governance proposals is to study the Namada PGF Steward proposal. The Namada PGF Steward proposal proposes to either add or remove a PGF Steward from the set of Stewards on Namada.
+
+Any user can submit the proposal, granted that they have enough funds to do so. The funds required to submit a governance proposal is a governance parameter (quite meta, we know). The funds are then kept in escrow until the proposal has been resolved.
+
+Once the proposal has been made, governance participants (i.e either validators or delegators with some bonded stake) are able to vote on the proposal.
+
+In order to approve the proposal, a Yay vote must be submitted, whereas Nay indicates a disapproval of the proposal.
+
+If at least 
+ 
+ 
+3
+2
+​
+  of the total voting power has voted on this proposal, and more than 50% of voters are in favour of the proposal (i.e have voted Yay), then the proposal has "passed", and the Steward change will be made.
+
+There are two scenarios:
+
+The proposal is rejected
+The proposal is accepted
+In the case that the proposal is rejected, the escrowed funds are "slashed". If the proposal is accepted, then the funds are given back to the proposer, and the state change is implemented (in this case the new Steward is either elected or removed) at the end of the grace-epoch.
+
+Economics of proposals
+Why have a cost to proposals?
+
+For the same reasons we pay gas fees, we pay an additional cost for proposals. In addition to competing for limited block space, the proposal is competing for limited "attention-space". This attention must be paid (for), and in this sense it is a fee paid for Governance's attention. If the proposal is accepted, and governance benefits from the effort put in constructing the proposal, the governance pays the proposer back for the proposer's efforts.
+
+The different proposals on Namada
+There are 3 (and a half) types of governance proposals on Namada.
+
+Default Proposal
+The default is the most general type of governance proposal on Namada. Default proposals come in two forms:
+
+With a wasm payload
+Without a wasm payload
+Default proposals without a wasm payload exist in order to create coordination around a certain consensus. This may be in the form of a hard-fork, but may also just be various other forms of social consensus, such as the renaming of various concepts, proposing focus on Namada grants/bug-bounties, the agreement to build bridges, etc.
+
+Default proposals with a wasm payload, when approved, executes the wasm code in order to implement a state-change on-chain. This is designed for changing governance parameters. For example, the set of incentivised assets in the shielded pool and/or the size of the subsidy are parameters that can be changed through this type of governance proposal.
+
+Any Namada user is able to propose a default proposal, and must escrow NAM in order to do so. Any governance participant is able to vote on this proposal.
+
+In order to pass, at least 
+ 
+ 
+3
+2
+​
+  of Namada voting-power must vote on the proposal, and the majority of these votes must be in favour of the proposal.
+
+Custom Proposals
+Non-default governance proposals on Namada are called "Custom Proposals".
+
+As of writing, there are three types of custom proposal:
+
+ETH Proposal
+PGF Proposal
+Steward Proposal
+ETH Proposal
+
+Perhaps the second coolest ETH related phenomenon since these bad boys were revealed at ETH-Denver
+This governance proposal is a special form of governance proposal, since it involves code that will execute calls to functions on the Ethereum smart contract that governs the ETH-Namada bridge.
+
+In the words of our ETH-bridge engineer Fraccaman, relaying the payload of ETHBridge proposals is "very f#@!ing cool". Once the proposal is passed, validators must relay a protocol transaction signing the bytes specified in the proposal. On a technical level, these bytes represent the ABI encoded function call to the Ethereum smart contract function. Once enough signatures have been collected, any user is able to submit the collection of the signatures and make a call to the smart-contract function specified by the proposal. The smart-contract includes logic to ensure the signatures are valid and sufficient. Once these conditions have been met, the smart-contract function is executed.
+
+Any Namada user is able to propose an ETH proposal, and must escrow NAM in order to do so. However, only validators are able to vote on these proposals.
+
+In order to pass, at least 
+ 
+ 
+3
+2
+​
+  of Namada voting-power must vote on the proposal, and the majority of these votes must be in favour of the proposal.
+
+PGF Proposal
+PGF proposals are governance proposals that can only be proposed by the current set of elected PGF Stewards. These proposals are a special type of proposal that makes either a retroactive public goods payment (RPGF) or a continuous public goods payment (CPGF).
+
+PGF-Proposal proposals pass by default, unless they are vetoed by governance participants.
+
+Governance participants are able to veto such proposals if and only if:
+
+At least 
+ 
+ 
+3
+1
+​
+  of total voting-power vote on the proposal AND the majority of votes are Nay. Further, if at least 
+ 
+ 
+3
+2
+​
+  of total voting-power has voted Nay on the proposal (which signifies significant disapproval), the PGF Steward is removed from the set of PGF Stewards.
+
+Steward Proposal
+TheSteward Proposal exists in order to vote in (or vote out) a new (or old) Public Goods Funding Steward.
+
+These proposals can be proposed by any user and voted on by governance participants. The proposal specifies the address of the Steward that is going to be voted-in/voted-out. The proposal's description is meant to include the motivation for why the Steward should be voted-in/voted-out.
+
+The PGF Steward is elected if and only if:
+At least 
+ 
+ 
+3
+1
+​
+  of Namada voting-power must vote on the proposal, and the majority of these votes must be in favour of the proposal.
+
+Offline proposal mechanism
+
+Pic related
+All that is great and well when the Namada chain is running properly and as expected. What about when the chain halts or experiences some other issues, how do we go about achieving consensus?
+
+The governance features on Namada includes a few novel changes compared to other governance models.
+
+In addition to introducing an "attention-fee" to governance proposals, Namada allows proposals to be submitted offline as well as online. Offline governance proposals exist in order to grant greater flexibility to governance participants on Namada.
+
+This tool is especially useful during times when a hard-fork is necessary in order to resolve some issue. A chain-halt is the example that comes to mind, which may have arisen either due to a Byzantine attack or due to a bug or similar.
+
+In this case, there is a mechanism in place for submitting votes to some focal-point, such as some (preferably decentralised) communication service that has been agreed upon. Users and validators can then verify these votes and signatures in the same way they would be able to on-chain.
+
+Submitting offline proposals
+Proposals that are made offline are then submitted on-chain as the signature over the hash of a JSON representing the structure:
+
+{
+  content: Base64<Vec<u8>>,
+  author: Address,
+  votingStart: TimeStamp,
+  votingEnd: TimeStamp,
+  signature: Base64<Vec<u8>>
+}
+
+Submitting offline votes
+Similarly, the vote is submitted as a signature over the hash of the json structure:
+
+{
+  content: Base64<Vec<u8>>,
+  author: Address,
+  votingStart: TimeStamp,
+  votingEnd: TimeStamp,
+  signature: Base64<Vec<u8>>
+}
+
+Concluding remarks
+
+Namada's Governance system is very flexible. It aims to accommodate most changes through on-chain proposals, and is able to use wasm and ABI payloads to do so. It also recognises the need for hard-forks and accommodates the coordination mechanisms to allow for this. Governance is set up in a way to make the users own the protocol as much as possible, which only makes sense as they are the ones that make it up.

@@ -1,0 +1,31 @@
+Introducing Shielded Swaps on Osmosis
+Published 
+Aug 2, 2023
+2min read
+Namada
+
+In a milestone announcement at Osmocon2023 in Paris, France, Adrian Brink, co-founder of Namada, unveiled plans for an upcoming feature known as “Shielded Swaps” on Osmosis. The potential impact of this innovation is already generating excitement within the industry, offering Osmosis users the ability to privately swap tokens on a chain that doesn't inherently support data protection.
+
+Shielded Swaps: A Peek into DeFi’s Future
+Once Namada launches, it aims to introduce the Shielded Swaps feature, designed to bring shielded token swaps to Osmosis. The concept of Shielded Swaps is grounded in the idea of "shielded actions." These actions aren't merely a technical feat but represent a philosophical shift towards true data protection in blockchain interactions.
+
+How Shielded Swaps Work
+The mechanics of Shielded Swaps are elegantly simple yet powerful:
+
+Transfer ATOM: In the first step, an ATOM is transferred from Namada's shielded account over Inter-Blockchain Communication protocol (IBC) to a transparent account on Osmosis.
+Trade ATOM for OSMO: Once the ATOM reaches Osmosis, it's openly traded for OSMO.
+Transfer the OSMO to Namada: Finally, the resulting OSMO is sent back to the user's shielded account on Namada over IBC.
+
+While this process may seem like multiple steps to those inspecting what's happening on the blockchain, from a user experience (UX) standpoint, it's executed in a second as a single seamless step!
+
+The elegance of this shielded swap lies in the untraceable connection between the initial shielded ATOM and the final shielded OSMO. Throughout the entire process, the user’s identity remains anonymous, and the transaction appears uncorrelated. This ensures that the conventional transparency of blockchain transactions does not result in compromised personal information.
+
+A Universal Application
+Shielded Swaps break down barriers, allowing shielded interactions with not only IBC compatible chains but any chain connected to Namada. Whether trading NFTs on Ethereum or staking ETH, the applications are broad and far-reaching.
+
+
+Shielded Swaps represent a remarkable leap in blockchain data protection, providing the most robust security guarantees yet for the multichain user. More than just a feature, it allows users to interact with app chains and other dApps without sacrificing their personally identifiable information, and in a multifaceted and seamless manner.
+
+In unveiling Shielded Swaps on Osmosis, Namada hasn't just taken a step towards the future; it's leading a transformative shift towards a more empowered, data rights-respecting, and user-centric blockchain world.
+
+Namada is a Proof-of-Stake Layer 1 blockchain protocol that delivers unparalleled multichain, asset-agnostic data protection guarantees. Utilizing advanced zk-SNARKs technology, Namada facilitates indistinguishable transactions for various assets in its unique Multi-Asset Shielded Pool (MASP). Developed by Heliax in the Anoma ecosystem, Namada is working toward a future where digital asset shielding becomes the norm, not the exception.

@@ -1,0 +1,103 @@
+Namada Shielded Expedition WANTED Asteroids, ROIDs Point System and Rankings
+Published 
+Jan 26, 2024
+5min read
+Awa Sun Yin
+
+Namada Shielded Expedition: WANTED Asteroids, ROIDs, and Rankings
+The Namada Shielded Expedition is a massively multiplayer role-playing incentivized testnet, and the final milestone for the Namada community to test the protocol before mainnet. A total of 10,469 Pilots and 129,238 Crew Members will be competing and cooperating with each other from the expedition’s genesis in an asteroid mining race. The Anoma Foundation is allocating a total of 30M NAM (3% of total supply) to the winners.
+
+This article describes the structure of the expedition, the list of WANTED asteroids, the ROIDs point system, Nebb rankings, and the NAM prizes for the winners. While preparing for orbital injection (2024-01-30T17:00:00.000), Pilots and Crew Members can leverage this information and develop a strategy to maximize their ROID accrual to rank as high as possible during the Shielded Expedition.
+
+NAAN != ROID, NAAN != NAM, and ROID != NAM
+
+Here’s a quick terminology recap:
+
+NAAN is the native token of the Namada Shielded Expedition. The token is used for staking and securing the network, as well as to pay for fees.
+ROID is a point in the Shielded Expedition. Pilots and Crew Members are ranked by the ROIDs they have individually accumulated. The only way to accumulate ROIDs is by mining asteroids (completing tasks).
+NAM is the native token of Namada mainnet, and will not be in the Shielded Expedition.
+Shielded Expedition Structure
+The expedition is expected to last from 14 to 21 solar days from genesis time 2024-01-30T17:00:00.000. After genesis, the expedition is only constrained by the sybil-resistance, consensus, algorithms and the laws of physics – unexpected events might occur, causing extensions or reductions in the expedition’s length.
+
+The Namada protocol version used for the Shielded Expedition is at least `v0.30.2` (v0). In order to advance to the deeper parts of the shielded space, Pilots and Crew Members will have to cooperate through on-chain governance to upgrade the protocol two times: from v0 to v1 (involving a parameter change), and from v1 to v2 (involving a protocol code and state change).
+
+The Nebb
+Modeled after the Webb, the Nebb is the most powerful telescope in the shielded ecosystem. This tool can help Pilots, Crew Members, and anyone in the community follow the developments in the Shielded Expedition. The Nebb has four key features:
+
+The Nebb (dashboard) with global statistics on the Shielded Expedition, as well as Governance and PGF-related activity
+PILOTS ranking, with the profiles of all 10,469 Pilots, ranked by their ROIDs
+CREW MEMBERs ranking, with the profiles of all 129,238 Crew Members, ranked by their ROIDs
+Special task submission system, for submitting evidence for S Class Asteroids, compatible with the Namada Extension to sign submissions
+At launch, the Nebb will be available under the URL: namada.net/shielded-expedition
+
+ROIDs Point System
+ROIDs are points in the Shielded Expedition. Pilots and Crew Members are ranked on the Nebb based on their accumulated ROIDs at the time. There are in total 1 trillion ROIDs to be distributed among Pilots, and another trillion ROIDs to be distributed among Crew Members.
+
+
+Total ROIDs
+The ROIDs that each participant has accumulated are shown on the Pilot Rankings and Crew Member Rankings on the Nebb. Rankings are updated every 5 minutes.
+
+The distribution of ROIDs is done automatically as Pilots and Crew Members successfully mine asteroids (complete tasks) across 4 classes. The table below indicates the maximum ROIDs per Asteroid Class:
+
+
+Classes of Asteroids and Max. ROIDs allocated per class
+NOTE: Pilots compete with other Pilots only, and Crew Members compete with other Crew Members only.
+
+Each asteroid class has specific Asteroids (tasks) with Max. ROIDs per asteroid. The ROIDs distribution is relative to how many Pilots / Crew Members mined the asteroid at the time (completed the task). The more participants complete each task, the less points each participant gets, and vice versa.
+
+See the example below of a dummy task:
+
+
+Dummy task for illustration purposes
+The ROIDs are assigned based on how many Pilots completed the task at a specific time.  E.g. if only 1 pilot completes it, then the pilot receives 1,000,000 points. If 5 pilots complete it, then it’s 1,000,000/5 = 200,000 ROIDs per pilot, and the ROIDs are redistributed. The ROIDs assignment is calculated every 5 minutes.
+
+PILOTS WANTED Asteroids
+The tables below are only applicable to Pilots participating in the Shielded Expedition.
+
+
+WANTED Asteroids of Class C, B, A from Pilots
+*Unlike classes C and B, class A asteroids are unknown, the only way to determine what they are is by continuous searching and experimenting with the protocol.
+
+Class S asteroids are special tasks. Unlike Classes C, B, and A, they require that participants submit evidence manually through the Nebb: namada.net/shielded-expedition/submit-special-task (available from network launch).
+
+NOTE: submitting spam through the Special Task tool can result in a permanent ban of the Pilot’s profile, which will be marked as “RIP” on the Nebb and will not be eligible for prizes.
+
+The table below lists all S Class asteroids for Pilots with examples for each subclass:
+
+
+WANTED Asteroids of Class S from Pilots
+CREW MEMBERS WANTED Asteroids
+The tables below are only applicable to Crew Members participating in the Shielded Expedition.
+
+
+WANTED Asteroids of Class C, A from Crew Members
+*Unlike class C, class A asteroids are unknown, the only way to determine what they are is by continuous searching and experimenting with the protocol.
+
+Class S asteroids are special tasks. Unlike Classes C, and A, they require that participants submit evidence manually through the Nebb: namada.net/shielded-expedition/submit-special-task (available from network launch).
+
+NOTE: submitting spam through the Special Task tool can result in a permanent ban of the Crew Member’s profile, which will be marked as “RIP” on the Nebb and will not be eligible for prizes.
+
+The table below lists all S Class asteroids for Crew Members with examples for each subclass:
+
+
+WANTED Asteroids of Class S from Crew Members
+Shielded Expedition Prizes
+A total of 30M NAM from the Namada genesis supply is allocated to the winners of the Shielded Expedition. The distribution is determined by the final Pilot and Crew Member rankings by the end of the expedition, which will remain as a persistent record on the Nebb.
+
+
+Shielded Expedition Prizes
+The winners will be announced after the Shielded Expedition ends. The prizes will be available directly on the account submitted during the registration process, subject to the Shielded Expedition’s Terms and Conditions. So make sure you keep your seed phrases safe!
+
+Resources
+Shielded Expedition genesis files 
+Protocol versions
+Tooling you can leverage for special tasks:
+Namada SDK
+Namada Light SDK
+Namadexer
+Namada Interfaces (extension, namada.me, etc)
+Namada Faucet
+SE Updates:
+@namada on X
+Namada Discord server
+See you at the Shielded Expedition's genesis!

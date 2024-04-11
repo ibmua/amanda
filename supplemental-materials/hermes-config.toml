@@ -1,0 +1,117 @@
+# HERMES config.toml for configuring IBC token transfers.
+[global]
+#log_level = 'info'
+log_level = 'trace'
+
+[mode]
+ 
+[mode.clients]
+enabled = true
+refresh = true
+misbehaviour = true
+ 
+[mode.connections]
+enabled = false
+ 
+[mode.channels]
+enabled = false
+ 
+[mode.packets]
+enabled = true
+clear_interval = 10
+clear_on_start = false
+tx_confirmation = true
+ 
+[telemetry]
+enabled = false
+host = '127.0.0.1'
+port = 3001
+
+
+[[chains]]
+id = 'shielded-expedition.88f17d1d14'  # set your chain ID
+type = 'Namada'
+
+trusting_period = '4752s'
+rpc_timeout = "60s"
+
+rpc_addr = 'http://127.0.0.1:26657'  # set the IP and the port of the chain
+grpc_addr = 'http://127.0.0.1:9090'  # not used for now
+account_prefix = ''  # not used
+memo_prefix = "tpknam1qz7z09ds674wlyfl6upvl2e6jtuus7lfp2"
+key_name = 'relayer2'  # The key is an account name you made
+store_prefix = 'ibc' 
+
+	[chains.gas_price]
+		price = 0.001
+		denom = "tnam1qxvg64psvhwumv3mwrrjfcz0h3t3274hwggyzcee" 
+			# the denom should be a raw token address
+
+	[chains.event_source]
+		mode = "push"
+		#mode = "pull"
+		url = "ws://127.0.0.1:26657/websocket"
+		batch_delay = "500ms"
+
+	[chains.packet_filter]
+		policy = 'allow'
+		list =	[
+				['transfer', "channel-668"],
+				['transfer', "channel-700"]
+				]
+
+
+
+[[chains]]
+type = "CosmosSdk"
+id = "osmo-test-5"
+rpc_addr = "https://rpc.osmotest5.osmosis.zone/"
+grpc_addr = "https://grpc.osmotest5.osmosis.zone/"
+rpc_timeout = "60s"
+trusted_node = false
+account_prefix = "osmo"
+#key_name = "relayer-o"
+key_name = "OSMOSIS-RELAYER-ADDRESS"
+key_store_type = "Test"
+store_prefix = "ibc"
+default_gas = 100000
+max_gas = 4000000
+gas_multiplier = 1.1
+max_msg_num = 30
+max_tx_size = 180000
+max_grpc_decoding_size = 33554432
+clock_drift = "5s"
+max_block_time = "30s"
+ccv_consumer_chain = false
+memo_prefix = "ForestNode"
+sequential_batch_tx = false
+
+	[chains.event_source]
+	mode = "push"
+	url = "wss://rpc.osmotest5.osmosis.zone:433/websocket"
+	batch_delay = "500ms"
+
+	[chains.trust_threshold]
+	numerator = "1"
+	denominator = "3"
+
+	[chains.gas_price]
+	price = 0.025
+	denom = "uosmo"
+
+	#[chains.packet_filter.min_fees]
+
+	[chains.packet_filter]
+		policy = 'allow'
+		list =	[
+				['transfer', "channel-6162"],
+				['transfer', "channel-6185"]
+				]
+
+
+	[chains.address_type]
+	derivation = "cosmos"
+
+	[tracing_server]
+	enabled = false
+	port = 5555

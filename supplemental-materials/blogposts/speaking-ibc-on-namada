@@ -1,0 +1,115 @@
+Speaking IBC on Namada
+Published 
+Sep 11, 2023
+6min read
+Bengt Lofgren
+
+Let's Talk IBC
+This article aims to do two things:
+1. Give an introduction to IBC
+2. Explain how to use IBC with Namada
+
+
+What is IBC?
+The best analogy I have heard to explain IBC is to think of blockchains as their own sovereign countries, and IBC as a common language. Although each country has its own customs, security enforcements, and capabilities, the common language can allow the two to agree on some common information.
+
+At the heart of every IBC connection lie three fundamental entities: packets, channels, and ports. Ports can be thought of as "what I expect to talk about", packets as "what I'm saying", and channels as "how I'm going to say it". In the context of 2 countries, the "channel of communication" may be to use a common email protocol, a landline phone, snail-mail, or some weekly in-person meeting, and the countries will specify how much communication shall be sent through this mean of communication, and at what times. The port in this case will be the subject of conversation, and therefore the blockchains will have agreed upon what packets "mean anything" on the other side. Packets will be the literal words being exchanged.
+
+
+It is also important that these blockchains "acknowledge" when one side has received a packet or not, as their states now depend on one another. Further, it is important to know that a packet sent was created in a "valid" manner, and IBC checks for this validity through cryptographic proofs.
+
+These IBC transactions are submitted by an actor called the "relayer", and are validated by the ledger, which keeps an updated "client" to represent the state of the other chain.
+
+How does IBC work on Namada?
+
+Telekinetic Battles rule
+Whenever a channel is established, a light client (referred to henceforth as "the client") is constructed (beforehand) on the Namada blockchain that keeps track of the vital information that the blockchain needs about blockchain B in order to verify and execute the packets that are sent through the channel. See MsgUpdateClient for more information on this.
+
+The technicalities are explained in the appendix.
+
+Relaying on Namada
+In order to act as a relayer, which involves opening channels, initiating the handshakes, and updating "the Client" it is recommended to use the Heliax fork of Hermes, which is a rust implementation of the IBC relayer (developed by InformalSystems).
+
+You can also find the Hermes official documentation here.
+
+Using IBC on Namada
+These technicalities are great for understanding what is happening under the hood, but how exactly could a user make such a transaction on Namada?
+
+The Namada Multitoken
+All fungible tokens on Namada share a single validity predicate (VP), called the Multitoken VP, however storage on Namada differentiates IBC assets from non IBC assets. IBC assets are fungible, but only within the chain and port from which they originated. This provides fault isolation between assets that would otherwise seem fungible.
+
+Making an IBC transfer on Namada
+
+IBC Transfer
+Now that we've covered the basics, it's time to dive into how a user can proceed with making their first IBC transfer.
+
+The namada client (namadac) implements the function ibc-transfer which conducts the IBC transfer message appropriately. The arguments of the functions are listed in the example funciton below:
+
+namadac ibc-transfer \
+--token NAM \
+--amount 100 \
+--source albert \
+--receiver atest1d9khqw36g56nqwpkgezrvvejg3p5xv2z8y6nydehxprygvp5g4znj3phxfpyv3pcgcunws2x0wwa76 \
+--signing-keys albert \
+--channel-id channel-0 \
+--node 127.0.0.1:27657
+Things to note:
+The source in this case is any address on the origin chain. This can be an alias for an address that is stored in the wallet (in this case Albert), or it can be the raw address itself. However, for the "receiver address", it needs to be the raw address as specified on the destination chain. If not correctly specified, funds may be lost.
+
+The channel-id will correspond to a channel-id that has already been established by a relayer at some point in the past. The node argument specifies the IP address and port for the node of the source chain. This is especially useful when interacting with two different chains using the same Namada client.
+
+Once this transaction has been executed, a CometBFT event is emitted and a pending execution is stored on chain in storage, that a relayer can relay at any time. Balances are deducted from the source of the account at this point, but the deduction is not finalised until an acknowledgement of the event being relayed successfully is received on chain.
+
+Once the relayer has provided a MsgAcknowledgement with the respective proof of a verified state change on chain-B, and Namada verifies it, the state change is finalised on Namada. Should no relayer provide the proof confirming the state change on chain-B, the state change is left as it is in a pending state until Namada either receives a MsgTimeoutOnClose or a MsgAcknowledgement.
+
+Note that IBC channels for port ICS20 transfers cannot be closed, so either of the two above must occur at some point.
+
+What about shielded actions?
+So, what is a shielded action in the first place?
+
+A shielded action is an IBC action in which the users' funds originate from and/or end up in the shielded pool.
+
+For specific chains, such as Osmosis, a specific port will be set up for this purpose, which calls the appropriate functions on each chain, and agree on what packets and therefore data can be sent across the channel and end up being valid IBC actions.
+
+The memo field is the essential piece of the puzzle which will allow for this, as it can allow for the destination address to be a shielded address, and although the internal address that initially receives the funds is a transparent account, it can exist for the sole responsibility of routing the funds to shielded addresses specified in the memo section.
+
+
+Conclusion
+IBC is an essential part of Namada's mission to provide a multichain data protection solution for users across the blockchain ecosystem.
+
+In this sense, IBC becomes arguably Namada's greatest feature, as it transforms Namada from another competing solution to a cooperative one, to be interoperable with the existing projects like Osmosis, Cosmos Hub, Akash Network, etc. but also future ones, such as Penumbra, DYDX, and perhaps even Zcash, should the community choose to go down that path.
+
+Appendix
+"The Client"
+The IBC client on Namada consists of 2 parts:
+
+ClientState
+ConsensusState
+ClientState
+The ClientState stores information about the other chain, including but not limited to the:
+
+chain-id
+latest_height - latest block height
+trust_threshold - fraction of (weighted) signatures from validators on the other chain
+proof_specs - specifies the structure of the proof that a relayer must provide in order for any IBC transaction to be considered valid by Namada. Namada conforms to the ICS023 specification . This technicality is what hinders byzantine relayers from affecting state maliciously. In this way, the security of the interchain network remains in tact (although liveness may be affected until an honest relayer steps in to provide a valid proof).
+ConsensusState
+root_hash - the merkle tree root hash
+next_validator_hash - the hash of the concatenation of the validator addresses for the next epoch
+timestamp - the time of the last update
+The values of the these fields are updated with each IBC transaction, and each such transaction is submitted (and paid for) by the relayer.
+
+The Handshake
+In order to establish a connection, a 4-way handshake is made between Namada and Chain B, which establishes the client and ensures that a common language is agreed upon. The handshake procedure for Namada is implemented to conform with the definitions specified in ICS 3 and ICS 4.
+
+The IBC validity predicate (VP)
+The IBC validity predicate exists in order to verify any IBC-related state execution on Namada.
+There are two main things that the IBC validity predicate verifies:
+
+Pseudo-execution verification.
+In a pseudo-environment (not changing true storage in any way), the execution is checked so that the resulting state change is in agreement with the IBC tx. An important distinction is that this step does not check the validity of the IBC-related data in any other way. This check is mainly needed for when arbitrary WASM execution is allowed on chain, and there is no whitelist.
+2. Verifying that the IBC tx is provided in a valid manner. This includes:
+
+A valid vector-commitment of chain-B's state is attached
+The message is valid (not timed out)
+The channel through which the message is sent is indeed open
+The IBC VP on Namada is what guarantees the safety of IBC transactions, as mentioned earlier in this article.

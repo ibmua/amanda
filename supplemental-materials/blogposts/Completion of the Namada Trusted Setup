@@ -1,0 +1,78 @@
+Completion of the Namada Trusted Setup
+Published 
+Jan 10, 2023
+4min read
+Awa Sun Yin
+
+Completion of the Namada Trusted Setup
+In preparation for Namada’s mainnet in early 2023, the Anoma Foundation coordinated a public Multi-Party Computation (MPC) ceremony to generate the public parameters for the Multi-Asset Shielded Pool (MASP) circuit – a crucial component for Namada’s shielded transfers and unified shielded set.
+
+We’re thrilled to announce that the Namada Trusted Setup Ceremony was completed at 9am UTC on the 21st of December 2022, with no less than 2,510 contributions to the ceremony. The final parameters have been published in this repository and will be included in the upcoming Namada protocol releases and will be used in the mainnet circuits.
+
+Namada Trusted Setup Recap
+Namada’s MASP requires the combination of two sets of parameters: phase I parameters from Zcash’s Powers of Tau ceremony; and phase II, which corresponds to the parameters generated in the recent Namada trusted setup. The former concluded in early 2018, whereas the latter was completed recently on the 21st of December 2022.
+
+For more context, see Announcing the Namada Trusted Setup
+Before the start of the Namada trusted setup, community members could show their interest by subscribing to a dedicated mailing list (we received an overwhelming total of 30,671 signups!). The ceremony was broken down into cohorts of 24 hours, with Cohort #1 starting on the 19th of November and ending with Cohort #32 on the 21st of December.
+
+In order to contribute, individuals needed a ceremony token, a unique token to successfully connect with the ceremony coordinator in order to submit a contribution. Participants received a ceremony token via the public mailing list or by completing a quest on writing and sharing about Namada, writing about open-source tech or the work from individuals or groups that contributed in increasing awareness and importance of data protection technologies. Some highlights include Signal, artist Ai Wei Wei, artist Heather Dewey Hagborg, anime Serial Experiments Lain, the Manga Guide to Cryptography, TV series Black Mirror, activist Max Schrems, CovidWatch, and researcher and artist Caroline Sinders.
+
+To compute the parameters, every participant had to run the computation locally with this CLI tool or their own client implementation. As soon as their turn in the queue arrived, a participant had a maximum of 20 minutes to complete and submit the contribution back to the coordinator.
+
+Finally, participants were encouraged to submit an attestation: a publicly verifiable record (e.g. link to a website) about their contribution setup and/or unique randomness sources. Remarkable sources of randomness ranged from more to less appetising delicacies, environmental noise recording by Palo Verde Generation Station or Oregonian nature combined with winter rain sounds, spotty friends or little half-human and half-ET’s frenetic typing.
+
+During the ceremony, all contributions were added to the dashboard, including the hash, signature, and response files, which you can verify by following these steps in “Verify a contribution”. The ceremony dashboard will be kept on the website for future reference, so anyone can download and verify the intermediate parameters.
+
+Random Beacon
+Just like in Zcash’s Powers of Tau and Sapling MPC ceremonies, there was a final computation using a random beacon. The random beacon used was a combination of 3 block hashes, announced on the 21st of December 2022 (and on this Reddit post) before the respective blocks were finalised:
+
+Block height 768360 of Bitcoin
+Block height 16233100 of Ethereum
+Block height 1920750 of Zcash
+The hashes were:
+
+Bitcoin height 768360: 00000000000000000006ccea7a2c42ff8cc2b1b9bb98e159cd922fa30dfe770f
+Ethereum height 16233100: 0x232c260a02b07e754c6b685452439b5b99d91f0f87f46899ad3ba1aab54d364e
+Zcash height 1920750 : 0000000000a276663e3d2acab5e571d815fca496e6a84f87841783a68ba779bb
+For combining, SHA256 was applied to the 3 block hashes and then 2^42 hashes of the result as a delay function:
+
+1: 00000000000000000006ccea7a2c42ff8cc2b1b9bb98e159cd922fa30dfe770f
+2: 232c260a02b07e754c6b685452439b5b99d91f0f87f46899ad3ba1aab54d364e
+3: 0000000000a276663e3d2acab5e571d815fca496e6a84f87841783a68ba779bb
+4: bbdaf7274ef168ee4db8963cd287743704bc262d6f443052f75917bc253185a0
+5: 49a6c037482ad7d43d7a3804a9d2f6dd935f320aa23f3d347605c1e111319ae3
+6: 6c11eadbdc1c484abbcff9efa7709599b3855055e84aa47e144a3425e43ce8f0
+
+[...]
+
+670: dca6b82ec3c201cb3c64275aa18fa1666c1e455309a7e7a5382c86828f1962b7
+671: bae845b69d79c9b86901ac9fb63029dce110b5256a111bed963b0f943c1775d6
+672: 06ca86e7f5b26faf06971f5377cdff5029c5ace928be152384abb38fa3927d2a
+
+[...]
+
+1023: f60b38b74b858160f8086bb9574ed5892531100104ba13448bb6ed5031b05a8c
+1024: da2a64b2d11d668bae09483cc834efc639897b4dcec8401f1678d073eb8a315e
+1025: 3665d6bf9d7c2ec8354647840749c7be832876996865903d53703ee2211eca44
+1026: 3dfe269bd825d0b2209cca19c68f89ed34f6b271acaed5af0455d1df13d11c0a
+1027: 02d6c592583a6727c12d02b3ae9edf5857c2d08d872310f2de9495a682c887e3
+1028: 8ecb1e82f5e01c8c0353e35bf0a782f21528f14154faa57436a89f02dd260224
+Some intermediate hashes - find the complete list on GitHub
+
+You can run the verify-beacon program on the intermediate hashes file to check that the intermediate hashes are all correct.
+
+To verify that the final parameters include the computation with the randomness beacon by running the following command using masp-mpc (which can take a while to run):
+
+$ cargo run --release --features="beacon" --bin beacon contribution_0.verified out_params.params
+Verify that the final parameters include the final computation with the randomness beacon
+
+The command takes the file contribution_0.verified (final parameters from the ceremony after the last contribution in Cohort #32) and the final hash 8ecb1e82f5e01c8c0353e35bf0a782f21528f14154faa57436a89f02dd260224 from the randomness beacon as a seed. The resulting parameters should match the final parameters that will be included in Namada's genesis. Meanwhile, you can find the final parameters as a release in this repository:
+
+Release Parameters · anoma/masp-mpc
+dc4aaf3c3ce056ab448b6c4a7f43c1d68502c2902ea89ab8769b1524a2e8ace9a5369621a73ee1daa52aec826907a19974a37874391cf8f11bbe0b0420de1ab7 masp-convert.params eafc3b1746cccc8b9eed2b69395692c5892f6aca83552a0...
+
+GitHub
+anoma
+
+What’s next?
+The final parameters will be included in an upcoming protocol version so they can already be tested in the next upgrades of the Namada public testnet. Contributions to the Namada trusted setup may be rewarded as a public good and all keys from the contributors have been collected. More specifics will be shared as mainnet gets closer, in the meantime make sure to keep the seed phrase you generated safe!

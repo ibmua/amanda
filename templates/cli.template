@@ -1,0 +1,19 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation and, possibly (but a not usually), even some source code. We also have help docs for any of the special CLI queries a user might need.
+
+<HASHTAGS/>
+
+We need to mark which CLI queries are likely to be used by the user to solve his case. Create a JSON based on the provided one. Go through each id and write a 0-10 score of how likely a user is to need to know the help information on each cli query.
+
+Here is the question that requires information sourcing to answer it:
+<QUESTION/>
+
+Output in the form of a JSON like
+{"1":3
+,"3":0
+,"100":10
+, ..
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or strings! Only "id":number!

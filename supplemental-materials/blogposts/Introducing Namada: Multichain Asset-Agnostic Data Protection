@@ -1,0 +1,43 @@
+Introducing Namada: Multichain Asset-Agnostic Data Protection
+Published 
+May 25, 2022
+5min read
+Awa Sun Yin
+
+Unshielded and shielded Namada animation
+This article was initially published on Medium, which is now deprecated in favour of this article updated on the 9th of March 2024.
+
+What is Namada?
+Namada is a proof-of-stake L1 for interchain asset-agnostic data protection and Anoma’s first fractal instance. The Namada protocol focuses on a subset of components of Anoma that enables shielded transfers for any kind of asset (fungible and non-fungible ones) independent of the platform they were created on, such as Ethereum or IBC-compatible chains. Using Namada you can transfer your ETH, DAI or any other fungible asset or NFT from Ethereum or your ATOM or OSMO from any IBC chain and send them around with a few second transaction latency and near-zero fees, all while shielding your personally identifiable information.
+
+For a more extensive list of all novel features that Namada provides, I recommend reading What is Namada?
+With the purpose of making shielded transfers more accessible for end users, Namada is vertically integrated and will be released with user friendly interfaces (very) soon™️.
+
+Why Namada?
+My first job in the space of decentralised protocols was not at an organisation that worked on a layer 1 or a dApp, but at a company that developed tools to deanonymise user data on blockchains and sold them for profit. It’s crazy how much you can tell by simply looking at addresses, values, time stamps, interaction graphs, usage patterns, or simply by mapping pseudonyms to the OSINT data (trivial, particularly if people use NFTs as their twitter profile). I (considering myself a mindful user) have been in a couple of situations where I almost doxed myself — you’ve gotta be extremely careful and the UX becomes atrocious. And even if you’re careful yourself, your peers could accidentally dox you too.
+
+I’m excited about the growth in the space, specially towards more usage of all kinds of fungible and non-fungible tokens in a multi-chain world. But I’m concerned about the lack of native data protection guarantees in all protocols, even more so when most users have little to no understanding about how much sensitive data they’re leaking on all fronts with every interaction — and how this data can be leveraged by anyone with access to the internet for their own benefit.
+
+If there’s data, it is/will be leveraged by someone. That it hasn’t happened yet is simply an indicator that the data-market fit hasn’t come yet.
+
+I want the decentralised protocols to be an alternative for as many as possible to existing centralised and exploitative financial systems. So every time I look at the work we do, I ask myself: is what we’re building better for users? Does this enable a more equitable power distribution than the existing systems, which impose an asymmetric power relationship upon their users? For the answer to be yes, data protection is a crucial property. For as long as blockchains are transparent, they will provide much worse data protection guarantees than existing systems because anyone with access to a full node can perform basic analysis to deanonymise users.
+
+How have shielded transfers evolved?
+Published in 2014, the Zerocash paper pioneered with the idea of deploying zk-SNARKs to enable shielded transfers and providing stronger data protection guarantees than pseudonymous transactions. This protocol was later implemented by the Electric Coin Company, the developers of the ZCash protocol, which went live in late 2016 and through numerous upgrades from Sprout to the recent NU5 — without the ECC, ZCash’s leadership and continuous contributions in the domain, we wouldn’t be were we are today with Namada. For many years, data protection protocols have coupled shielded transfers with the native asset, so users couldn’t make shielded transfers without using ZEC on ZCash.
+
+In the recent years, there’s been a boom in cryptography research and deployment (specially zero-knowledge proof schemes) on different protocols and platforms. However, the usage of data protection protocols hasn’t been normalised yet and is very small compared to the usage of pseudonymous protocols.
+
+I’m thrilled to use Namada myself and to see what users will do with Namada, which allows multichain users to make shielded transfers with any kind of asset held by the user, be it fungible or non-fungible assets — and independent to what chain or platform they were created on. One of the key properties of Namada is that all assets will be sharing one anonymity set. This feature allows us to move away from the per-asset shielded set, which can significantly weaken the data protection guarantees specially when the asset has a low transaction volume and/or high value; it also allows us to create a way larger anonymity set, as any fungible and non-fungible assets across all sovereign chains and platforms can be sharing the same shielded set.
+
+
+Shielded transfers with ETH, ERC20, NFTs and ATOM on Namada
+Namada is vertically integrated protocol with the purpose of providing a few-second latency and near-zero fees at the protocol level, but also a seamless user experience with an integrated browser-based interface. Namada will also be an experiment on the cryptoeconomics front, as it will come with rewards for users of the shielded set.
+
+What does Namada’s architecture look like?
+This is just an overview peak, you’ll find an up-to-date protocol specifications on specs.namada.net.
+
+Namada is a custom layer 1 protocol that deploys Tendermint BFT as its consensus algorithm and Cubic Proof-of-Stake (CPoS) as its sybil resistance mechanism, with advancements such as the reward distribution model via an automatically-compounding variant of the F1 fee distribution and cubic slashing, designed to discourage validators to operate the network with similar configurations and increase the robustness of the network with a validator set with more diversity in infrastructure architecture. To support non-native fungible and non-fungible tokens, Namada is integrated with the IBC protocol and custom bridges to enable interoperability with platforms that do not support deterministic finality (at first, a bridge to Ethereum).
+
+For governance, Namada has two components: an off-chain signalling mechanism and an on-chain voting mechanism. The on-chain voting mechanism is a simple text-based proposal voting system with the particularity that it is implemented as a validity predicate (remember this term, as it will be more and more prominent in later Anoma protocol versions). The off-chain signalling mechanism is designed to act as a coordinator among validators in case there is a proposal that requires a hard fork, so that operators can use it to agree on the next move. In other words, the governance mechanism works off-chain, including the stake based on the last snapshot.
+
+The latest software release of Namada deploys the Multi-Asset Shielded Pool (MASP), a zero-knowledge circuit that enables all assets to share one anonymity set — this property is very important as it allows both fungible and non-fungible assets to share the same shielded set so the data protection guarantees are not subject to the volume of transactions with that particular asset. In addition, Namada v1.0 will come with another upgrade (Convert Circuit), which is a modified version of MASP to enable rewards for users that use shielded transfers. This mechanism subsidises data protection as a public good via protocol inflation without encouraging transactional spam.

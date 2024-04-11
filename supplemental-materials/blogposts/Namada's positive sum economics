@@ -1,0 +1,195 @@
+Namada's positive sum economics
+Published 
+May 9, 2023
+10min read
+Bengt Lofgren
+
+Positive feedback loops between all stakeholders
+f 
+NAM
+​
+ :Tokenomics↦Collective interest
+
+f 
+NAM
+​
+ (x+y):=∣x+y∣ 
+∞
+ 
+
+Up until today, we have described Namada as a layer-1 blockchain that brings data protection to users' assets through its zero-knowledge derived multi-asset shielded pool. You can read more in our article What is Namada?. Namada's native token NAM has been described as the basis of Namada's proof of stake (PoS) cryptoeconomic security and is used to pay fees on Namada.
+
+A more cool way of describing Namada is as a cybernetic robot. Namada is a robot that is designed with one objective function: maximise the collective interest of Namada's stakeholders. It is fed input from its users and validators through both metrics and governance, and then learns to adjust itself (by changing NAM related variables) to meet its objective.
+
+Namada's objective function of serving the collective interest of the Namada stakeholders, both present and future, seems to be at least an NP-hard problem.
+
+
+(Not) to be confused with "no problem is hard"
+For this reason, the design takes a cybernetic (feedback-driven) approach in order to approximate the best solution for any period in time.
+
+In this article, we outline this positive-sum approach, first by talking about the various stakeholders and their respective interests at play. We then discuss the different ways in which the tokenomics of NAM fit in to satisfy these interests in a collective, balanced way.
+
+Outlining the interests at play
+In order to begin to justify this statement, we must first outline the interests of each Namada stakeholder.
+
+The stakeholders
+The stakeholders of Namada can be broken down into three groups:
+
+Users of Namada
+Proof of Stake (PoS) Validators and delegators
+Those participating in the cryptoeconomic security of Namada through voting on blocks and staking NAM
+Those staking NAM either through delegations or by being a validator themselves
+HODLers of Namada
+Those holding the NAM token, either long term, medium-term or short-term
+The collective interest
+Perhaps the most important interests are the interests shared by every Namada stakeholder.
+
+We lightly assume that all stakeholders are interested in:
+
+Allocating NAM using community-driven processes toward public goods that they all benefit from
+New users of Namada
+Moar PGF
+In addition to the public goods production that results from Public Goods Funding (PGF), there are spillover benefits from PGF. A major spillover effect is the reallocation of ownership of Namada (NAM), bringing NAM to potentially new users (network effects). During the early stages of Namada's development at least, it is likely that recipients of PGF will be foreign to the Namada protocol. Receiving PGF denominated in the Namada native asset acts as an incentive to become involved with the protocol as they learn more about the protocol. If PGF acts as a mechanism to bring more users and HODLers of Namada, then we tap into the intersections of interests, creating a positive feedback loop. Most importantly, PGF thus fosters incentivisation for more PGF, which is a nice feature to have.
+
+4. An aligned and cohesive (good vibez only) community and culture.
+This is the most difficult variable to both measure and solve, yet arguably the most important interest to meet.
+
+We will assume that the following interests for each stakeholder applies:
+
+Users of Namada
+Are interested in:
+
+The data protection guarantees of the shielded set
+The security guarantees Namada offers for their assets
+In terms of cryptoeconomic security (consensus)
+And in terms of protocol correctness (no bugs)
+3. Low transaction fees
+
+4. The NAM token incentives for users that keep their assets in the shielded-set
+
+Validators and delegators of Namada
+Are interested in:
+
+Earning incentives for staking their NAM tokens and participating in Proof of Stake (PoS)
+Earning commission from PoS staking delegations
+Governance voting power aggregated from delegators
+HODLers of NAM
+Are interested in:
+
+"Number go up" in terms of the holders unit(s) of account*
+This is an important caveat. Anyone who is holding NAM as a unit of account has some denomination as to what it is worth relative to them. This might be in terms of some fiat like USD or JPY; it could be in terms of some other cryptocurrency that they use for paying fees; it could be in terms of some real good that accepts NAM as payment. This caveat becomes important when we think of the positive externalities of NAM supply inflation.
+
+If we assume a single unit of account, we can think of this valuation (price) in terms of the equation:
+value=amount of NAM owned×unit of account
+
+However, when there are multiple units of accounts at play, the equation suddenly becomes more complicated and non-linear (we formalise this later).
+
+The positive feedback loop of interests
+As validators and delegators accrue staking rewards, and as users accrue shielded-pool rewards, they become HODLers of NAM.
+
+As HODLers of NAM pay make transactions to transfer assets, keep their wealth in the shielded pool, and delegate tokens to their favourite validators, they become users and stakers of Namada, respectively.
+
+Namada's in-built positive feedback loop keeps these separate interests ever so more intertwined.
+
+
+Namada go brrrrr
+In a thousand words
+As explained by a colourful Venn Diagram:
+
+
+Collective interest of Namada stakeholders
+Achieving the collective interest
+
+Cybernetic Namada
+Achieving these goals is a difficult task. The fact that most of these goals are interdependent doesn't make this task any easier.
+
+In this way, Namada is like a robot. It optimises the function: maximise the collective interest of Namada, using both measurable statistics as well as signals (voting) as inputs.
+
+The PD controllers
+Some of these interdependent goals are represented mathematically through Proportional Derivative (PD) controller equations on Namada. The mathematics behind these controllers are out of scope for this article (although I will definitely make room for one in a later publication). In short, PD controllers are models that are designed to guide systems toward intended equilibria in a continuous fashion.
+
+Intuitively, a PD works like a thermostat. You set the intended temperature, and as it gets colder, the thermostat turns the heating up, and as it gets warmer, the heating is turned off, and perhaps the air-conditioning system is turned on. If these thermostats are tuned correctly, we can maximise the "win-win"-ess of the situation.
+
+The democratic process
+Other variables are voted on directly by governance. Sometimes, the votes can help elude information that is not directly measurable.
+
+When users vote on variables like inflation, it signals that they would like to move towards a new equilibrium that may make them happier in terms of something they care about. This "something" could be price-stability, price itself, directing money towards PGF, which is unknown. However, the vote itself, coupled with proposals that outline the reasoning behind the proposal allows the protocol to uncover (at least partially) the values of hidden variables. These tunings through governance will then hopefully allow the tokenomics to approximate that which maximises the collective interest.
+
+Governance also helps elude preferences with regards to Namada's community and culture. PGF proposals, voting on Grants, and other forms of NAM distribution serve as spotlights for what the Namada community values. By giving the users the ability to direct these funds in terms of their preferences acts as a vehicle for shaping their own culture and community.
+
+To know what we know
+(... and to know we don't know what we don't).
+
+In order to achieve the objective of maximum social welfare, the Namada protocol seeks to maximise a function that is at least partially unknown. Below, we outline each of these interests and the extent as to which the Namada protocol is able to monitor and adjust them directly.
+
+INTEREST	VISIBILITY	MEASURABLE?	DIRECTLY CONTROLLABLE?	MODE OF CONTROL
+Inflation	Public	Yes	Yes	Governance
+Shielded set size	Public	Yes	No	Shielded-set rewards
+Shielded-set rewards	Public	Yes	Yes	PD controllers, Governance
+Security	Public	Ish	Ish	BUIDLers and Stakers
+Fees	Public	Yes	Ish (price but not activity)	PD controllers, Gov (bounded)
+Price	Public	Ish*	No	Astrology**
+Price-stability	Shielded	No*	No	Growth of Namada
+PoS rewards	Public	Yes	Yes	PD-controllers
+PGF	Public	Yes	Yes	Governance
+Community size	Public	Yes	No	Memes
+Community culture	Shielded	No	No	Good decisions
+*This is because of the fact that each user will have different units-of-account, which is private information. For the price value itself, usually a basket of stable currencies should be enough to have an understanding of what people mean when they talk about price.
+
+**In seriousness, the price of NAM is determined by people deciding to accept NAM at a certain price (in USD, sandwiches, etc.) - it's entirely up to free choice of users (outside of Namada). But that fact is hard to accept so instead we draw messy looking charts with a bunch of colours and arrows.
+
+Balancing opposing interests
+Interests between interest-groups will tautologically never be perfectly aligned*. For this reason, we need a design that maximises the "total social welfare" amongst them.
+
+* Where we define an interest group as a group with the same collection of interests
+
+Users and validators
+Users and validators have perhaps two of the most dichotomous interests.
+
+Users are interested in paying low fees (in terms of price) and receiving shielded set rewards. Validators and delegators (collectively stakers), on the other hand, are interested in receiving high fees (in terms of revenue) and proof-of-stake rewards. Since stakers' NAM are locked for staking purposes, they are unable to reap the benefits of the shielded pool rewards, which becomes their opportunity cost.
+
+Nevertheless, that is not all that the fees pay for. The revenue reaped from fees is split between stakers, PGF beneficiaries and shielded set rewards.
+
+At a first-order glance, this can be seen as a "rebate" of fees paid by the users. However, at closer look it is more than that, because of the network effects that result from the distribution of tokens to new users.
+
+If we think about this in detail, staker fee revenue is calculated as (assuming the whole revenue goes to stakers, which it does not, but for simplicity):
+
+ 
+ 
+
+Where the overline simply denotes the "average" gas price. Hence, if the number of users increase, all other things being equal, stakers interests are satisfied without any loss to the user.
+
+Is it possible that paying fees on Namada attracts new users to Namada?
+
+There are two (many) ways:
+
+PGF distribution attracts more users to Namada
+Shielded-set rewards can be set as a function of fees paid on Namada
+The first effect is already discussed above. PGF recipients are likely to be new to the Namada ecosystem, and the airdrop can encourage them to learn more about the protocol.
+
+If shielded-set rewards are a function of the fees paid on Namada, then these new rewards should attract more assets into the shielded set. If new users enter Namada as a result, then we have more users, which pay more fees. If more assets are brought into the shielded set from existing users, then although the shielded-set rewards may decrease, the shielded set is increased, ensuring a win-win in one way or another.
+
+In this way, both validators and Users can benefit from increased activity and users on Namada.
+
+HODLers of Namada
+There is also the class of users that hold Namada as a store of value.
+
+This may be as a speculative asset or simply because Namada has some meaning to them as a unit of account. Perhaps there are certain goods that can only be paid in NAM. Others may be gifted NAM through PGF and hold NAM as an intermediary storage of value until it is needed for another transaction.
+
+For these stakeholders, what matters is the value of NAM in terms of their units of account at any given time 
+t. This function can be very non-linear. For example, let's say we can buy an internet connection and dank memes with NAM, and these are our units of account. Then my value function will be most dependant on the NAM per internet-access if I do not have internet-access, but will not matter if I already have internet-access (or at least minimal, since 2 internet-accesses is nice if one is being slow). My value function for dank memes is infinite once I do have internet-access, but zero if I do not have internet-access.
+
+Because the unit of account is both private information and varying across users, the Namada protocol cannot optimise some known function in the same way it is able to use PD controllers to balance the interests between the other two stakeholders.
+
+However, it is clear that certain variables like NAM inflation, are directly concerned with this interest group. Therefore, by allowing these users to continuously manage these variables through governance coordination, the protocol is able to optimise an "unknown" function, simply by approximating a solution through the "will of the crowd".
+
+The happy ending
+
+Anons learning about positive sum economics
+In summary, the Namada protocol is a benevolent robot. It takes an entire list of both measurable and partially-measurable inputs in order to adjust a range of outputs (variables) in order to make all the stakeholders of Namada happy.
+
+Sometimes these adjustments require striking a balance between competing interests (does inflation go towards shielded rewards or staking rewards?). However often times, due to the interdependent nature of interests, as well as the feedback loop that turns stakers and users into holders and vice versa, a small adjustment in the right direction makes everyone strictly happier. Attracting more users to Namada seems to be a "free-lunch" method that benefits the collective.
+
+Nonetheless, the robot relies on reliable inputs. For measurable statistics such as the size of the shielded set and the number of users, the data interpretability is trivial. However, for certain hidden variables, like price, culture and community, it relies on the well published signals through the medium of governance. Only through these votes and proposals, can the protocol move towards a collective interest that takes all the variables into account.
+
+The more accurate and reliable these inputs are, the better the robot can do its job at making Namada a win-win-win situation for every stakeholder, Namada' what.

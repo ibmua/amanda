@@ -1,0 +1,42 @@
+Announcing the Namada Trusted Setup
+Published 
+Nov 5, 2022
+3min read
+Awa Sun Yin
+
+Warning: destructive content ahead
+Namada's MASP circuit enables all asset types (fungible and non-fungible) to share one unified shielded set. To generate the final zk-SNARK parameters for the MASP circuit, the Anoma Foundation will be coordinating a multi-party computation ceremony.
+
+Why participate?
+Namada's MASP circuit will use the combination of two sets of parameters: phase I parameters from the Powers of Tau ceremony coordinated by the Zcash Foundation in 2018 (fun fact: participant #11 was co-founder Adrian); and the new parameters generated in the upcoming Namada trusted setup ceremony as phase II.
+
+Every shielded transfer completed on Namada v1 will rely on these parameters. Every trusted setup ceremony is grounded on a 1 out of n trust assumption: among the set of ceremony participants, at least one of them is honest, meaning that they never share their secret input to the ceremony (a.k.a toxic waste). This means that the Namada circuit parameters are secure as long as there exists at least one honest participant in the Powers of Tau ceremony and in the Namada trusted setup ceremony. This protocol is described in the paper Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model by Sean Bowe, Ian Miers, and Ariel Gabizon.
+
+In other words, if you're excited about using Namada's features like asset-agnostic shielded transfers or shielded set rewards, I really recommend participating in the ceremony. This way, you are not trusting the other participants in the Namada trusted setup – you'll be trusting that at least you have never shared and have effectively destroyed the toxic waste from your participation.
+
+From the protocol's perspective, the more publicly verifiable proofs of toxic waste destruction the better – these are public goods and Namada can retroactively fund the individuals that publish them (using shielded transfers!). This way, even if you're uncertain of whether you effectively destroyed yours, you can rest assured if at least 1 other participant did it properly by checking their published proof.
+
+Getting fancy
+There are two ways of standing out as a participant in the Namada trusted setup:
+
+Publish a convincing attestation of your hardware setup and that you effectively destroyed the toxic waste after participating.
+Publish a proof of your unique source of entropy. This makes the trusted setup not only more secure (as OS random number generators could be backdoored), but it also can help prove your humanity and be very entertaining for the community, which can be considered a public good too.
+Of course, you can also combine 1) and 2) to get extra fanciness combos.
+
+Inspiration
+I've gathered here a compilation of publicly available attestations of 1) and 2) from participants in past ceremonies:
+
+In Zcash's Sprout (October 2016), Andrew Miller, Peter Van Valkenburgh, Edward Snowden, Zooko Wilcox, Derek Hinch, and Peter Todd demonstrated very meticulous hardware and OS setups (watch from min 1:32 in the video) and pretty destructive ways of deleting their toxic waste (watch from min 3:37 in the video).
+In Powers of Tau (early 2018), Amber Baldet and Patrick Nielsen described their entire setup, source of entropy, and really hot destruction method in the article hidden in plain sight.
+In Aztec's Ignition (January 2020), Vitalik Buterin participated through his own implementation of the MPC code according to this blogpost (if someone has a link to Vitalik's code, please share!).
+From Celo's Plumo Ceremony (July 2021) I selfishly want to highlight Hudson Jameson's repawkable source of entropy that you can review in this flooftage.
+There are so many ways of standing out: compile the trusted setup with your custom Rust compiler, ask for your fluffy companions to help with entropy, etc. Most importantly: don't forget to document your attestation (written, audio, video, etc.) and make it publicly accessible via a link!
+
+Getting ready
+Want to participate? Follow these instructions:
+
+If you haven't yet, sign up (closed) to participate in the ceremony. Signing up shows us that you intend to participate and allows us to keep you updated about the ceremony and your slot. The sign up form will be closed on the 15th of November at 00:00 UTC.
+Regular participation doesn't require special equipment, but the Namada TS code already supports a couple of advanced features: computation on another machine and a custom source of entropy (32 bytes). Of course, you're more than welcome to use even your own implementation. Start prepping your fanciness!
+Documenting attestations: don't forget to document your fanciness. After all that work, it'd be a shame if others were not able to review it (and retroactive PGF doesn't work without publicly available attestations).
+Keep an eye on your email, you’ll be notified about your participation slot before the ceremony starts.
+Save the date: the ceremony will start on the 19th of November 2022 at 00:00 UTC

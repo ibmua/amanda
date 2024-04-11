@@ -1,0 +1,78 @@
+What is Namada?
+Published 
+Oct 27, 2022
+4min read
+Awa Sun Yin
+
+Unshielded and shielded Namada
+TLDR: Namada is a proof-of-stake L1 for interchain asset-agnostic data protection. Namada natively interoperates with fast-finality chains via IBC and with Ethereum via a trustless two-way bridge. For data protection, Namada deploys an upgraded version of the multi-asset shielded pool (MASP) circuit that allows all assets (fungible and non-fungible) to share a common shielded set – this way, transferring a CryptoKitty is indistinguishable from transferring ETH, DAI, ATOM, OSMO, NAM (Namada's native asset) or any other asset on Namada. The MASP circuit's latest update enables shielded set rewards, a novel feature that funds data protection as a public good.
+
+The reference implementation of the Namada protocol is built in Rust by Heliax, one of the development organisations in the Anoma ecosystem. Namada is the first fractal instance of Anoma and an initial step towards the multi-chain vision of homogeneous architecture, heterogeneous security.
+
+This article focuses on the most innovative features in Namada V1 at a high level and provides an overview of all the components that enable them.
+
+For tech deep-dives:
+
+Namada Protocol Specifications
+Namada Docs
+Namada Codebase
+Novel features for Namada users
+The most innovative features that Namada brings to users are:
+
+Asset-agnostic shielded transfers: transferring any fungible and non-fungible tokens with Zcash-like data protection, including native and non-native tokens. This is enabled by the deployment of novel zk-SNARKs.
+Shared shielded set: a shielded transfer involving an Ethereum NFT is indistinguishable from an ATOM or NAM transfer. The MASP, an upgraded version of Zcash's Sapling circuit, enables all assets to share the same shielded set, so that data protection guarantees are not fragmented among individual assets and are independent to the transaction volume of a particular asset.
+Fast ZKP generation on edge devices: Namada is vertically integrated and users will be able to interact at mainnet with the protocol and send shielded transfers via browser applications.
+Low transaction latency and near-zero fees: via fast-proof generation and modern BFT consensus, Namada supports Visa-like speed with finality. Just like Anoma, Namada scales via fractal instances.
+IBC compatible and trustless Ethereum bridge: Namada interoperates with any fast-finality chain that is IBC compatible. To interoperate with Ethereum, Namada deploys a custom trustless Ethereum bridge designed to maximise safety. This means enforcing flow controls for all bridge connections, as well as considering faulty Ethereum transfers as a slashable offence. For liveness guarantees across the Ethereum bridge, as well as enhanced user experience, we incorporate incentivised relaying to Ethereum.
+Data protection as a public good: the Namada protocol incentives users that hold shielded assets, thereby contributing to the shared shielded set, via the latest update of the MASP circuit that includes the novel Convert Circuit. The shielded set in Namada is a non-exclusive and anti-rivalrous public good; the more people use shielded transfers, the better the data protection guarantees for each individual.
+Namada's Cubic Proof-of-Stake (CPoS)
+Namada's PoS mechanism is called Cubic Proof-of-Stake (CPoS). Here are some of the innovations that come with CPoS that are relevant to validators and delegators:
+
+Upgraded variant of the F1 fee distribution mechanism: Staking rewards compound automatically, removing the need to make transactions to claim staking rewards and re-stake them. This is enabled via this algorithm, which takes inspiration from the initial F1 Fee Distribution research paper.
+Cubic slashing: penalties for safety faults in Namada are calculated following this cubic slashing algorithm. Simply put, the amount slashed is exponentially higher if more validators or a larger single validator commit faults at the same time. Cubic slashing encourages validators that operate multiple consensus nodes to deploy more diverse and uncorrelated setups. The slash rate for a given infraction 
+i is proportional to:
+( 
+i
+∑
+i∈I
+​
+ i.votingPower) 
+3
+ 
+
+Where I is the set of all validators that committed infractions within a (-1,+1) epoch range of the infraction in question.
+Improved PoS guarantees: the cost of attacking Namada is quantifiable in all cases due to the automatic detection mechanism on which accounts contributed to the fault (validators, delegators, etc).
+Transaction fees in multiple assets: transaction fees can be paid in many tokens and which tokens are accepted can be updated via a governance vote.
+
+Cubic Slashing
+Namada Governance
+Namada's governance mechanism provides a formal mechanism through which future protocol changes or versions can be decided on. Namada's governance mechanism has two protocols:
+
+On-chain protocol: that supports text-based proposals with stake-weighted voting. Anyone with NAM tokens can vote in governance and delegators can overwrite their validators' votes:
+{
+    "title": "<text>",
+    "authors": "<authors email addresses> ",
+    "discussions-to": "<email address / link>",
+    "created": "<date created on, in ISO 8601 (yyyy-mm-dd) format>",
+    "license": "<abbreviation for approved license(s)>",
+    "abstract": "<text>",
+    "motivation": "<text>",
+    "details": "<NIP number(s)> - optional field",
+    "requires": "<NIP number(s)> - optional field",
+}
+Proposals in Namada use a similar format to BIP2
+
+Off-chain protocol: in cases where the Namada chain is not able to produce blocks anymore, the off-chain protocol can be used by validators to signal and coordinate a common move.
+Public Goods Funding (PGF)
+Namada will support both retroactive and proactive public-goods funding, both managed by a public-goods-funding council composed of a handful of trusted community members, who have joint (multisignature) authorisation over public-goods funding disbursement transactions.
+
+Proactive Public Goods Funding is continuously distributed to recipients over time, intended to cover costs.
+Retroactive Public Goods Funding is distributed in lump-sum payments based on past work, intended to warp the incentive space towards outcomes which benefit future users of Namada.
+The council is elected bi-annually by Namada governance and subject to spending caps, but otherwise has latitude to fund public goods as council members see fit.
+
+What's next?
+Things coming (very) soon™️:
+
+Namada Trusted Setup ceremony to generate the random parameters for the MASP and Convert circuit. More information on the ceremony and the sign up form namada.net/trusted-setup
+Public testnets: public testnets will provide a great playground for anyone who is interested in operating the network or using its features. To receive updates on the testnets, sign up with this form: testnet updates.
+Follow @namadanetwork on Twitter to stay up-to-date!

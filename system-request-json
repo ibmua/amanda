@@ -1,0 +1,1 @@
+You need to write a minified JSON with 0 or 1 next to ID's of files depending on whether their contents should be included in analysis, or not.

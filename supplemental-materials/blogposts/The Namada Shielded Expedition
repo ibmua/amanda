@@ -1,0 +1,92 @@
+The Namada Shielded Expedition
+Published 
+Dec 15, 2023
+5min read
+Anoma Foundation
+
+The Namada Shielded Expedition
+TLDR; The Namada Shielded Expedition is a massively multiplayer role-playing incentivized testnet.
+
+Looking back at when Namada’s public testnets first started in January 2023, it was a very small group of 11 validators. Today, the validator community alone is composed of hundreds of individuals and institutions, with more than 250 pre-genesis validators launching and maintaining every public testnet.
+
+The Namada protocol is a sovereign chain that innovates across the entire stack: including cryptographic primitives (MASP), the base ledger itself, proof-of-stake (CPoS), public goods funding (PGF and Stewards), and applications like shielded actions. Namada’s purpose is to make the best data protection accessible for every multichain user – to achieve this vision, Namada needs you now more than ever.
+
+We invite you to join the Namada Shielded Expedition, a massively multiplayer role-playing incentivized testnet – and the final expedition for the shielded community to battle-test the protocol before mainnet.
+
+Overview of the Shielded Expedition
+In this expedition into the shielded ecosystem, you can join as a pilot (validator), or as a crew member (user). Once the expedition starts, Pilots and Crew Members can only be constrained by the sybil-resistance (CPoS), consensus (CometBFT) algorithms, and the laws of physics. Pilots can join forces with other Pilots, Crew Members can join other Crew Members, become Pilots – or any combinations or permutations of the above.
+
+In the Shielded Expedition, Pilots and Crew Members compete with each other in an asteroid mining race. The range of asteroids is vast: some are easy and abundant to mine, others are the rarest, farthest in the shielded universe – and also the hardest to mine. Mined asteroids are converted to ROID (points) in the Shielded Expedition. During the expedition, Pilots and Crew Members are ranked in real-time by the amount of ROID (points) they have accumulated on the Nebb, a public tabular (leaderboard) ranking in real-time all Pilots and Crew Members based on the amount of ROID they have accumulated at the time. The final ranking is determined at the end of the expedition, leaving a persistent record in the chronology of the shielded ecosystem.
+
+The Anoma Foundation is allocating a total of 30M NAM (3% of total supply) to the winners of the Shielded Expedition in the Namada genesis block proposal.
+
+NAAN the Fuel for the Shielded Expedition
+Pilots and Crew Members will need NAAN, the native currency in the Shielded Expedition (testnet tokens), and fuel to power the spaceships in the race to mine asteroids.
+
+Pilots and Crew Members can join before the expedition starts (pre-genesis) or during the expedition (post Shielded Expedition genesis time). Participants registering pre-genesis will receive NAAN in the Shielded Expedition genesis block, whereas the ones joining after can receive NAAN from the Shielded Expedition faucet.
+
+Note that NAAN != ROID, NAAN != NAM, and ROID != NAM
+Timelines and Phases of the Shielded Expedition
+Phase 0: Registration
+To appear on the Nebb rankings and to be eligible for the competition prizes, Pilots and Crew Members must register using the forms below. Registration opens for Pilots (validators) and Crew Members (users) from today and closes at 9am UTC on Tuesday, the 2nd of January 2024. Pilots and Crew Members who do not register on time can participate in the Shielded Expedition, but will not rank on the Nebb and will not be eligible for competition prizes.
+
+100 validators will be selected as pre-genesis Pilots by members of the Anoma Foundation, Heliax, and Knowable. All other registered pilots’ accounts will be included in the genesis block proposal for the Shielded Expedition and can become validators post-genesis.
+
+Any Crew Member who submits a valid registration (includes all the information necessary for participating) will be selected, and their accounts will be included in the genesis block proposal for the Shielded Expedition.
+
+Members of the Anoma Foundation, Heliax, and Knowable can participate in the Shielded Expedition but are not eligible for prizes.
+
+Phase 1: Preparation “Launch Control”
+From Phase 0 use all the free time – and information publicly available – to prepare yourself by researching the shielded ecosystem, developing your strategy, tactics, plan, and gathering the resources needed beforehand to maximize ROID accrual.
+
+Remember that the range of asteroids is vast: some are easy and abundant to mine, as a result it will be mined by many; others are the rarest, farthest in the shielded universe – and also the hardest to mine – resulting in very few Pilots and Crew Members able to mine them. The more common the asteroid, the less ROID it’s valued at; the rarer the asteroid, the higher the ROID. Lastly, for some asteroids, the earlier they’re mined, the more ROID they’re valued at.
+
+Before genesis, a list of wanted asteroids (tasks) and more specifics into the ROID system will be published – so stay tuned, you don’t want to miss any transmissions).
+
+Phase 2: Pre-Genesis “Afterburn”
+The Shielded Expedition genesis file will be published on Monday, the 8th of January 2024. This file includes the genesis accounts from the selected 100 Pilots and all correctly registered Crew Members with NAAN balances allocated.
+
+Pilots
+
+The 100 selected Pilots will be announced on the 4th of January 2024
+These Pilots will have until 9am UTC on Thursday, the 11th of January 2024 to submit valid transactions to bond their stake at genesis (validator init tx)
+Selected genesis validators (Pilots) who do not submit their bonding transactions on time will be removed from the set (and can always join post-genesis)
+Crew Members
+
+At this stage, nothing else is needed from Crew Members.
+Phase 3: Genesis “Orbital Injection”
+Around 16:00 UTC on Friday, the 12th of January 2024, the Anoma Foundation will propose the Shielded Expedition genesis block files. The genesis time will be set to 16:00 UTC on the 16th of January 2024. 
+
+As the Anoma Foundation and Heliax will not operate any pre/post genesis Pilots in the Shielded Expedition (or in mainnet), the launch is entirely up to the Pilots.
+
+Phase 4: Expedition “Cruising”
+The Shielded Expedition can last anywhere from 14 to 21 solar calendar days from genesis, and possibly more as the shielded universe is only bound by the sybil-resistance (CPoS), consensus (CometBFT) algorithms, the laws of physics – and the chaos caused by Pilots and Crew members.
+
+During the expedition Pilots and Crew Members will appear on the Nebb, a public tabular (leaderboard) ranking in real-time all Pilots and Crew Members based on the amount of ROID they have accumulated. By the end of the expedition, the final state on the Nebb will persist as a record in the chronology of the shielded ecosystem.
+
+Phase X: Ending
+It is impossible to predict how the Shielded Expedition will end.
+
+Join the Namada Shielded Expedition 
+Before proceeding
+Registering DOES NOT guarantee a prize. Please register only if you intend to compete in the Shielded Expedition.
+The Shielded Expedition is not a walk in the park, please register only after reading all the information above and have considered the timelines, phases, and resources needed to compete – especially for pre-genesis Pilots.
+Familiarity with command-line tools is expected from all Pilots and Crew Members. 
+Before submitting any of the forms, please read the fields and complete them carefully.
+Registration forms
+To be eligible for prizes, for your moniker to appear on the Nebb rankings, and to join pre-genesis, please register:
+
+As a pre-genesis Pilot (validator): namada.deform.cc/shielded-expedition-pilots/
+As a pre-genesis Crew Members (user): namada.deform.cc/shielded-expedition-crew/
+Pilots and Crew Members who do not register on time can still participate in the Shielded Expedition post-genesis, but will not rank on the Nebb and will not be eligible for competition prizes.
+
+Remarks:
+
+Both forms are open from today and close at 9am UTC on Tuesday, the 2nd of January 2024. Submissions made after this time will not be considered.
+100 Pilots (validators) will be selected by the Anoma Foundation, Heliax, and Knowable as pre-genesis Pilots. The remaining validators who submitted a valid form will also receive NAAN at the Shielded ecosystem genesis block and can become validators post-genesis.
+Any crew member (user) that submits a valid form will receive NAAN at the Shielded Ecosystem genesis block.
+Anyone will be able to participate in the testnet as a pilot and/or crew member post genesis, all you will need is at least 1 NAAN which you can get from the faucet after launch.
+The Shielded Ecosystem awaits you...
+See you at the Shielded Expedition...
+
+The Anoma Foundation

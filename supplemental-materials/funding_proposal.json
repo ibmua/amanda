@@ -1,0 +1,78 @@
+{
+   "proposal": {
+     "id": 336,
+     "content": {
+       "title": "Staying positive",
+       "authors": "namada@forestnode.xyz",
+       "discussions-to": "🖐",
+       "created": "2024-03-13T23:59:01Z",
+       "license": "MIT",
+       "abstract": "Cut the massive approved 200M spending on tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e steward down to 5k. Also, as we've lost almost all our NAANs to double-vote-based slashing, not to beg for NAAN's from you every week, we kindly ask of you to approve the testnet funding.",
+       "motivation": "Testing out the Steward functionality of the Namada and having fun while at it.",
+       "details": "Love yall! ❤",
+       "requires": ""
+     },
+     "author": "tnam1qxy9qez7f63rly36suw08z65ur9e2lfspcgzp4uy",
+     "voting_start_epoch": 34,
+     "voting_end_epoch": 36,
+     "grace_epoch": 38
+   },
+  
+"data" :
+    {
+        "continuous" : 
+            [
+                {
+                    "Internal": 
+                            {
+                                "amount": "200000000000",
+                                "target": "tnam1qqz3rzekvxpdlyyz47g28e3jjq8x252t8542rhdk"
+                            }
+                }
+                ,
+                {
+                    "Internal": 
+                            {
+                                "amount": "5000000000",
+                                "target": "tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e"
+                            }
+                }
+                ,
+                {
+                    "Ibc": 
+                        {
+                            
+                            "amount": "500000000",
+                            "target": "osmo1xl7pamcuf8pnnrx58kq4gyuzwk6hg67r87eujw",
+                            "port_id": "transfer",
+                            "channel_id": "channel-700"
+                        }
+                }
+
+            ],
+        "retro" : 
+            [
+                {
+                    "Internal": 
+                        {
+                            "amount": "300000000000",
+                            "target": "tnam1qqz3rzekvxpdlyyz47g28e3jjq8x252t8542rhdk"
+                        }
+                }
+                ,
+                {
+                    "Ibc": 
+                        {
+                            
+                            "amount": "1000000000",
+                            "target": "osmo1xl7pamcuf8pnnrx58kq4gyuzwk6hg67r87eujw",
+                            "port_id": "transfer",
+                            "channel_id": "channel-700"
+                        }
+                }
+
+            ]
+    }  
+
+        
+ }

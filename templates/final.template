@@ -1,0 +1,12 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation, source code and CLI help.
+
+<HASHTAGS/>
+
+Here is the question that requires information sourcing to answer it:
+<QUESTION/>
+
+Please, provide the answer. With nice markup styling. Please, provide nice citations and links to appropriate sources and try to restrict from extrapolating too much about any material that is not provided - be okay with saying "I don't know" if you don't have the full evidence.
+
+Don't produce markup like <document_reference index="14">blah</document_reference>, etc, don't write in tags that would be unusual to find in usual text.

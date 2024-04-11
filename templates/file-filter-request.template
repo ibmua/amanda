@@ -1,0 +1,26 @@
+We are browsing the documentation and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question:
+
+<QUESTION/>
+
+To answer this question we need to consult with documentation and, maybe, even some source code. We have a list of files and their tags (or sometimes the content itself).
+
+<HASHTAGS/>
+
+We need to mark which files are likely to be truly instrumental for analysis and answering the problem and which are not. We'll go through each file ID and construct a JSON marking each file as 0 if it's unlikely to contain information that will be of use for answering the question, or writing the most relevant content tags if it's likely to be useful for answering.
+
+As a reminder, here is the question once again:
+
+<QUESTION/>
+
+Now construct the JSON for file IDs. Exclude (produce 0 values) any files that are not too likely to be of benefit to the analysis of the problem in question.
+
+Output in the form of a JSON like
+{"[id]":"3 most relevant content tags from the list per which the decision to include thus source of info was made"
+,"[id]":0
+# or in the case where not a short content tag, but full file contents were provided, if the content is deemed important for answering:
+,"[id]":1
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or anything like that, only "id":"tag1 tag2 tag3", "id":1, or "id":0

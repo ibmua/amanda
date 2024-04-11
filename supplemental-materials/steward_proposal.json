@@ -1,0 +1,27 @@
+{
+   "proposal": {
+     "id": 211,
+     "content": {
+       "title": "ForestNode Steward 2024",
+       "authors": "[email protected]",
+       "discussions-to": "N/A",
+       "created": "2024-02-25T14:50:01Z",
+       "license": "MIT",
+       "abstract": "ForestNode is currently pursuing the role of stewardship, placing a strong emphasis on engaging in technical research. I am committed to ensuring that my technical research endeavors unequivocally steer clear of any involvement with weapons of mass destruction. Nevertheless, there is a slight chance that my focus might extend to open-source software in a different context.",
+       "motivation": "Want to test out the Steward functionality of the Namada",
+       "details": "I bring a unique intelligence and a forward-thinking mindset to the table. I want to use these qualities to address complex problems and channel public support into open-source software projects that contribute positively to society, avoiding any involvement in harmful activities.",
+       "requires": ""
+     },
+     "author": "tnam1qxy9qez7f63rly36suw08z65ur9e2lfspcgzp4uy",
+     "voting_start_epoch": 18,
+     "voting_end_epoch": 20,
+     "grace_epoch": 22
+   },
+  
+"data" : 
+        {
+            "add": "tnam1qxy9qez7f63rly36suw08z65ur9e2lfspcgzp4uy",
+            "remove": []
+        }
+        
+ }

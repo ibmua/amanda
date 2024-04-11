@@ -1,0 +1,19 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation and, possibly (but a not usually), even some source code. We have a list of files provided by their ids and their tags.
+
+<HASHTAGS/>
+
+We need to mark which files are likely to be truly instrumental for analysis and answering the problem and which are not. We go through all of the file ids and mark their relevance and potential importance on a 0-10 scale based on their tags. For files marked as 1 in the JSON above, we'll mark it as 10 to make sure it's proritized.
+
+Here is the question that requires information sourcing to answer it:
+<QUESTION/>
+
+Output in the form of a JSON like
+{"[id]":3
+,"[id]":0
+,"[id]":10
+, ..
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or anything like that, only "id":"hashtag", "id":1, or "id":0!

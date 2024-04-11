@@ -1,0 +1,45 @@
+Namada is Now Available on Ledger
+Published 
+Feb 7, 2024
+3min read
+Emily Ostbo
+
+Namada Ledger app now live
+The Namada application was officially approved for public Ledger release, allowing holders to store their assets with a market-leading hardware wallet.
+We are happy to announce that Ledger is now integrated with the Namada network and available to use for the broader public.The application first became available for installation via Ledger’s developer mode on the 29th of January, 2024. Now, any user can access their NAM from Ledger by installing the Namada application via the App Catalog. The application is compatible with the Namada CLI and the browser extension.
+
+The application has been built by Zondax – a Namada ecosystem builder that has proven to be the most reliable partner for Ledger apps development, with more than 50 applications built to date, in collaboration with engineers at Heliax.
+
+What can you do with NAM via Ledger hardware wallets?
+Before mainnet, you can use the Ledger hardware wallet to generate Namada keys. You can also connect your Ledger hardware wallet to the Namada browser extension and use the keys in your  Ledger to interact with web applications, such as the Namada RPGF Drop (now closed), the ongoing Shielded Expedition’s Nebb, and any future Namada wallets or applications that are integrated with the Namada browser extension.
+
+For command line users, the Namada CLI also supports connectivity with the Ledger hardware wallet, allowing users to interact with the Namada protocol using the keys generated and stored in the Ledger hardware wallet.
+
+With the current version, users can use the Namada Ledger application to generate multisignatures, sign staking transactions, make Namada and IBC transfers, and vote on governance. In future versions of the Namada ledger app, users will be able to sign shielded transfers and shielded actions.
+
+This means that you will be able to manage your NAM and interact with the Namada ecosystem while keeping your private keys on the hardware wallet.
+
+How to use the Namada Extension with Ledger? 
+The Namada application is available on Ledger Nano S, Nano S Plus, and Nano X. The application is compatible with the Namada browser Extension.
+
+How to use the Namada Extension for the first time with your Ledger hardware wallet:
+
+Install the Namada Extension in your browser
+Launch the application and the “initial set-up”
+Click on “Connect to Ledger Hardware Wallet”
+On the browser extension, on Step 1 click “Next”, this will prompt a window “Namada wants to connect”. Select your Ledger hardware device and click “Connect”
+On Step 2, unlock your Ledger and open the Namada app on your device. You should see the “Namada Ready” message. Now go back to the Namada extension and click “Next”
+On Ledger, you will see the “Please review” message showing your Namada address. Approve it on your ledger.
+In the next step on the browser extension you can name your account and create an extension password. You will need this password to unlock your Namada browser extension.
+Click “Next” and you’ve successfully imported your Namada keys from your Ledger hardware wallet.
+Adding your Ledger hardware wallet to the Namada extension
+If this is not the first time you’re using the Namada browser extension, you can add Namada keys stored in your Ledger hardware wallet to the Namada browser extension. To do this, follow these steps:
+
+Open the Namada extension on your browser
+Click “Add keys”
+Click on “Connect to Ledger Hardware Wallet”
+On the browser extension, on Step 1 click “Next”, this will prompt a window “Namada wants to connect”. Select your Ledger hardware device and click “Connect”
+On Step 2, unlock your Ledger and open the Namada app on your device. You should see the “Namada Ready” message. Now go back to the Namada extension and click “Next”
+On Ledger, you will see the “Please review” message showing your Namada address. Approve it on your ledger.
+In the next step on the browser extension you can name your account and create an extension password. You will need this password to unlock your Namada browser extension.
+Click “Next” and you’ve successfully imported your Namada keys from your Ledger hardware wallet.
