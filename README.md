@@ -3,6 +3,10 @@
 
 Amanda is an AI assistant that answers questions about the Namada blockchain. It can help find out how to use Namada or develop with it. With some skill, you can extend Amanda to know more information than it does right out of the box and even to integrate it with your own project. To provide an example and also to code for other often-used-together tools beside `namada`, some information on `osmosisd` and `gaiad` CLI was also scanned and added to knowledge base by default. Adding unnecessary things into AI analysis, though, makes AI requests more expensive and less effective at finding the information you need, so take that into account.
 
+## Quickstart
+
+Check it out real fast in Google Collab https://colab.research.google.com/drive/141H_D1Y-9gYEACeiGZ7197k9Of1G9Dn3?usp=sharing Also, it's a pretty good environment to run it via web.
+
 ## Install
 
 Tested on Ubuntu Linux, to be tested on MacOS.
