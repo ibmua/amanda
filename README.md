@@ -5,7 +5,7 @@ Amanda is an AI assistant that answers questions about the Namada blockchain. It
 
 ## Quickstart
 
-Check it out real fast in Google Colab. Also, Colab a good environment to run Amanda via web.
+Check it out real fast in Google Colab. Also, Colab a good environment to run Amanda via web, even though the markdown there is suboptimal.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/141H_D1Y-9gYEACeiGZ7197k9Of1G9Dn3?usp=sharing)
 
 

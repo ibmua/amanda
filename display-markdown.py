@@ -10,8 +10,8 @@ try:
 except ImportError:
     in_colab = False
 
-if in_colab:
-    print("Running in Google Colab")
+# if in_colab:
+#     print("Running in Google Colab")
 
 
 # print("in_colab",in_colab)
