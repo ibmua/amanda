@@ -5,7 +5,9 @@ Amanda is an AI assistant that answers questions about the Namada blockchain. It
 
 ## Quickstart
 
-Check it out real fast in Google Collab https://colab.research.google.com/drive/141H_D1Y-9gYEACeiGZ7197k9Of1G9Dn3?usp=sharing Also, it's a pretty good environment to run it via web.
+Check it out real fast in Google Colab. Also, Colab a good environment to run Amanda via web.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/141H_D1Y-9gYEACeiGZ7197k9Of1G9Dn3?usp=sharing)
+
 
 ## Install
 
@@ -59,7 +61,7 @@ Or, though it should work worse, your can include searching through codebase wit
 amanda --code How do I blah blah?
 ```
 
-Do note, that as of April 2024 Claude 3 models are very freshly out and the API is basically like a spotty hotel WiFi connection. It is expected to scale and improve in the coming months and it should begin to work in a stable dependable fashion and accept higher request quotas. Right now you may encounter errors due to curent very strict token limitations and API errors. This is usually not a problem with the app, but with the temporary limitations and problems with the API. Also, as LLM AIs get smarter and cheaper, it will be possible to get to better answers cheaper.
+Do note, that as of April 2024 Claude 3 models are very freshly out and the API is basically like a spotty hotel WiFi connection. It is expected to scale and improve in the coming months and it should begin to work in a stable dependable fashion and accept higher request quotas. Right now you may encounter errors due to curent very strict token limitations and API errors. This is usually not a problem with the app, but with the temporary limitations and problems with the API. Also, as LLM AIs get smarter, cheaper and faster, it will be possible to get to better answers cheaper.
 
 ## AI API
 

@@ -1,15 +1,35 @@
-"""
-python3 display-markdown.py --input outputs/ai-answer.md
-"""
 import argparse
+import re
 from rich.console import Console
 from rich.markdown import Markdown
+
+try:
+    import IPython
+    if 'google.colab' in str(IPython.get_ipython()):
+        is_colab = True
+    elif 'IPKernelApp' in get_ipython().config:
+        is_jupyter = True
+    else:
+        is_colab = False
+        is_jupyter = False
+except ImportError:
+    is_colab = False
+    is_jupyter = False
 
 def display_markdown(file_path):
     console = Console()
     with open(file_path, 'r') as f:
-        md = Markdown(f.read())
-        console.print(md)
+        content = f.read()
+        if is_colab or is_jupyter:
+            # Replace links with plain text URLs in Colab or Jupyter
+            content = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'\1 (\2)', content)
+        md = Markdown(content)
+        if is_colab or is_jupyter:
+            # Print the Markdown content as plain text in Colab or Jupyter
+            print(md.plain)
+        else:
+            # Print the formatted Markdown in the terminal
+            console.print(md)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Display markdown file in the terminal.')
