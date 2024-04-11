@@ -110,6 +110,7 @@ else
     python3 full-cycle.py --nocode
     cat outputs/question-refined > outputs/question
     echo "We will now try to refine the improve it"
+    cp outputs/ai-answer.md outputs/ai-answer-FIRST.md
     python3 full-cycle.py --nocode
 fi
 EOL
