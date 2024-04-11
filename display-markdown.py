@@ -7,9 +7,10 @@ try:
     import IPython
     if 'google.colab' in str(IPython.get_ipython()):
         is_colab = True
+        is_jupyter = False
     else:
         is_colab = False
-        is_jupyter = 'IPKernelApp' in IPython.get_ipython().config
+        is_jupyter = IPython.get_ipython() is not None
 except (ImportError, NameError):
     is_colab = False
     is_jupyter = False
