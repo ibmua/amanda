@@ -69,9 +69,10 @@ cat > "$DESTINATION_FOLDER/amanda" << EOL
 #!/bin/bash
 
 # Set the AMANDA_FOLDER path
+export AMANDA_API="$AMANDA_API"
 export AMANDA_FOLDER="$CURRENT_FOLDER"
-CLAUDE_API_KEY="$CLAUDE_API_KEY"
-GOOGLE_PROJECT_ID="$GOOGLE_PROJECT_ID"
+export CLAUDE_API_KEY="$CLAUDE_API_KEY"
+export GOOGLE_PROJECT_ID="$GOOGLE_PROJECT_ID"
 
 # Change directory to the AMANDA_FOLDER
 cd "\$AMANDA_FOLDER"
@@ -111,6 +112,8 @@ else
     cat outputs/question-refined > outputs/question
     echo "We will now try to refine the improve it"
     cp outputs/ai-answer.md outputs/ai-answer-FIRST.md
+    sleep 10
+    echo "Trying to improve the answer"
     python3 full-cycle.py --nocode
 fi
 EOL

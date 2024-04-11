@@ -1,0 +1,660 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation and, possibly (but a not usually), even some source code. We also have help docs for any of the special CLI queries a user might need.
+
+{
+"751": [
+"gaiad query liquidity withdraws",
+"Query all withdraw messages on the liquidity pool batch for the specified pool-id If batch messages are normally processed from the endblock, the resulting state is applied and the messages are removed in the beginning of next block. To query for past blocks, query the block height using the REST/gRPC API of a node that is not pruned. Example: $ gaiad query liquidity withdraws 1"
+],
+"752": [
+"gaiad query mint",
+"Querying commands for the minting module"
+],
+"753": [
+"gaiad query mint annual-provisions",
+"Query the current minting annual provisions value"
+],
+"754": [
+"gaiad query mint inflation",
+"Query the current minting inflation value"
+],
+"755": [
+"gaiad query mint params",
+"Query the current minting parameters"
+],
+"756": [
+"gaiad query params",
+"Querying commands for the params module"
+],
+"757": [
+"gaiad query params subspace",
+"Query for raw parameters by subspace and key"
+],
+"758": [
+"gaiad query provider",
+"Querying commands for the ccv provider module"
+],
+"759": [
+"gaiad query provider consumer-genesis",
+"Query for consumer chain genesis state by chain id"
+],
+"760": [
+"gaiad query provider list-consumer-chains",
+"Query active consumer chains for provider chain."
+],
+"761": [
+"gaiad query provider list-start-proposals",
+"Query mature and pending consumer chains start proposals on provider chain. Matured proposals will be executed on the next block - their spawn_time has passed Pending proposals are waiting for their spawn_time to pass."
+],
+"762": [
+"gaiad query provider list-stop-proposals",
+"Query mature and pending consumer chains stop proposals on provider chain. Matured proposals will be executed on the next block - their stop_time has passed Pending proposals are waiting for their stop_time to pass."
+],
+"763": [
+"gaiad query provider registered-consumer-reward-denoms",
+"Returns the registered consumer reward denoms. Example: $ gaiad query provider registered-consumer-reward-denoms"
+],
+"764": [
+"gaiad query provider throttle-state",
+"Returns state relevant to throttled slash packet queue on the provider chain. Queue is ordered by time of arrival. Example: $ gaiad query provider throttle-state"
+],
+"765": [
+"gaiad query provider throttled-consumer-packet-data",
+"Returns the current pending VSCMatured and slash packet data instances for a consumer chainId. Queue is ordered by ibc sequence number. Example: $ gaiad query provider throttled-consumer-packet-data foochain"
+],
+"766": [
+"gaiad query provider validator-consumer-key",
+"Returns the currently assigned validator consensus public key for a consumer chain, if one has been assigned. Example: $ gaiad query provider validator-consumer-key foochain cosmosvalcons1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"767": [
+"gaiad query provider validator-provider-key",
+"Returns the currently assigned validator consensus public key for the provider chain. Example: $ gaiad query provider validator-provider-key foochain cosmosvalcons1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"768": [
+"gaiad query slashing",
+"Querying commands for the slashing module"
+],
+"769": [
+"gaiad query slashing params",
+"Query genesis parameters for the slashing module: $ <appd> query slashing params"
+],
+"770": [
+"gaiad query slashing signing-info",
+"Use a validators' consensus public key to find the signing-info for that validator: $ <appd> query slashing signing-info '{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"OauFcTKbN5Lx3fJL689cikXBqe+hcp6Y+x0rYUdR9Jk=\"}'"
+],
+"771": [
+"gaiad query slashing signing-infos",
+"signing infos of validators: $ <appd> query slashing signing-infos"
+],
+"772": [
+"gaiad query staking",
+"Querying commands for the staking module"
+],
+"773": [
+"gaiad query staking all-tokenize-share-records",
+"Query for all tokenize share records. Example: $ gaiad query staking all-tokenize-share-records"
+],
+"774": [
+"gaiad query staking delegation",
+"Query delegations for an individual delegator on an individual validator. Example: $ gaiad query staking delegation cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"775": [
+"gaiad query staking delegations",
+"Query delegations for an individual delegator on all validators. Example: $ gaiad query staking delegations cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"776": [
+"gaiad query staking delegations-to",
+"Query delegations on an individual validator. Example: $ gaiad query staking delegations-to cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"777": [
+"gaiad query staking historical-info",
+"Query historical info at given height. Example: $ gaiad query staking historical-info 5"
+],
+"778": [
+"gaiad query staking last-tokenize-share-record-id",
+"Query for last tokenize share record id. Example: $ gaiad query staking last-tokenize-share-record-id"
+],
+"779": [
+"gaiad query staking params",
+"Query values set as staking parameters. Example: $ gaiad query staking params"
+],
+"780": [
+"gaiad query staking pool",
+"Query values for amounts stored in the staking pool. Example: $ gaiad query staking pool"
+],
+"781": [
+"gaiad query staking redelegation",
+"Query a redelegation record for an individual delegator between a source and destination validator. Example: $ gaiad query staking redelegation cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"782": [
+"gaiad query staking redelegations",
+"Query all redelegation records for an individual delegator. Example: $ gaiad query staking redelegation cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"783": [
+"gaiad query staking redelegations-from",
+"Query delegations that are redelegating _from_ a validator. Example: $ gaiad query staking redelegations-from cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"784": [
+"gaiad query staking tokenize-share-lock-info",
+"Query the status of a tokenize share lock for a given account Example: $ gaiad query staking tokenize-share-lock-info cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"785": [
+"gaiad query staking tokenize-share-record-by-denom",
+"Query individual tokenize share record information by share denom. Example: $ gaiad query staking tokenize-share-record-by-denom"
+],
+"786": [
+"gaiad query staking tokenize-share-record-by-id",
+"Query individual tokenize share record information by share by id. Example: $ gaiad query staking tokenize-share-record-by-id [id]"
+],
+"787": [
+"gaiad query staking tokenize-share-records-owned",
+"Query tokenize share records by address. Example: $ gaiad query staking tokenize-share-records-owned [owner]"
+],
+"788": [
+"gaiad query staking total-liquid-staked",
+"Query for total number of liquid staked tokens. Liquid staked tokens are identified as either a tokenized delegation, or tokens owned by an interchain account. Example: $ gaiad query staking total-liquid-staked"
+],
+"789": [
+"gaiad query staking total-tokenize-share-assets",
+"Query for total tokenized staked assets. Example: $ gaiad query staking total-tokenize-share-assets"
+],
+"790": [
+"gaiad query staking unbonding-delegation",
+"Query unbonding delegations for an individual delegator on an individual validator. Example: $ gaiad query staking unbonding-delegation cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"791": [
+"gaiad query staking unbonding-delegations",
+"Query unbonding delegations for an individual delegator. Example: $ gaiad query staking unbonding-delegations cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"792": [
+"gaiad query staking unbonding-delegations-from",
+"Query delegations that are unbonding _from_ a validator. Example: $ gaiad query staking unbonding-delegations-from cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"793": [
+"gaiad query staking validator",
+"Query details about an individual validator. Example: $ gaiad query staking validator cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"794": [
+"gaiad query staking validators",
+"Query details about all validators on a network. Example: $ gaiad query staking validators"
+],
+"795": [
+"gaiad query tendermint-validator-set",
+"Get the full tendermint validator set at given height"
+],
+"796": [
+"gaiad query tx",
+"Example: $ gaiad query tx <hash> $ gaiad query tx --type=acc_seq <addr>/<sequence> $ gaiad query tx --type=signature <sig1_base64>,<sig2_base64...>"
+],
+"797": [
+"gaiad query txs",
+"Search for transactions that match the exact given events where results are paginated. Each event takes the form of '{eventType}.{eventAttribute}={value}'. Please refer to each module's documentation for the full set of events to query for. Each module documents its respective events under 'xx_events.md'. Example: $ gaiad query txs --events 'message.sender=cosmos1...&message.action=withdraw_delegator_reward' --page 1 --limit 30"
+],
+"798": [
+"gaiad query upgrade",
+"Querying commands for the upgrade module"
+],
+"799": [
+"gaiad query upgrade applied",
+"If upgrade-name was previously executed on the chain, this returns the header for the block at which it was applied. This helps a client determine which binary was valid over a given range of blocks, as well as more context to understand past migrations."
+],
+"800": [
+"gaiad query upgrade module_versions",
+"Gets a list of module names and their respective consensus versions. Following the command with a specific module name will return only that module's information."
+],
+"801": [
+"gaiad query upgrade plan",
+"Gets the currently scheduled upgrade plan, if one exists"
+],
+"802": [
+"gaiad rollback",
+"A state rollback is performed to recover from an incorrect application state transition, when Tendermint has persisted an incorrect app hash and is thus unable to make progress. Rollback overwrites a state at height n with the state at height n - 1. The application also roll back to height n - 1. No blocks are removed, so upon restarting Tendermint the transactions in block n will be re-executed against the application."
+],
+"803": [
+"gaiad rosetta",
+"spin up a rosetta server"
+],
+"804": [
+"gaiad start",
+"Run the full node application with Tendermint in or out of process. By default, the application will run with Tendermint in process. Pruning options can be provided via the '--pruning' flag or alternatively with '--pruning-keep-recent', 'pruning-keep-every', and 'pruning-interval' together. For '--pruning' the options are as follows: default: the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals nothing: all historic states will be saved, nothing will be deleted (i.e. archiving node) everything: all saved states will be deleted, storing only the current and previous state; pruning at 10 block intervals custom: allow pruning options to be manually specified through 'pruning-keep-recent', 'pruning-keep-every', and 'pruning-interval' Node halting configurations exist in the form of two flags: '--halt-height' and '--halt-time'. During the ABCI Commit phase, the node will check if the current block height is greater than or equal to the halt-height or if the current block time is greater than or equal to the halt-time. If so, the node will attempt to gracefully shutdown and the block will not be committed. In addition, the node will not be able to commit subsequent blocks. For profiling and benchmarking purposes, CPU profiling can be enabled via the '--cpu-profile' flag which accepts a path for the resulting pprof file. The node may be started in a 'query only' mode where only the gRPC and JSON HTTP API services are enabled via the 'grpc-only' flag. In this mode, Tendermint is bypassed and can be used when legacy queries are needed after an on-chain upgrade is performed. Note, when enabled, gRPC will also be automatically enabled."
+],
+"805": [
+"gaiad status",
+"Query remote node for status"
+],
+"806": [
+"gaiad tendermint",
+"Tendermint subcommands"
+],
+"807": [
+"gaiad tendermint reset-state",
+"Remove all the data and WAL"
+],
+"808": [
+"gaiad tendermint show-address",
+"Shows this node's tendermint validator consensus address"
+],
+"809": [
+"gaiad tendermint show-node-id",
+"Show this node's ID"
+],
+"810": [
+"gaiad tendermint show-validator",
+"Show this node's tendermint validator info"
+],
+"811": [
+"gaiad tendermint unsafe-reset-all",
+"(unsafe) Remove all the data and WAL, reset this node's validator to genesis state"
+],
+"812": [
+"gaiad tendermint version",
+"Print protocols' and libraries' version numbers against which this app has been compiled."
+],
+"813": [
+"gaiad testnet",
+"testnet will create \"v\" number of directories and populate each with necessary files (private validator, genesis, config, etc.). Note, strict routability for addresses is turned off in the config file. Example: gaiad testnet --v 4 --output-dir ./output --starting-ip-address 192.168.10.2"
+],
+"814": [
+"gaiad tx",
+"Transactions subcommands"
+],
+"815": [
+"gaiad tx authz",
+"Authorize and revoke access to execute transactions on behalf of your address"
+],
+"816": [
+"gaiad tx authz exec",
+"execute tx on behalf of granter account: Example: $ gaiad tx authz exec tx.json --from grantee $ gaiad tx bank send <granter> <recipient> --from <granter> --chain-id <chain-id> --generate-only > tx.json && gaiad tx authz exec tx.json --from grantee"
+],
+"817": [
+"gaiad tx authz grant",
+"grant authorization to an address to execute a transaction on your behalf: Examples: $ gaiad tx authz grant cosmos1skjw.. send /cosmos.bank.v1beta1.MsgSend --spend-limit=1000stake --from=cosmos1skl.. $ gaiad tx authz grant cosmos1skjw.. generic --msg-type=/cosmos.gov.v1beta1.MsgVote --from=cosmos1sk.."
+],
+"818": [
+"gaiad tx authz revoke",
+"revoke authorization from a granter to a grantee: Example: $ gaiad tx authz revoke cosmos1skj.. /cosmos.bank.v1beta1.MsgSend --from=cosmos1skj.."
+],
+"819": [
+"gaiad tx bank",
+"Bank transaction subcommands"
+],
+"820": [
+"gaiad tx bank send",
+"Send funds from one account to another. Note, the'--from' flag is ignored as it is implied from [from_key_or_address]. When using '--dry-run' a key name cannot be used, only a bech32 address."
+],
+"821": [
+"gaiad tx broadcast",
+"Broadcast transactions created with the --generate-only flag and signed with the sign command. Read a transaction from [file_path] and broadcast it to a node. If you supply a dash (-) argument in place of an input filename, the command reads from standard input. $ <appd> tx broadcast ./mytxn.json"
+],
+"822": [
+"gaiad tx crisis",
+"Crisis transactions subcommands"
+],
+"823": [
+"gaiad tx crisis invariant-broken",
+"Submit proof that an invariant broken to halt the chain"
+],
+"824": [
+"gaiad tx decode",
+"Decode a binary encoded transaction string"
+],
+"825": [
+"gaiad tx distribution",
+"Distribution transactions subcommands"
+],
+"826": [
+"gaiad tx distribution fund-community-pool",
+"Funds the community pool with the specified amount Example: $ gaiad tx distribution fund-community-pool 100uatom --from mykey"
+],
+"827": [
+"gaiad tx distribution set-withdraw-addr",
+"Set the withdraw address for rewards associated with a delegator address. Example: $ gaiad tx distribution set-withdraw-addr cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p --from mykey"
+],
+"828": [
+"gaiad tx distribution withdraw-all-rewards",
+"Withdraw all rewards for a single delegator. Note that if you use this command with --broadcast-mode=sync or --broadcast-mode=async, the max-msgs flag will automatically be set to 0. Example: $ gaiad tx distribution withdraw-all-rewards --from mykey"
+],
+"829": [
+"gaiad tx distribution withdraw-all-tokenize-share-rewards",
+"Withdraw reward for all owned TokenizeShareRecord Example: $ gaiad tx distribution withdraw-tokenize-share-rewards --from mykey"
+],
+"830": [
+"gaiad tx distribution withdraw-rewards",
+"Withdraw rewards from a given delegation address, and optionally withdraw validator commission if the delegation address given is a validator operator. Example: $ gaiad tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey $ gaiad tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey --commission"
+],
+"831": [
+"gaiad tx distribution withdraw-tokenize-share-rewards",
+"Withdraw reward for an owned TokenizeShareRecord Example: $ gaiad tx distribution withdraw-tokenize-share-rewards 1 --from mykey"
+],
+"832": [
+"gaiad tx encode",
+"Encode transactions created with the --generate-only flag and signed with the sign command. Read a transaction from <file>, serialize it to the Amino wire protocol, and output it as base64. If you supply a dash (-) argument in place of an input filename, the command reads from standard input."
+],
+"833": [
+"gaiad tx evidence",
+"Evidence transaction subcommands"
+],
+"834": [
+"gaiad tx feegrant",
+"Grant and revoke fee allowance for a grantee by a granter"
+],
+"835": [
+"gaiad tx feegrant grant",
+"Grant authorization to pay fees from your address. Note, the'--from' flag is ignored as it is implied from [granter]. Examples: gaiad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z or gaiad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --period 3600 --period-limit 10stake --expiration 36000 or gaiad tx feegrant grant cosmos1skjw... cosmos1skjw... --spend-limit 100stake --expiration 2022-01-30T15:04:05Z --allowed-messages \"/cosmos.gov.v1beta1.MsgSubmitProposal,/cosmos.gov.v1beta1.MsgVote\""
+],
+"836": [
+"gaiad tx feegrant revoke",
+"revoke fee grant from a granter to a grantee. Note, the'--from' flag is ignored as it is implied from [granter]. Example: $ gaiad tx feegrant revoke cosmos1skj.. cosmos1skj.."
+],
+"837": [
+"gaiad tx gov",
+"Governance transactions subcommands"
+],
+"838": [
+"gaiad tx gov deposit",
+"Submit a deposit for an active proposal. You can find the proposal-id by running \"gaiad query gov proposals\". Example: $ gaiad tx gov deposit 1 10stake --from mykey"
+],
+"839": [
+"gaiad tx gov submit-proposal",
+"Submit a proposal along with an initial deposit. Proposal title, description, type and deposit can be given directly or through a proposal JSON file. Example: $ gaiad tx gov submit-proposal --proposal=\"path/to/proposal.json\" --from mykey Where proposal.json contains: { \"title\": \"Test Proposal\", \"description\": \"My awesome proposal\", \"type\": \"Text\", \"deposit\": \"10test\" } Which is equivalent to: $ gaiad tx gov submit-proposal --title=\"Test Proposal\" --description=\"My awesome proposal\" --type=\"Text\" --deposit=\"10test\" --from mykey"
+],
+"840": [
+"gaiad tx gov submit-proposal cancel-software-upgrade",
+"Cancel a software upgrade along with an initial deposit."
+],
+"841": [
+"gaiad tx gov submit-proposal community-pool-spend",
+"Submit a community pool spend proposal along with an initial deposit. The proposal details must be supplied via a JSON file. Example: $ gaiad tx gov submit-proposal community-pool-spend <path/to/proposal.json> --from=<key_or_address> Where proposal.json contains: { \"title\": \"Community Pool Spend\", \"description\": \"Pay me some Atoms!\", \"recipient\": \"cosmos1s5afhd6gxevu37mkqcvvsj8qeylhn0rz46zdlq\", \"amount\": \"1000stake\", \"deposit\": \"1000stake\" }"
+],
+"842": [
+"gaiad tx gov submit-proposal consumer-addition",
+"Submit a consumer addition proposal along with an initial deposit. The proposal details must be supplied via a JSON file. Unbonding period, transfer timeout period and ccv timeout period should be provided as nanosecond time periods. Example: $ <appd> tx gov submit-proposal consumer-addition <path/to/proposal.json> --from=<key_or_address> Where proposal.json contains: { \"title\": \"Create the FooChain\", \"description\": \"Gonna be a great chain\", \"chain_id\": \"foochain\", \"initial_height\": { \"revision_number\": 2, \"revision_height\": 3 }, \"genesis_hash\": \"Z2VuZXNpcyBoYXNo\", \"binary_hash\": \"YmluYXJ5IGhhc2g=\", \"spawn_time\": \"2022-01-27T15:59:50.121607-08:00\", \"blocks_per_distribution_transmission\": 1000, \"consumer_redistribution_fraction\": \"0.75\", \"distribution_transmission_channel\": \"\", \"historical_entries\": 10000, \"transfer_timeout_period\": 3600000000000, \"ccv_timeout_period\": 2419200000000000, \"unbonding_period\": 1728000000000000, \"deposit\": \"10000stake\" }"
+],
+"843": [
+"gaiad tx gov submit-proposal consumer-removal",
+"Submit a consumer chain removal proposal along with an initial deposit. The proposal details must be supplied via a JSON file. Example: $ <appd> tx gov submit-proposal consumer-removal <path/to/proposal.json> --from=<key_or_address> Where proposal.json contains: { \"title\": \"Stop the FooChain\", \"description\": \"It was a great chain\", \"chain_id\": \"foochain\", \"stop_time\": \"2022-01-27T15:59:50.121607-08:00\", \"deposit\": \"10000stake\" }"
+],
+"844": [
+"gaiad tx gov submit-proposal equivocation",
+"Submit an equivocation proposal along with an initial deposit. The proposal details must be supplied via a JSON file. Example: $ <appd> tx gov submit-proposal equivocation <path/to/proposal.json> --from=<key_or_address> Where proposal.json contains: { \"title\": \"Equivoque Foo validator\", \"description\": \"He double-signs on the Foobar consumer chain\", \"equivocations\": [ { \"height\": 10420042, \"time\": \"2023-01-27T15:59:50.121607-08:00\", \"power\": 10, \"consensus_address\": \"cosmosvalcons1s5afhd6gxevu37mkqcvvsj8qeylhn0rz46zdlq\" } ], \"deposit\": \"10000stake\" }"
+],
+"845": [
+"gaiad tx gov submit-proposal ibc-upgrade",
+"Submit an IBC client breaking upgrade proposal along with an initial deposit. The client state specified is the upgraded client state representing the upgraded chain Example Upgraded Client State JSON: { \"@type\":\"/ibc.lightclients.tendermint.v1.ClientState\", \"chain_id\":\"testchain1\", \"unbonding_period\":\"1814400s\", \"latest_height\":{\"revision_number\":\"0\",\"revision_height\":\"2\"}, \"proof_specs\":[{\"leaf_spec\":{\"hash\":\"SHA256\",\"prehash_key\":\"NO_HASH\",\"prehash_value\":\"SHA256\",\"length\":\"VAR_PROTO\",\"prefix\":\"AA==\"},\"inner_spec\":{\"child_order\":[0,1],\"child_size\":33,\"min_prefix_length\":4,\"max_prefix_length\":12,\"empty_child\":null,\"hash\":\"SHA256\"},\"max_depth\":0,\"min_depth\":0},{\"leaf_spec\":{\"hash\":\"SHA256\",\"prehash_key\":\"NO_HASH\",\"prehash_value\":\"SHA256\",\"length\":\"VAR_PROTO\",\"prefix\":\"AA==\"},\"inner_spec\":{\"child_order\":[0,1],\"child_size\":32,\"min_prefix_length\":1,\"max_prefix_length\":1,\"empty_child\":null,\"hash\":\"SHA256\"},\"max_depth\":0,\"min_depth\":0}], \"upgrade_path\":[\"upgrade\",\"upgradedIBCState\"], }"
+],
+"846": [
+"gaiad tx gov submit-proposal param-change",
+"Submit a parameter proposal along with an initial deposit. The proposal details must be supplied via a JSON file. For values that contains objects, only non-empty fields will be updated. IMPORTANT: Currently parameter changes are evaluated but not validated, so it is very important that any \"value\" change is valid (ie. correct type and within bounds) for its respective parameter, eg. \"MaxValidators\" should be an integer and not a decimal. Proper vetting of a parameter change proposal should prevent this from happening (no deposits should occur during the governance process), but it should be noted regardless. Example: $ gaiad tx gov submit-proposal param-change <path/to/proposal.json> --from=<key_or_address> Where proposal.json contains: { \"title\": \"Staking Param Change\", \"description\": \"Update max validators\", \"changes\": [ { \"subspace\": \"staking\", \"key\": \"MaxValidators\", \"value\": 105 } ], \"deposit\": \"1000stake\" }"
+],
+"847": [
+"gaiad tx gov submit-proposal software-upgrade",
+"Submit a software upgrade along with an initial deposit. Please specify a unique name and height for the upgrade to take effect. You may include info to reference a binary download link, in a format compatible with: https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor"
+],
+"848": [
+"gaiad tx gov submit-proposal update-client",
+"Submit an update IBC client proposal along with an initial deposit. Please specify a subject client identifier you want to update.. Please specify the substitute client the subject client will be updated to."
+],
+"849": [
+"gaiad tx gov vote",
+"Submit a vote for an active proposal. You can find the proposal-id by running \"gaiad query gov proposals\". Example: $ gaiad tx gov vote 1 yes --from mykey"
+],
+"850": [
+"gaiad tx gov weighted-vote",
+"Submit a vote for an active proposal. You can find the proposal-id by running \"gaiad query gov proposals\". Example: $ gaiad tx gov weighted-vote 1 yes=0.6,no=0.3,abstain=0.05,no_with_veto=0.05 --from mykey"
+],
+"851": [
+"gaiad tx ibc",
+"IBC transaction subcommands"
+],
+"852": [
+"gaiad tx ibc channel",
+"IBC channel transaction subcommands"
+],
+"853": [
+"gaiad tx ibc client",
+"IBC client transaction subcommands"
+],
+"854": [
+"gaiad tx ibc client create",
+"create a new IBC client with the specified client state and consensus state - ClientState JSON example: {\"@type\":\"/ibc.lightclients.solomachine.v1.ClientState\",\"sequence\":\"1\",\"frozen_sequence\":\"0\",\"consensus_state\":{\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"AtK50+5pJOoaa04qqAqrnyAqsYrwrR/INnA6UPIaYZlp\"},\"diversifier\":\"testing\",\"timestamp\":\"10\"},\"allow_update_after_proposal\":false} - ConsensusState JSON example: {\"@type\":\"/ibc.lightclients.solomachine.v1.ConsensusState\",\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"AtK50+5pJOoaa04qqAqrnyAqsYrwrR/INnA6UPIaYZlp\"},\"diversifier\":\"testing\",\"timestamp\":\"10\"}"
+],
+"855": [
+"gaiad tx ibc client misbehaviour",
+"submit a client misbehaviour to prevent future updates"
+],
+"856": [
+"gaiad tx ibc client update",
+"update existing client with a header"
+],
+"857": [
+"gaiad tx ibc client upgrade",
+"upgrade the IBC client associated with the provided client identifier while providing proof committed by the counterparty chain to the new client and consensus states - ClientState JSON example: {\"@type\":\"/ibc.lightclients.solomachine.v1.ClientState\",\"sequence\":\"1\",\"frozen_sequence\":\"0\",\"consensus_state\":{\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"AtK50+5pJOoaa04qqAqrnyAqsYrwrR/INnA6UPIaYZlp\"},\"diversifier\":\"testing\",\"timestamp\":\"10\"},\"allow_update_after_proposal\":false} - ConsensusState JSON example: {\"@type\":\"/ibc.lightclients.solomachine.v1.ConsensusState\",\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"AtK50+5pJOoaa04qqAqrnyAqsYrwrR/INnA6UPIaYZlp\"},\"diversifier\":\"testing\",\"timestamp\":\"10\"}"
+],
+"858": [
+"gaiad tx ibc-transfer",
+"IBC fungible token transfer transaction subcommands"
+],
+"859": [
+"gaiad tx ibc-transfer transfer",
+"Transfer a fungible token through IBC. Timeouts can be specified as absolute or relative using the \"absolute-timeouts\" flag. Timeout height can be set by passing in the height string in the form {revision}-{height} using the \"packet-timeout-height\" flag. Relative timeout height is added to the block height queried from the latest consensus state corresponding to the counterparty channel. Relative timeout timestamp is added to the greater value of the local clock time and the block timestamp queried from the latest consensus state corresponding to the counterparty channel. Any timeout set to 0 is disabled."
+],
+"860": [
+"gaiad tx liquidity",
+"Liquidity transaction subcommands"
+],
+"861": [
+"gaiad tx liquidity create-pool",
+"Create liquidity pool and deposit coins. Example: $ gaiad tx liquidity create-pool 1 1000000000uatom,50000000000uusd --from mykey This example creates a liquidity pool of pool-type 1 (two coins) and deposits 1000000000uatom and 50000000000uusd. New liquidity pools can be created only for coin combinations that do not already exist in the network. [pool-type]: The id of the liquidity pool-type. The only supported pool type is 1 [deposit-coins]: The amount of coins to deposit to the liquidity pool. The number of deposit coins must be 2 in pool type 1."
+],
+"862": [
+"gaiad tx liquidity deposit",
+"Deposit coins a liquidity pool. This deposit request is not processed immediately since it is accumulated in the liquidity pool batch. All requests in a batch are treated equally and executed at the same swap price. Example: $ gaiad tx liquidity deposit 1 100000000uatom,5000000000uusd --from mykey This example request deposits 100000000uatom and 5000000000uusd to pool-id 1. Deposits must be the same coin denoms as the reserve coins. [pool-id]: The pool id of the liquidity pool [deposit-coins]: The amount of coins to deposit to the liquidity pool"
+],
+"863": [
+"gaiad tx liquidity swap",
+"Swap offer coin with demand coin from the liquidity pool with the given order price. This swap request is not processed immediately since it is accumulated in the liquidity pool batch. All requests in a batch are treated equally and executed at the same swap price. The order of swap requests is ignored since the universal swap price is calculated in every batch to prevent front running. The requested swap is executed with a swap price that is calculated from the given swap price function of the pool, the other swap requests, and the liquidity pool coin reserve status. Swap orders are executed only when the execution swap price is equal to or greater than the submitted order price of the swap order. Example: $ gaiad tx liquidity swap 1 1 50000000uusd uatom 0.019 0.003 --from mykey For this example, imagine that an existing liquidity pool has with 1000000000uatom and 50000000000uusd. This example request swaps 50000000uusd for at least 950000uatom with the order price of 0.019 and swap fee rate of 0.003. A sufficient balance of half of the swap-fee-rate of the offer coin is required to reserve the offer coin fee. The order price is the exchange ratio of X/Y, where X is the amount of the first coin and Y is the amount of the second coin when their denoms are sorted alphabetically. Increasing order price reduces the possibility for your request to be processed and results in buying uatom at a lower price than the pool price. For explicit calculations, The swap fee rate must be the value that set as liquidity parameter in the current network. The only supported swap-type is 1. For the detailed swap algorithm, see https://github.com/gravity-devs/liquidity [pool-id]: The pool id of the liquidity pool [swap-type]: The swap type of the swap message. The only supported swap type is 1 (instant swap). [offer-coin]: The amount of offer coin to swap [demand-coin-denom]: The denomination of the coin to exchange with offer coin [order-price]: The limit order price for the swap order. The price is the exchange ratio of X/Y where X is the amount of the first coin and Y is the amount of the second coin when their denoms are sorted alphabetically [swap-fee-rate]: The swap fee rate to pay for swap that is proportional to swap amount. The swap fee rate must be the value that set as liquidity parameter in the current network."
+],
+"864": [
+"gaiad tx liquidity withdraw",
+"Withdraw pool coin from the specified liquidity pool. This swap request is not processed immediately since it is accumulated in the liquidity pool batch. All requests in a batch are treated equally and executed at the same swap price. Example: $ gaiad tx liquidity withdraw 1 10000pool96EF6EA6E5AC828ED87E8D07E7AE2A8180570ADD212117B2DA6F0B75D17A6295 --from mykey This example request withdraws 10000 pool coin from the specified liquidity pool. The appropriate pool coin must be requested from the specified pool. [pool-id]: The pool id of the liquidity pool [pool-coin]: The amount of pool coin to withdraw from the liquidity pool"
+],
+"865": [
+"gaiad tx multisign",
+"Sign transactions created with the --generate-only flag that require multisig signatures. Read one or more signatures from one or more [signature] file, generate a multisig signature compliant to the multisig key [name], and attach the key name to the transaction read from [file]. Example: $ gaiad tx multisign transaction.json k1k2k3 k1sig.json k2sig.json k3sig.json If --signature-only flag is on, output a JSON representation of only the generated signature. If the --offline flag is on, the client will not reach out to an external node. Account number or sequence number lookups are not performed so you must set these parameters manually. The current multisig implementation defaults to amino-json sign mode. The SIGN_MODE_DIRECT sign mode is not supported.'"
+],
+"866": [
+"gaiad tx multisign-batch",
+"Assemble a batch of multisig transactions generated by batch sign command. Read one or more signatures from one or more [signature] file, generate a multisig signature compliant to the multisig key [name], and attach the key name to the transaction read from [file]. Example: $ gaiad tx multisign-batch transactions.json multisigk1k2k3 k1sigs.json k2sigs.json k3sig.json The current multisig implementation defaults to amino-json sign mode. The SIGN_MODE_DIRECT sign mode is not supported.'"
+],
+"867": [
+"gaiad tx provider",
+"provider transactions subcommands"
+],
+"868": [
+"gaiad tx provider assign-consensus-key",
+"assign a consensus public key to use for a consumer chain"
+],
+"869": [
+"gaiad tx provider register-consumer-reward-denom",
+"Registers a denom that can be sent from consumer chains to all validators and delegators as a reward. Costs a fee, which is specified in genesis.json under the \"consumer_reward_denom_fee\" key. Will fail if the sending account has an insufficient balance. Example: $ gaiad tx provider register-consumer-reward-denom untrn --from mykey"
+],
+"870": [
+"gaiad tx sign",
+"Sign a transaction created with the --generate-only flag. It will read a transaction from [file], sign it, and print its JSON encoding. If the --signature-only flag is set, it will output the signature parts only. The --offline flag makes sure that the client will not reach out to full node. As a result, the account and sequence number queries will not be performed and it is required to set such parameters manually. Note, invalid values will cause the transaction to fail. The --multisig=<multisig_key> flag generates a signature on behalf of a multisig account key. It implies --signature-only. Full multisig signed transactions may eventually be generated via the 'multisign' command."
+],
+"871": [
+"gaiad tx sign-batch",
+"Sign batch files of transactions generated with --generate-only. The command processes list of transactions from file (one StdTx each line), generate signed transactions or signatures and print their JSON encoding, delimited by '\\n'. As the signatures are generated, the command updates the account sequence number accordingly. If the --signature-only flag is set, it will output the signature parts only. The --offline flag makes sure that the client will not reach out to full node. As a result, the account and the sequence number queries will not be performed and it is required to set such parameters manually. Note, invalid values will cause the transaction to fail. The sequence will be incremented automatically for each transaction that is signed. The --multisig=<multisig_key> flag generates a signature on behalf of a multisig account key. It implies --signature-only."
+],
+"872": [
+"gaiad tx slashing",
+"Slashing transaction subcommands"
+],
+"873": [
+"gaiad tx slashing unjail",
+"unjail a jailed validator: $ <appd> tx slashing unjail --from mykey"
+],
+"874": [
+"gaiad tx staking",
+"Staking transaction subcommands"
+],
+"875": [
+"gaiad tx staking cancel-unbond",
+"Cancel Unbonding Delegation and delegate back to the validator. Example: $ gaiad tx staking cancel-unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100stake 2 --from mykey"
+],
+"876": [
+"gaiad tx staking create-validator",
+"create new validator initialized with a self-delegation to it"
+],
+"877": [
+"gaiad tx staking delegate",
+"Delegate an amount of liquid coins to a validator from your wallet. Example: $ gaiad tx staking delegate cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 1000stake --from mykey"
+],
+"878": [
+"gaiad tx staking disable-tokenize-shares",
+"Disables the tokenization of shares for an address. The account must explicitly re-enable if they wish to tokenize again, at which point they must wait the chain's unbonding period. Example: $ gaiad tx staking disable-tokenize-shares --from mykey"
+],
+"879": [
+"gaiad tx staking edit-validator",
+"edit an existing validator account"
+],
+"880": [
+"gaiad tx staking enable-tokenize-shares",
+"Enables the tokenization of shares for an address after it had been disable. This transaction queues the enablement of tokenization, but the address must wait 1 unbonding period from the time of this transaction before tokenization is permitted. Example: $ gaiad tx staking enable-tokenize-shares --from mykey"
+],
+"881": [
+"gaiad tx staking redeem-tokens",
+"Redeem specified amount of share tokens to delegation. Example: $ gaiad tx staking redeem-tokens 100sharetoken --from mykey"
+],
+"882": [
+"gaiad tx staking redelegate",
+"Redelegate an amount of illiquid staking tokens from one validator to another. Example: $ gaiad tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100stake --from mykey"
+],
+"883": [
+"gaiad tx staking tokenize-share",
+"Tokenize delegation to share tokens. Example: $ gaiad tx staking tokenize-share cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100stake cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey"
+],
+"884": [
+"gaiad tx staking transfer-tokenize-share-record",
+"Transfer ownership of TokenizeShareRecord. Example: $ gaiad tx staking transfer-tokenize-share-record 1 cosmos1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey"
+],
+"885": [
+"gaiad tx staking unbond",
+"Unbond an amount of bonded shares from a validator. Example: $ gaiad tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100stake --from mykey"
+],
+"886": [
+"gaiad tx staking unbond-validator",
+"Unbond a validator. Example: $ gaiad tx staking unbond-validator --from mykey"
+],
+"887": [
+"gaiad tx staking validator-bond",
+"Mark a delegation as a validator self-bond. Example: $ gaiad tx staking validator-bond cosmosvaloper13h5xdxhsdaugwdrkusf8lkgu406h8t62jkqv3h --from mykey"
+],
+"888": [
+"gaiad tx validate-signatures",
+"Print the addresses that must sign the transaction, those who have already signed it, and make sure that signatures are in the correct order. The command would check whether all required signers have signed the transactions, whether the signatures were collected in the right order, and if the signature is valid over the given transaction. If the --offline flag is also set, signature validation over the transaction will be not be performed as that will require RPC communication with a full node."
+],
+"889": [
+"gaiad tx vesting",
+"Vesting transaction subcommands"
+],
+"890": [
+"gaiad tx vesting create-vesting-account",
+"Create a new vesting account funded with an allocation of tokens. The account can either be a delayed or continuous vesting account, which is determined by the '--delayed' flag. All vesting accouts created will have their start time set by the committed block's time. The end_time must be provided as a UNIX epoch timestamp."
+],
+"891": [
+"gaiad validate-genesis",
+"validates the genesis file at the default location or at the location passed as an arg"
+],
+"892": [
+"gaiad version",
+"Print the application binary version information"
+]
+}
+
+We need to mark which CLI queries are likely to be used by the user to solve his case. Create a JSON based on the provided one. Go through each id and write a 0-10 score of how likely a user is to need to know the help information on each cli query.
+
+Here is the question that requires information sourcing to answer it:
+<question>How to operate an IBC relayer?
+
+Here's an answer that isn't very good. Looks like it may be incomplete, or incorrect. Look:<poor_answer>
+
+To operate an IBC relayer, you need to follow these steps:
+
+1. **Install Hermes**
+
+Hermes is an IBC relayer developed by Informal Systems. You can install it from binaries or build it from source. The instructions are provided in the [Hermes documentation](https://hermes.informal.systems/documentation/installation.html).
+
+For example, to install from binaries:
+
+```bash
+export TAG="v1.7.4-namada-beta7"
+export ARCH="x86_64-unknown-linux-gnu" # or "aarch64-apple-darwin"
+curl -Lo /tmp/hermes.tar.gz https://github.com/heliaxdev/hermes/releases/download/${TAG}/hermes-${TAG}-${ARCH}.tar.gz
+tar -xvzf /tmp/hermes.tar.gz -C /usr/local/bin
+```
+
+2. **Configure Hermes**
+
+You need to create a `config.toml` file that describes the connections Hermes will be responsible for. An example configuration is provided in the [supplemental materials](supplemental-materials/hermes-config.toml).
+
+3. **Set up the relayer account**
+
+On each chain, you need to create a `relayer` account. For Namada, you can run:
+
+```bash
+namadaw gen --alias relayer
+```
+
+This will generate a key for the relayer account, stored in the `wallet.toml` file in the node's base directory.
+
+4. **Add the relayer key to Hermes**
+
+You need to add the relayer's key to Hermes using the `keys add` command:
+
+```bash
+hermes --config $HERMES_CONFIG keys add --chain $CHAIN_ID --key-file $WALLET_PATH
+```
+
+5. **Create IBC channel**
+
+To create an IBC channel between the two chains, run:
+
+```bash
+hermes --config $HERMES_CONFIG \
+  create channel \
+  --a-chain $CHAIN_A_ID \
+  --b-chain $CHAIN_B_ID \
+  --a-port transfer \
+  --b-port transfer \
+  --new-client-connection --yes
+```
+
+This will create the necessary IBC client connection and channel.
+
+6. **Start the relayer**
+
+Finally, you can start the relayer:
+
+```bash
+hermes --config $HERMES_CONFIG start
+```
+
+The relayer will now monitor the chains and relay IBC packets according to the events it observes.
+
+For more details on operating a relayer, you can refer to the [Hermes documentation](https://hermes.informal.systems/) and the [Namada docs on relaying](https://docs.namada.net/operators/ibc.html).
+
+</poor_answer>
+Please, answer the same following question, but better, including more sources that were lacking in this analysis:
+How to operate an IBC relayer?
+</question>
+
+Output in the form of a JSON like
+{"1":3
+,"3":0
+,"100":10
+, ..
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or strings! Only "id":number!

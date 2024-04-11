@@ -9,18 +9,20 @@ def parse_file(input_file):
     with open(input_file, 'r') as file:
         content = file.read()
 
-    pattern = re.compile(r'<source>namada-src/namada-docs/packages/docs/pages/(.*?)\.mdx</source>')
+    pattern = re.compile(r'<source>namada-src/namada-docs/packages/docs/pages/(.*?)\\.mdx</source>')
     parsed_content = pattern.sub(r'<source>https://docs.namada.net/\1</source>', content)
-
     content = parsed_content
 
-    pattern = re.compile(r'<source>namada-src/namada-docs/packages/specs/pages/(.*?)\.mdx</source>')
+    pattern = re.compile(r'<source>namada-src/namada-docs/packages/specs/pages/(.*?)\\.mdx</source>')
     parsed_content = pattern.sub(r'<source>https://specs.namada.net/\1</source>', content)
-
     content = parsed_content
 
-    pattern = re.compile(r'<source>namada-src/namada-docs/packages/community/pages/(.*?)\.mdx</source>')
+    pattern = re.compile(r'<source>namada-src/namada-docs/packages/community/pages/(.*?)\\.mdx</source>')
     parsed_content = pattern.sub(r'<source>https://namada.net/community/\1</source>', content)
+    content = parsed_content
+
+    pattern = re.compile(r'\((https://(?:docs|specs)?\.?namada\.net/.*?)\\.mdx\)')
+    parsed_content = pattern.sub(r'(\1)', content)
 
     return parsed_content
 

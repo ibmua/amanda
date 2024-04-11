@@ -1,0 +1,1092 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation and, possibly (but a not usually), even some source code. We also have help docs for any of the special CLI queries a user might need.
+
+{
+"251": [
+"osmosisd query ibc client consensus-state",
+"Query the consensus state for a particular light client at a given height. If the '--latest' flag is included, the query returns the latest consensus state, overriding the height argument."
+],
+"252": [
+"osmosisd query ibc client consensus-state-heights",
+"Query the heights of all consensus states associated with the provided client ID."
+],
+"253": [
+"osmosisd query ibc client consensus-states",
+"Query all the consensus states from a given client state."
+],
+"254": [
+"osmosisd query ibc client header",
+"Query the latest Tendermint header of the running chain"
+],
+"255": [
+"osmosisd query ibc client params",
+"Query the current ibc client parameters"
+],
+"256": [
+"osmosisd query ibc client self-consensus-state",
+"Query the self consensus state for this chain. This result may be used for verifying IBC clients representing this chain which are hosted on counterparty chains."
+],
+"257": [
+"osmosisd query ibc client state",
+"Query stored client state"
+],
+"258": [
+"osmosisd query ibc client states",
+"Query all available light clients"
+],
+"259": [
+"osmosisd query ibc client status",
+"Query client activity status. Any client without an 'Active' status is considered inactive"
+],
+"260": [
+"osmosisd query ibc connection",
+"IBC connection query subcommands"
+],
+"261": [
+"osmosisd query ibc connection connections",
+"Query all connections ends from a chain"
+],
+"262": [
+"osmosisd query ibc connection end",
+"Query stored connection end"
+],
+"263": [
+"osmosisd query ibc connection params",
+"Query the current ibc connection parameters"
+],
+"264": [
+"osmosisd query ibc connection path",
+"Query stored client connection paths"
+],
+"265": [
+"osmosisd query ibc-transfer",
+"IBC fungible token transfer query subcommands"
+],
+"266": [
+"osmosisd query ibc-transfer denom-hash",
+"Query the denom hash info from a given denom trace"
+],
+"267": [
+"osmosisd query ibc-transfer denom-trace",
+"Query the denom trace info from a given trace hash or ibc denom"
+],
+"268": [
+"osmosisd query ibc-transfer denom-traces",
+"Query the trace info for all token denominations"
+],
+"269": [
+"osmosisd query ibc-transfer escrow-address",
+"Get the escrow address for a channel"
+],
+"270": [
+"osmosisd query ibc-transfer params",
+"Query the current ibc-transfer parameters"
+],
+"271": [
+"osmosisd query ibc-transfer total-escrow",
+"Query the total amount of tokens in escrow for a denom"
+],
+"272": [
+"osmosisd query ibchooks",
+"Querying commands for the ibchooks module"
+],
+"273": [
+"osmosisd query ibchooks wasm-sender",
+"Generate the local address for a wasm hooks sender. Example: $ osmosisd query ibc-hooks wasm-hooks-sender channel-42 juno12smx2wdlyttvyzvzg54y2vnqwq2qjatezqwqxu"
+],
+"274": [
+"osmosisd query incentives",
+"Querying commands for the incentives module"
+],
+"275": [
+"osmosisd query incentives active-gauges",
+"Query active gauges"
+],
+"276": [
+"osmosisd query incentives active-gauges-per-denom",
+"Query active gauges per denom Example: $ osmosisd q incentives active-gauges-per-denom gamm/pool/1"
+],
+"277": [
+"osmosisd query incentives all-groups",
+"Query all groups"
+],
+"278": [
+"osmosisd query incentives all-groups-gauges",
+"Query all group gauges"
+],
+"279": [
+"osmosisd query incentives all-groups-with-gauge",
+"Query all groups with their respective group gauge"
+],
+"280": [
+"osmosisd query incentives current-weight-by-group-gauge-id",
+"Query current incentives distribution weight since epoch for each gauge respectively from a group gauge ID"
+],
+"281": [
+"osmosisd query incentives gauge-by-id",
+"Query gauge by id. Example: $ osmosisd q incentives gauge-by-id 1"
+],
+"282": [
+"osmosisd query incentives gauges",
+"Query all available gauges"
+],
+"283": [
+"osmosisd query incentives group-by-group-gauge-id",
+"Query a group it's respective group gauge ID"
+],
+"284": [
+"osmosisd query incentives rewards-estimation",
+"Query rewards estimation. Example: $ osmosisd query incentives rewards-estimation"
+],
+"285": [
+"osmosisd query incentives to-distribute-coins",
+"Query coins that is going to be distributed"
+],
+"286": [
+"osmosisd query incentives upcoming-gauges",
+"Query upcoming gauges"
+],
+"287": [
+"osmosisd query incentives upcoming-gauges-per-denom",
+"Query scheduled gauges per denom"
+],
+"288": [
+"osmosisd query interchain-accounts",
+"IBC interchain accounts query subcommands"
+],
+"289": [
+"osmosisd query interchain-accounts controller",
+"IBC interchain accounts controller query subcommands"
+],
+"290": [
+"osmosisd query interchain-accounts controller interchain-account",
+"Query the controller submodule for the interchain account address for a given owner on a particular connection"
+],
+"291": [
+"osmosisd query interchain-accounts controller params",
+"Query the current interchain-accounts controller submodule parameters"
+],
+"292": [
+"osmosisd query interchain-accounts host",
+"IBC interchain accounts host query subcommands"
+],
+"293": [
+"osmosisd query interchain-accounts host packet-events",
+"Query the interchain-accounts host submodule packet events for a particular channel and sequence"
+],
+"294": [
+"osmosisd query interchain-accounts host params",
+"Query the current interchain-accounts host submodule parameters"
+],
+"295": [
+"osmosisd query interchainquery",
+"Querying commands for the interchainquery module"
+],
+"296": [
+"osmosisd query interchainquery params",
+"Query the current parameters"
+],
+"297": [
+"osmosisd query lockup",
+"Querying commands for the lockup module"
+],
+"298": [
+"osmosisd query lockup account-locked-beforetime",
+"Query account's unlocked records before specific time Timestamp is UNIX time in seconds. Example: $ osmosisd q lockup account-locked-pastime <address> <timestamp>"
+],
+"299": [
+"osmosisd query lockup account-locked-coins",
+"Query account's locked coins Example: $ osmosisd q lockup account-locked-coins <address>"
+],
+"300": [
+"osmosisd query lockup account-locked-duration",
+"Query account locked records with a specific duration Example: $ osmosisd q lockup account-locked-duration osmo1yl6hdjhmkf37639730gffanpzndzdpmhxy9ep3 604800s"
+],
+"301": [
+"osmosisd query lockup account-locked-longer-duration",
+"Query account locked records with longer duration"
+],
+"302": [
+"osmosisd query lockup account-locked-longer-duration-denom",
+"Query locked records for a denom with longer duration"
+],
+"303": [
+"osmosisd query lockup account-locked-longer-duration-not-unlocking",
+"Query account locked records with longer duration from unlocking only queue"
+],
+"304": [
+"osmosisd query lockup account-locked-pastime",
+"Query locked records of an account with unlock time beyond timestamp Example: $ osmosisd q lockup account-locked-pastime <address> <timestamp>"
+],
+"305": [
+"osmosisd query lockup account-locked-pastime-denom",
+"Query account's lock records by address, timestamp, denom Timestamp is UNIX time in seconds. Example: $ osmosisd q lockup account-locked-pastime-denom <address> <timestamp> <denom>"
+],
+"306": [
+"osmosisd query lockup account-locked-pastime-not-unlocking",
+"Query locked records of an account with unlock time beyond timestamp within not unlocking queue. Timestamp is UNIX time in seconds. Example: $ osmosisd q lockup account-locked-pastime-not-unlocking <address> <timestamp>"
+],
+"307": [
+"osmosisd query lockup account-unlockable-coins",
+"Query account's unlockable coins. Example: $ osmosisd query lockup account-unlockable-coins <address>"
+],
+"308": [
+"osmosisd query lockup account-unlocking-coins",
+"Query account's unlocking coins Example: $ osmosisd q lockup account-unlocking-coins <address>"
+],
+"309": [
+"osmosisd query lockup lock-by-id",
+"Query account's lock record by id Example: $ osmosisd q lockup lock-by-id 1"
+],
+"310": [
+"osmosisd query lockup lock-reward-receiver",
+"Query lock's reward receiver Example: $ osmosisd q lockup lock-reward-receiver 1"
+],
+"311": [
+"osmosisd query lockup module-balance",
+"Query module balance"
+],
+"312": [
+"osmosisd query lockup module-locked-amount",
+"Query locked amount"
+],
+"313": [
+"osmosisd query lockup next-lock-id",
+"Query next lock id to be created"
+],
+"314": [
+"osmosisd query lockup output-all-locks",
+"Output all locks into a json file. Example: $ osmosisd query lockup output-all-locks <max lock ID>"
+],
+"315": [
+"osmosisd query lockup params",
+"Get the params for the x/lockup module"
+],
+"316": [
+"osmosisd query lockup synthetic-lockup-by-lock-id",
+"Query synthetic lock by underlying lockup id"
+],
+"317": [
+"osmosisd query lockup synthetic-lockups-by-lock-id",
+"Query synthetic lockups by lockup id (is deprecated for synthetic-lockup-by-lock-id)"
+],
+"318": [
+"osmosisd query lockup total-locked-of-denom",
+"Example: $ osmosisd q lockup total-locked-of-denom uosmo --min-duration=0s"
+],
+"319": [
+"osmosisd query mint",
+"Querying commands for the mint module"
+],
+"320": [
+"osmosisd query mint epoch-provisions",
+"Query the current minting epoch provisions value"
+],
+"321": [
+"osmosisd query mint params",
+"Query the current minting parameters"
+],
+"322": [
+"osmosisd query packetforward",
+"Querying commands for the packetforward module"
+],
+"323": [
+"osmosisd query packetforward params",
+"Query the current packetforward parameters"
+],
+"324": [
+"osmosisd query params",
+"Querying commands for the params module"
+],
+"325": [
+"osmosisd query params subspace",
+"Query for raw parameters by subspace and key"
+],
+"326": [
+"osmosisd query poolincentives",
+"Querying commands for the poolincentives module"
+],
+"327": [
+"osmosisd query poolincentives distr-info",
+"Query distribution info Example: $ osmosisd q poolincentives distr-info"
+],
+"328": [
+"osmosisd query poolincentives external-incentivized-gauges",
+"Query external incentivized gauges Example: $ osmosisd q poolincentives external-incentivized-gauges"
+],
+"329": [
+"osmosisd query poolincentives gauge-ids",
+"Query the matching gauge ids and durations by pool id Example: $ osmosisd q poolincentives gauge-ids 1"
+],
+"330": [
+"osmosisd query poolincentives incentivized-pools",
+"Query incentivized pools. Example: $ osmosisd q poolincentives incentivized-pools"
+],
+"331": [
+"osmosisd query poolincentives lockable-durations",
+"Query distribution info. Example: $ osmosisd q poolincentives lockable-durations"
+],
+"332": [
+"osmosisd query poolincentives params",
+"Get the params for the x/poolincentives module"
+],
+"333": [
+"osmosisd query poolmanager",
+"Querying commands for the poolmanager module"
+],
+"334": [
+"osmosisd query poolmanager all-pools",
+"Query all pools on the Osmosis chain"
+],
+"335": [
+"osmosisd query poolmanager estimate-single-pool-swap-exact-amount-in",
+"Query estimate-single-pool-swap-exact-amount-in. Example: $ osmosisd q poolmanager estimate-single-pool-swap-exact-amount-in 1 1000stake uosmo"
+],
+"336": [
+"osmosisd query poolmanager estimate-single-pool-swap-exact-amount-out",
+"Query estimate-single-pool-swap-exact-amount-out. Example: $ osmosisd q poolmanager estimate-single-pool-swap-exact-amount-out 1 uosmo 1000stake"
+],
+"337": [
+"osmosisd query poolmanager estimate-swap-exact-amount-in",
+"Query estimate-swap-exact-amount-in. Example: $ osmosisd q poolmanager estimate-swap-exact-amount-in 1000stake --swap-route-pool-ids=2 --swap-route-pool-ids=3"
+],
+"338": [
+"osmosisd query poolmanager estimate-swap-exact-amount-out",
+"Query estimate-swap-exact-amount-out. Example: $ osmosisd q poolmanager estimate-swap-exact-amount-out 1000stake --swap-route-pool-ids=2 --swap-route-pool-ids=3"
+],
+"339": [
+"osmosisd query poolmanager estimate-trade-based-on-price-impact",
+"Query estimate-trade-based-on-price-impact $ osmosisd q poolmanager estimate-trade-based-on-price-impact 100uosmo stosmo 833 0.001 1.00"
+],
+"340": [
+"osmosisd query poolmanager list-pools-by-denom",
+"Query list-pools-by-denom $ osmosisd q poolmanager list-pools-by-denom uosmo"
+],
+"341": [
+"osmosisd query poolmanager num-pools",
+"Query number of pools"
+],
+"342": [
+"osmosisd query poolmanager params",
+"Get the params for the x/poolmanager module"
+],
+"343": [
+"osmosisd query poolmanager pool",
+"Query pool Example: $ osmosisd q poolmanager pool 1"
+],
+"344": [
+"osmosisd query poolmanager spot-price",
+"Query spot-price $ osmosisd q poolmanager spot-price 1 uosmo ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+],
+"345": [
+"osmosisd query poolmanager total-pool-liquidity",
+"Query total-pool-liquidity $ osmosisd q poolmanager total-pool-liquidity 1"
+],
+"346": [
+"osmosisd query poolmanager total-volume-for-pool",
+"Query total-volume-for-pool $ osmosisd q poolmanager total-volume-for-pool 1"
+],
+"347": [
+"osmosisd query poolmanager trading-pair-taker-fee",
+"Query trading pair taker fee $ osmosisd q poolmanager trading-pair-taker-fee uosmo uatom"
+],
+"348": [
+"osmosisd query protorev",
+"Querying commands for the protorev module"
+],
+"349": [
+"osmosisd query protorev admin-account",
+"Query the admin account"
+],
+"350": [
+"osmosisd query protorev all-profits",
+"Query all ProtoRev profits"
+],
+"351": [
+"osmosisd query protorev all-proto-rev",
+"Query protocol revenue across all modules"
+],
+"352": [
+"osmosisd query protorev all-statistics",
+"Query all ProtoRev statistics"
+],
+"353": [
+"osmosisd query protorev base-denoms",
+"Query the base denoms used to construct arbitrage routes"
+],
+"354": [
+"osmosisd query protorev developer-account",
+"Query the developer account"
+],
+"355": [
+"osmosisd query protorev enabled",
+"Query whether protorev is currently enabled"
+],
+"356": [
+"osmosisd query protorev hot-routes",
+"Query the ProtoRev hot routes currently being used"
+],
+"357": [
+"osmosisd query protorev info-by-pool-type",
+"Query the pool info used to determine how computationally expensive a route is"
+],
+"358": [
+"osmosisd query protorev max-pool-points-per-block",
+"Query the max pool points per block"
+],
+"359": [
+"osmosisd query protorev max-pool-points-per-tx",
+"Query the max pool points per tx"
+],
+"360": [
+"osmosisd query protorev number-of-trades",
+"Query the number of cyclic arbitrage trades protorev has executed"
+],
+"361": [
+"osmosisd query protorev params",
+"Query the module params"
+],
+"362": [
+"osmosisd query protorev pool",
+"Query the pool id for a given denom pair stored via the highest liquidity method in ProtoRev"
+],
+"363": [
+"osmosisd query protorev profits-by-denom",
+"Query the profits of protorev by denom Example:$ osmosisd q protorev profits-by-denom uosmo"
+],
+"364": [
+"osmosisd query protorev statistics-by-route",
+"Query statistics about a specific arbitrage route Example:$ osmosisd q protorev statistics-by-route [1,2,3]"
+],
+"365": [
+"osmosisd query rate-limited-ibc",
+"Querying commands for the rate-limited-ibc module"
+],
+"366": [
+"osmosisd query rate-limited-ibc params",
+"Get the params for the x/rate-limited-ibc module"
+],
+"367": [
+"osmosisd query slashing",
+"Querying commands for the slashing module"
+],
+"368": [
+"osmosisd query slashing params",
+"Query genesis parameters for the slashing module: $ <appd> query slashing params"
+],
+"369": [
+"osmosisd query slashing signing-info",
+"Use a validators' consensus public key to find the signing-info for that validator: $ <appd> query slashing signing-info '{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"OauFcTKbN5Lx3fJL689cikXBqe+hcp6Y+x0rYUdR9Jk=\"}'"
+],
+"370": [
+"osmosisd query slashing signing-infos",
+"signing infos of validators: $ <appd> query slashing signing-infos"
+],
+"371": [
+"osmosisd query staking",
+"Querying commands for the staking module"
+],
+"372": [
+"osmosisd query staking delegation",
+"Query delegations for an individual delegator on an individual validator. Example: $ osmosisd query staking delegation osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"373": [
+"osmosisd query staking delegations",
+"Query delegations for an individual delegator on all validators. Example: $ osmosisd query staking delegations osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"374": [
+"osmosisd query staking delegations-to",
+"Query delegations on an individual validator. Example: $ osmosisd query staking delegations-to osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"375": [
+"osmosisd query staking historical-info",
+"Query historical info at given height. Example: $ osmosisd query staking historical-info 5"
+],
+"376": [
+"osmosisd query staking params",
+"Query values set as staking parameters. Example: $ osmosisd query staking params"
+],
+"377": [
+"osmosisd query staking pool",
+"Query values for amounts stored in the staking pool. Example: $ osmosisd query staking pool"
+],
+"378": [
+"osmosisd query staking redelegation",
+"Query a redelegation record for an individual delegator between a source and destination validator. Example: $ osmosisd query staking redelegation osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p osmovaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"379": [
+"osmosisd query staking redelegations",
+"Query all redelegation records for an individual delegator. Example: $ osmosisd query staking redelegation osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"380": [
+"osmosisd query staking redelegations-from",
+"Query delegations that are redelegating _from_ a validator. Example: $ osmosisd query staking redelegations-from osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"381": [
+"osmosisd query staking unbonding-delegation",
+"Query unbonding delegations for an individual delegator on an individual validator. Example: $ osmosisd query staking unbonding-delegation osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"382": [
+"osmosisd query staking unbonding-delegations",
+"Query unbonding delegations for an individual delegator. Example: $ osmosisd query staking unbonding-delegations osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p"
+],
+"383": [
+"osmosisd query staking unbonding-delegations-from",
+"Query delegations that are unbonding _from_ a validator. Example: $ osmosisd query staking unbonding-delegations-from osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"384": [
+"osmosisd query staking validator",
+"Query details about an individual validator. Example: $ osmosisd query staking validator osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"385": [
+"osmosisd query staking validators",
+"Query details about all validators on a network. Example: $ osmosisd query staking validators"
+],
+"386": [
+"osmosisd query superfluid",
+"Querying commands for the superfluid module"
+],
+"387": [
+"osmosisd query superfluid all-intermediary-accounts",
+"Query all superfluid intermediary accounts"
+],
+"388": [
+"osmosisd query superfluid all-superfluid-assets",
+"Query all superfluid assets"
+],
+"389": [
+"osmosisd query superfluid asset-multiplier",
+"Query asset multiplier by denom Example: $ osmosisd q superfluid asset-multiplier gamm/pool/1"
+],
+"390": [
+"osmosisd query superfluid connected-intermediary-account",
+"Query connected intermediary account Example: $ osmosisd q superfluid connected-intermediary-account 1"
+],
+"391": [
+"osmosisd query superfluid params",
+"Query parameters for the superfluid module: $ <appd> query superfluid params"
+],
+"392": [
+"osmosisd query superfluid superfluid-delegation-amount",
+"Query coins superfluid delegated for a delegator, validator, denom"
+],
+"393": [
+"osmosisd query superfluid superfluid-delegation-by-delegator",
+"Query coins superfluid delegated for the specified delegator"
+],
+"394": [
+"osmosisd query superfluid superfluid-undelegation-by-delegator",
+"Query coins superfluid undelegated for the specified delegator"
+],
+"395": [
+"osmosisd query superfluid total-delegation-by-delegator",
+"Query both superfluid delegation and normal delegation"
+],
+"396": [
+"osmosisd query superfluid total-superfluid-delegations",
+"Query total amount of osmo delegated via superfluid staking"
+],
+"397": [
+"osmosisd query superfluid unpool-whitelist",
+"Query whitelisted pool ids to unpool"
+],
+"398": [
+"osmosisd query tendermint-validator-set",
+"Get the full tendermint validator set at given height"
+],
+"399": [
+"osmosisd query tokenfactory",
+"Querying commands for the tokenfactory module"
+],
+"400": [
+"osmosisd query tokenfactory denom-authority-metadata",
+"Get the authority metadata for a specific denom Example: $ osmosisd q tokenfactory uatom"
+],
+"401": [
+"osmosisd query tokenfactory denoms-from-creator",
+"Returns a list of all tokens created by a specific creator address Example: $ osmosisd q tokenfactory <address>"
+],
+"402": [
+"osmosisd query tokenfactory params",
+"Get the params for the x/tokenfactory module"
+],
+"403": [
+"osmosisd query twap",
+"Querying commands for the twap module"
+],
+"404": [
+"osmosisd query twap arithmetic",
+"Query arithmetic twap for pool. Start time must be unix time. End time can be unix time or duration. Example: $ osmosisd q twap arithmetic 1 uosmo 1667088000 24h $ osmosisd q twap arithmetic 1 uosmo 1667088000 1667174400"
+],
+"405": [
+"osmosisd query twap geometric",
+"Query geometric twap for pool. Start time must be unix time. End time can be unix time or duration. Example: $ osmosisd q twap geometric 1 uosmo 1667088000 24h $ osmosisd q twap geometric 1 uosmo 1667088000 1667174400"
+],
+"406": [
+"osmosisd query tx",
+"Example: $ osmosisd query tx <hash> $ osmosisd query tx --type=acc_seq <addr>/<sequence> $ osmosisd query tx --type=signature <sig1_base64>,<sig2_base64...>"
+],
+"407": [
+"osmosisd query txfees",
+"Querying commands for the txfees module"
+],
+"408": [
+"osmosisd query txfees base-denom",
+"Query the base fee denom Example: $ osmosisd q txfees base-denom"
+],
+"409": [
+"osmosisd query txfees base-fee",
+"Query the eip base fee. Example: $ osmosisd q txfees base-fee"
+],
+"410": [
+"osmosisd query txfees denom-pool-id",
+"Query the pool id associated with a specific whitelisted fee token Example: $ osmosisd q txfees denom-pool-id [denom]"
+],
+"411": [
+"osmosisd query txfees fee-tokens",
+"Query the list of non-basedenom fee tokens and their associated pool ids Example: $ osmosisd q txfees fee-tokens"
+],
+"412": [
+"osmosisd query txs",
+"Search for transactions that match the exact given events where results are paginated. Each event takes the form of '{eventType}.{eventAttribute}={value}'. Please refer to each module's documentation for the full set of events to query for. Each module documents its respective events under 'xx_events.md'. Example: $ osmosisd query txs --events 'message.sender=cosmos1...&message.action=withdraw_delegator_reward' --page 1 --limit 30"
+],
+"413": [
+"osmosisd query upgrade",
+"Querying commands for the upgrade module"
+],
+"414": [
+"osmosisd query upgrade applied",
+"If upgrade-name was previously executed on the chain, this returns the header for the block at which it was applied. This helps a client determine which binary was valid over a given range of blocks, as well as more context to understand past migrations."
+],
+"415": [
+"osmosisd query upgrade module_versions",
+"Gets a list of module names and their respective consensus versions. Following the command with a specific module name will return only that module's information."
+],
+"416": [
+"osmosisd query upgrade plan",
+"Gets the currently scheduled upgrade plan, if one exists"
+],
+"417": [
+"osmosisd query valsetpref",
+"Querying commands for the valsetpref module"
+],
+"418": [
+"osmosisd query valsetpref val-set",
+"Query the validator set for a specific user address"
+],
+"419": [
+"osmosisd query wasm",
+"Querying commands for the wasm module"
+],
+"420": [
+"osmosisd query wasm build-address",
+"build contract address"
+],
+"421": [
+"osmosisd query wasm code",
+"Downloads wasm bytecode for given code id"
+],
+"422": [
+"osmosisd query wasm code-info",
+"Prints out metadata of a code id"
+],
+"423": [
+"osmosisd query wasm contract",
+"Prints out metadata of a contract given its address"
+],
+"424": [
+"osmosisd query wasm contract-history",
+"Prints out the code history for a contract given its address"
+],
+"425": [
+"osmosisd query wasm contract-state",
+"Querying commands for the wasm module"
+],
+"426": [
+"osmosisd query wasm contract-state all",
+"Prints out all internal state of a contract given its address"
+],
+"427": [
+"osmosisd query wasm contract-state raw",
+"Prints out internal state for of a contract given its address"
+],
+"428": [
+"osmosisd query wasm contract-state smart",
+"Calls contract with given address with query data and prints the returned result"
+],
+"429": [
+"osmosisd query wasm libwasmvm-version",
+"Get libwasmvm version"
+],
+"430": [
+"osmosisd query wasm list-code",
+"List all wasm bytecode on the chain"
+],
+"431": [
+"osmosisd query wasm list-contract-by-code",
+"List wasm all bytecode on the chain for given code id"
+],
+"432": [
+"osmosisd query wasm list-contracts-by-creator",
+"List all contracts by creator"
+],
+"433": [
+"osmosisd query wasm params",
+"Query the current wasm parameters"
+],
+"434": [
+"osmosisd query wasm pinned",
+"List all pinned code ids"
+],
+"435": [
+"osmosisd rollback",
+"A state rollback is performed to recover from an incorrect application state transition, when Tendermint has persisted an incorrect app hash and is thus unable to make progress. Rollback overwrites a state at height n with the state at height n - 1. The application also rolls back to height n - 1. No blocks are removed, so upon restarting Tendermint the transactions in block n will be re-executed against the application."
+],
+"436": [
+"osmosisd rosetta",
+"spin up a rosetta server"
+],
+"437": [
+"osmosisd set-env",
+"Set home environment variables for commands Example: osmosisd set-env mainnet osmosisd set-env testnet osmosisd set-env localnet [optional-chain-id] osmosisd set-env $HOME/.custom-dir"
+],
+"438": [
+"osmosisd staked-to-csv",
+"Export a airdrop csv from a provided balances export (from export-derive-balances) Example: osmosisd staked-to-csv ../balances.json ../airdrop.csv"
+],
+"439": [
+"osmosisd start",
+"Run the full node application with Tendermint in or out of process. By default, the application will run with Tendermint in process. Pruning options can be provided via the '--pruning' flag or alternatively with '--pruning-keep-recent', and 'pruning-interval' together. For '--pruning' the options are as follows: default: the last 362880 states are kept, pruning at 10 block intervals nothing: all historic states will be saved, nothing will be deleted (i.e. archiving node) everything: 2 latest states will be kept; pruning at 10 block intervals. custom: allow pruning options to be manually specified through 'pruning-keep-recent', and 'pruning-interval' Node halting configurations exist in the form of two flags: '--halt-height' and '--halt-time'. During the ABCI Commit phase, the node will check if the current block height is greater than or equal to the halt-height or if the current block time is greater than or equal to the halt-time. If so, the node will attempt to gracefully shutdown and the block will not be committed. In addition, the node will not be able to commit subsequent blocks. For profiling and benchmarking purposes, CPU profiling can be enabled via the '--cpu-profile' flag which accepts a path for the resulting pprof file. The node may be started in a 'query only' mode where only the gRPC and JSON HTTP API services are enabled via the 'grpc-only' flag. In this mode, Tendermint is bypassed and can be used when legacy queries are needed after an on-chain upgrade is performed. Note, when enabled, gRPC will also be automatically enabled."
+],
+"440": [
+"osmosisd status",
+"Query remote node for status"
+],
+"441": [
+"osmosisd tendermint",
+"Tendermint subcommands"
+],
+"442": [
+"osmosisd tendermint bootstrap-state",
+"Bootstrap CometBFT state at an arbitrary block height using a light client"
+],
+"443": [
+"osmosisd tendermint reset-state",
+"Remove all the data and WAL"
+],
+"444": [
+"osmosisd tendermint show-address",
+"Shows this node's tendermint validator consensus address"
+],
+"445": [
+"osmosisd tendermint show-node-id",
+"Show this node's ID"
+],
+"446": [
+"osmosisd tendermint show-validator",
+"Show this node's tendermint validator info"
+],
+"447": [
+"osmosisd tendermint unsafe-reset-all",
+"(unsafe) Remove all the data and WAL, reset this node's validator to genesis state"
+],
+"448": [
+"osmosisd tendermint version",
+"Print protocols' and libraries' version numbers against which this app has been compiled."
+],
+"449": [
+"osmosisd testnet",
+"testnet will create \"v\" number of directories and populate each with necessary files (private validator, genesis, config, etc.). Note, strict routability for addresses is turned off in the config file. Example: osmosisd testnet --v 4 --output-dir ./output --starting-ip-address 192.168.10.2"
+],
+"450": [
+"osmosisd tx",
+"Transactions subcommands"
+],
+"451": [
+"osmosisd tx authz",
+"Authorize and revoke access to execute transactions on behalf of your address"
+],
+"452": [
+"osmosisd tx authz exec",
+"execute tx on behalf of granter account: Example: $ osmosisd tx authz exec tx.json --from grantee $ osmosisd tx bank send <granter> <recipient> --from <granter> --chain-id <chain-id> --generate-only > tx.json && osmosisd tx authz exec tx.json --from grantee"
+],
+"453": [
+"osmosisd tx authz grant",
+"create a new grant authorization to an address to execute a transaction on your behalf: Examples: $ osmosisd tx authz grant cosmos1skjw.. send --spend-limit=1000stake --from=cosmos1skl.. $ osmosisd tx authz grant cosmos1skjw.. generic --msg-type=/cosmos.gov.v1.MsgVote --from=cosmos1sk.."
+],
+"454": [
+"osmosisd tx authz revoke",
+"revoke authorization from a granter to a grantee: Example: $ osmosisd tx authz revoke cosmos1skj.. /cosmos.bank.v1beta1.MsgSend --from=cosmos1skj.."
+],
+"455": [
+"osmosisd tx bank",
+"Bank transaction subcommands"
+],
+"456": [
+"osmosisd tx bank multi-send",
+"Send funds from one account to two or more accounts. By default, sends the [amount] to each address of the list. Using the '--split' flag, the [amount] is split equally between the addresses. Note, the '--from' flag is ignored as it is implied from [from_key_or_address] and separate addresses with space. When using '--dry-run' a key name cannot be used, only a bech32 address."
+],
+"457": [
+"osmosisd tx bank send",
+"Send funds from one account to another. Note, the '--from' flag is ignored as it is implied from [from_key_or_address]. When using '--dry-run' a key name cannot be used, only a bech32 address."
+],
+"458": [
+"osmosisd tx broadcast",
+"Broadcast transactions created with the --generate-only flag and signed with the sign command. Read a transaction from [file_path] and broadcast it to a node. If you supply a dash (-) argument in place of an input filename, the command reads from standard input. $ <appd> tx broadcast ./mytxn.json"
+],
+"459": [
+"osmosisd tx concentratedliquidity",
+"concentratedliquidity transactions subcommands"
+],
+"460": [
+"osmosisd tx concentratedliquidity add-to-position",
+"add to an existing concentrated liquidity position"
+],
+"461": [
+"osmosisd tx concentratedliquidity collect-incentives",
+"collect incentives from liquidity position(s)"
+],
+"462": [
+"osmosisd tx concentratedliquidity collect-spread-rewards",
+"collect spread rewards from liquidity position(s)"
+],
+"463": [
+"osmosisd tx concentratedliquidity create-pool",
+"denom-1 (the quote denom), tick spacing, and spread factors must all be authorized by the concentrated liquidity module"
+],
+"464": [
+"osmosisd tx concentratedliquidity create-position",
+"create or add to existing concentrated liquidity position"
+],
+"465": [
+"osmosisd tx concentratedliquidity fungify-positions",
+"Combine fully charged positions within the same range into a new single fully charged position"
+],
+"466": [
+"osmosisd tx concentratedliquidity transfer-positions",
+"transfer a list of concentrated liquidity positions to a new owner"
+],
+"467": [
+"osmosisd tx concentratedliquidity withdraw-position",
+"withdraw from an existing concentrated liquidity position"
+],
+"468": [
+"osmosisd tx cosmwasmpool",
+"cosmwasmpool transactions subcommands"
+],
+"469": [
+"osmosisd tx cosmwasmpool create-pool",
+"create a cosmwasm pool"
+],
+"470": [
+"osmosisd tx crisis",
+"Crisis transactions subcommands"
+],
+"471": [
+"osmosisd tx crisis invariant-broken",
+"Submit proof that an invariant broken to halt the chain"
+],
+"472": [
+"osmosisd tx decode",
+"Decode a binary encoded transaction string"
+],
+"473": [
+"osmosisd tx distribution",
+"Distribution transactions subcommands"
+],
+"474": [
+"osmosisd tx distribution fund-community-pool",
+"Funds the community pool with the specified amount Example: $ osmosisd tx distribution fund-community-pool 100uatom --from mykey"
+],
+"475": [
+"osmosisd tx distribution set-withdraw-addr",
+"Set the withdraw address for rewards associated with a delegator address. Example: $ osmosisd tx distribution set-withdraw-addr osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p --from mykey"
+],
+"476": [
+"osmosisd tx distribution withdraw-all-rewards",
+"Withdraw all rewards for a single delegator. Note that if you use this command with --broadcast-mode=sync or --broadcast-mode=async, the max-msgs flag will automatically be set to 0. Example: $ osmosisd tx distribution withdraw-all-rewards --from mykey"
+],
+"477": [
+"osmosisd tx distribution withdraw-rewards",
+"Withdraw rewards from a given delegation address, and optionally withdraw validator commission if the delegation address given is a validator operator. Example: $ osmosisd tx distribution withdraw-rewards osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey $ osmosisd tx distribution withdraw-rewards osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey --commission"
+],
+"478": [
+"osmosisd tx encode",
+"Encode transactions created with the --generate-only flag or signed with the sign command. Read a transaction from <file>, serialize it to the Protobuf wire protocol, and output it as base64. If you supply a dash (-) argument in place of an input filename, the command reads from standard input."
+],
+"479": [
+"osmosisd tx evidence",
+"Evidence transaction subcommands"
+],
+"480": [
+"osmosisd tx gamm",
+"gamm transactions subcommands"
+],
+"481": [
+"osmosisd tx gamm adjust-scaling-factors",
+"adjust scaling factors"
+],
+"482": [
+"osmosisd tx gamm create-pool",
+"Must provide path to a pool JSON file (--pool-file) describing the pool to be created Sample pool JSON file contents for balancer: { \"weights\": \"4uatom,4osmo,2uakt\", \"initial-deposit\": \"100uatom,5osmo,20uakt\", \"swap-fee\": \"0.01\", \"exit-fee\": \"0.01\", \"future-governor\": \"168h\" } For stableswap (demonstrating need for a 1:1000 scaling factor, see doc) { \"initial-deposit\": \"1000000uusdc,1000miliusdc\", \"swap-fee\": \"0.01\", \"exit-fee\": \"0.00\", \"future-governor\": \"168h\", \"scaling-factors\": \"1000,1\" }"
+],
+"483": [
+"osmosisd tx gamm exit-pool",
+"exit a new pool and withdraw the liquidity from it"
+],
+"484": [
+"osmosisd tx gamm exit-swap-extern-amount-out",
+"exit swap extern amount out"
+],
+"485": [
+"osmosisd tx gamm exit-swap-share-amount-in",
+"exit swap share amount in"
+],
+"486": [
+"osmosisd tx gamm join-pool",
+"join a new pool and provide the liquidity to it"
+],
+"487": [
+"osmosisd tx gamm join-swap-extern-amount-in",
+"join swap extern amount in"
+],
+"488": [
+"osmosisd tx gamm join-swap-share-amount-out",
+"join swap share amount out"
+],
+"489": [
+"osmosisd tx gamm swap-exact-amount-in",
+"swap exact amount in"
+],
+"490": [
+"osmosisd tx gamm swap-exact-amount-out",
+"swap exact amount out"
+],
+"491": [
+"osmosisd tx gov",
+"Governance transactions subcommands"
+],
+"492": [
+"osmosisd tx gov deposit",
+"Submit a deposit for an active proposal. You can find the proposal-id by running \"osmosisd query gov proposals\". Example: $ osmosisd tx gov deposit 1 10stake --from mykey"
+],
+"493": [
+"osmosisd tx gov draft-proposal",
+"Generate a draft proposal json file. The generated proposal json contains only one message (skeleton)."
+],
+"494": [
+"osmosisd tx gov submit-legacy-proposal",
+"Submit a legacy proposal along with an initial deposit. Proposal title, description, type and deposit can be given directly or through a proposal JSON file. Example: $ osmosisd tx gov submit-legacy-proposal --proposal=\"path/to/proposal.json\" --from mykey Where proposal.json contains: { \"title\": \"Test Proposal\", \"description\": \"My awesome proposal\", \"type\": \"Text\", \"deposit\": \"10test\" } Which is equivalent to: $ osmosisd tx gov submit-legacy-proposal --title=\"Test Proposal\" --description=\"My awesome proposal\" --type=\"Text\" --deposit=\"10test\" --from mykey"
+],
+"495": [
+"osmosisd tx gov submit-legacy-proposal cancel-software-upgrade",
+"Cancel a software upgrade along with an initial deposit."
+],
+"496": [
+"osmosisd tx gov submit-legacy-proposal create-cl-pool-and-cfmm-link",
+"submit a proposal to create CL pool and link to Balancer pool."
+],
+"497": [
+"osmosisd tx gov submit-legacy-proposal create-concentratedliquidity-pool-proposal",
+"Submit a create concentrated liquidity pool proposal. Passing in FlagPoolRecords separated by commas would be parsed automatically to pairs of pool records. Ex) --pool-records=uion,uosmo,100,0.003,stake,uosmo,1000,0.005 -> [uion<>uosmo, tickSpacing 100, spreadFactor 0.3%] [stake<>uosmo, tickSpacing 1000, spreadFactor 0.5%]"
+],
+"498": [
+"osmosisd tx gov submit-legacy-proposal create-groups-proposal",
+"Submit a create groups proposal. Passing in pool-id-pairs separated by commas would be parsed automatically to a single set for a single group. If a semicolon is presented, that would be parsed as pool IDs for separate group. Don't forget the single quotes around the pool IDs! Ex) create-groups-proposal '1,2;3,4,5;6,7' -> Group 1: Pool IDs 1, 2 Group 2: Pool IDs 3, 4, 5 Group 3: Pool IDs 6, 7"
+],
+"499": [
+"osmosisd tx gov submit-legacy-proposal denom-pair-taker-fee-proposal",
+"Submit a denom pair taker fee proposal. Passing in denom-pairs-with-taker-fee separated by commas would be parsed automatically to pairs of denomPairTakerFee records. Ex) denom-pair-taker-fee-proposal uion,uosmo,0.0016,stake,uosmo,0.005,uatom,uosmo,0.0015 -> [uion<>uosmo, takerFee 0.16%] [stake<>uosmo, takerFee 0.5%] [uatom<>uosmo, removes from state since its being set to the default takerFee value]"
+],
+"500": [
+"osmosisd tx gov submit-legacy-proposal ibc-upgrade",
+"Submit an IBC client breaking upgrade proposal along with an initial deposit. The client state specified is the upgraded client state representing the upgraded chain Example Upgraded Client State JSON: { \"@type\":\"/ibc.lightclients.tendermint.v1.ClientState\", \"chain_id\":\"testchain1\", \"unbonding_period\":\"1814400s\", \"latest_height\":{\"revision_number\":\"0\",\"revision_height\":\"2\"}, \"proof_specs\":[{\"leaf_spec\":{\"hash\":\"SHA256\",\"prehash_key\":\"NO_HASH\",\"prehash_value\":\"SHA256\",\"length\":\"VAR_PROTO\",\"prefix\":\"AA==\"},\"inner_spec\":{\"child_order\":[0,1],\"child_size\":33,\"min_prefix_length\":4,\"max_prefix_length\":12,\"empty_child\":null,\"hash\":\"SHA256\"},\"max_depth\":0,\"min_depth\":0},{\"leaf_spec\":{\"hash\":\"SHA256\",\"prehash_key\":\"NO_HASH\",\"prehash_value\":\"SHA256\",\"length\":\"VAR_PROTO\",\"prefix\":\"AA==\"},\"inner_spec\":{\"child_order\":[0,1],\"child_size\":32,\"min_prefix_length\":1,\"max_prefix_length\":1,\"empty_child\":null,\"hash\":\"SHA256\"},\"max_depth\":0,\"min_depth\":0}], \"upgrade_path\":[\"upgrade\",\"upgradedIBCState\"], }"
+]
+}
+
+We need to mark which CLI queries are likely to be used by the user to solve his case. Create a JSON based on the provided one. Go through each id and write a 0-10 score of how likely a user is to need to know the help information on each cli query.
+
+Here is the question that requires information sourcing to answer it:
+<question>How to operate an IBC relayer?
+
+Here's an answer that isn't very good. Looks like it may be incomplete, or incorrect. Look:<poor_answer>
+
+To operate an IBC relayer, you need to follow these steps:
+
+1. **Install Hermes**
+
+Hermes is an IBC relayer developed by Informal Systems. You can install it from binaries or build it from source. The instructions are provided in the [Hermes documentation](https://hermes.informal.systems/documentation/installation.html).
+
+For example, to install from binaries:
+
+```bash
+export TAG="v1.7.4-namada-beta7"
+export ARCH="x86_64-unknown-linux-gnu" # or "aarch64-apple-darwin"
+curl -Lo /tmp/hermes.tar.gz https://github.com/heliaxdev/hermes/releases/download/${TAG}/hermes-${TAG}-${ARCH}.tar.gz
+tar -xvzf /tmp/hermes.tar.gz -C /usr/local/bin
+```
+
+2. **Configure Hermes**
+
+You need to create a `config.toml` file that describes the connections Hermes will be responsible for. An example configuration is provided in the [supplemental materials](supplemental-materials/hermes-config.toml).
+
+3. **Set up the relayer account**
+
+On each chain, you need to create a `relayer` account. For Namada, you can run:
+
+```bash
+namadaw gen --alias relayer
+```
+
+This will generate a key for the relayer account, stored in the `wallet.toml` file in the node's base directory.
+
+4. **Add the relayer key to Hermes**
+
+You need to add the relayer's key to Hermes using the `keys add` command:
+
+```bash
+hermes --config $HERMES_CONFIG keys add --chain $CHAIN_ID --key-file $WALLET_PATH
+```
+
+5. **Create IBC channel**
+
+To create an IBC channel between the two chains, run:
+
+```bash
+hermes --config $HERMES_CONFIG \
+  create channel \
+  --a-chain $CHAIN_A_ID \
+  --b-chain $CHAIN_B_ID \
+  --a-port transfer \
+  --b-port transfer \
+  --new-client-connection --yes
+```
+
+This will create the necessary IBC client connection and channel.
+
+6. **Start the relayer**
+
+Finally, you can start the relayer:
+
+```bash
+hermes --config $HERMES_CONFIG start
+```
+
+The relayer will now monitor the chains and relay IBC packets according to the events it observes.
+
+For more details on operating a relayer, you can refer to the [Hermes documentation](https://hermes.informal.systems/) and the [Namada docs on relaying](https://docs.namada.net/operators/ibc.html).
+
+</poor_answer>
+Please, answer the same following question, but better, including more sources that were lacking in this analysis:
+How to operate an IBC relayer?
+</question>
+
+Output in the form of a JSON like
+{"1":3
+,"3":0
+,"100":10
+, ..
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or strings! Only "id":number!

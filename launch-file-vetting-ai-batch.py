@@ -1,5 +1,5 @@
 import os
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import subprocess
 
 # Get the absolute path of the script's directory
@@ -9,6 +9,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
 FILENAME = "outputs/file-filter.prompt"
+MAX_INSTANCES = 5
 
 def process_file(i):
     if os.path.isfile(f"{FILENAME}.{i}"):
@@ -26,20 +27,21 @@ def process_file(i):
 
 def main():
     amanda_api = os.getenv("AMANDA_API")
-    
     if amanda_api == "google":
-        with ThreadPoolExecutor() as executor:
-            futures = []
-            i = 0
-            while True:
-                if os.path.isfile(f"{FILENAME}.{i}"):
-                    futures.append(executor.submit(process_file, i))
-                    i += 1
-                else:
+        i = 0
+        while True:
+            with ThreadPoolExecutor(max_workers=MAX_INSTANCES) as executor:
+                futures = []
+                for _ in range(MAX_INSTANCES):
+                    if os.path.isfile(f"{FILENAME}.{i}"):
+                        futures.append(executor.submit(process_file, i))
+                        i += 1
+                    else:
+                        break
+                if not futures:
                     break
-            
-            for future in futures:
-                future.result()
+                for future in as_completed(futures):
+                    future.result()
     else:
         i = 0
         while True:

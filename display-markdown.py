@@ -10,6 +10,7 @@ try:
 except ImportError:
     in_colab = False
 
+
 if in_colab:
     print("Running in Google Colab")
 

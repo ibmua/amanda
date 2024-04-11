@@ -1,0 +1,1092 @@
+We are browsing and answering question based on the docs and codebase of Namada - Tendermint-based blockchain with ZK system based on similar algorithms to ZCash.
+
+A user has a question. To answer this question we need to consult with documentation and, possibly (but a not usually), even some source code. We also have help docs for any of the special CLI queries a user might need.
+
+{
+"1": [
+"namada",
+"Namada command line interface."
+],
+"2": [
+"namada node",
+"Node sub-commands."
+],
+"3": [
+"namada node ledger",
+"Ledger node sub-commands. If no sub-command specified, defaults to run the node."
+],
+"4": [
+"namada node ledger run",
+"Run Namada ledger node."
+],
+"5": [
+"namada node ledger run-until",
+"Run Namada ledger node until a given height. Then halt or suspend."
+],
+"6": [
+"namada node ledger reset",
+"Delete Namada ledger node's and Tendermint node's storage data."
+],
+"7": [
+"namada node ledger dump-db",
+"Dump Namada ledger node's DB from a block into a file."
+],
+"8": [
+"namada node ledger rollback",
+"Roll Namada state back to the previous height. This command does not create a backup of neither the Namada nor the Tendermint state before execution: for extra safety, it is recommended to make a backup in advance."
+],
+"9": [
+"namada node config",
+"Configuration sub-commands."
+],
+"10": [
+"namada node config gen",
+"Generate the default configuration file."
+],
+"11": [
+"namada node config update-local-config",
+"Update the validator's local configuration."
+],
+"12": [
+"namada relayer",
+"Relayer sub-commands."
+],
+"13": [
+"namada relayer ethereum-bridge-pool",
+"Functionality for interacting with the Ethereum bridge pool. This pool holds transfers waiting to be relayed to Ethereum."
+],
+"14": [
+"namada relayer ethereum-bridge-pool construct-proof",
+"Construct a merkle proof that the given transfers are in the pool."
+],
+"15": [
+"namada relayer ethereum-bridge-pool query",
+"Get the contents of the Ethereum Bridge pool."
+],
+"16": [
+"namada relayer ethereum-bridge-pool query-relayed",
+"Get the confirmation status of transfers to Ethereum."
+],
+"17": [
+"namada relayer ethereum-bridge-pool query-signed",
+"Get the contents of the Ethereum Bridge pool with a signed Merkle root."
+],
+"18": [
+"namada relayer ethereum-bridge-pool recommend-batch",
+"Get a recommended batch of transfers from the bridge pool to relay to Ethereum."
+],
+"19": [
+"namada relayer ethereum-bridge-pool relay-proof",
+"Construct a merkle proof that the given transfers are in the pool and relay it to Ethereum."
+],
+"20": [
+"namada relayer validator-set",
+"Validator set queries, that return data in a format to be consumed by the Namada Ethereum bridge smart contracts."
+],
+"21": [
+"namada relayer validator-set bridge",
+"Query the Bridge validator set in Namada, at the given epoch, or the latest one, if none is provided."
+],
+"22": [
+"namada relayer validator-set governance",
+"Query the Governance validator set in Namada, at the given epoch, or the latest one, if none is provided."
+],
+"23": [
+"namada relayer validator-set proof",
+"Query an Ethereum ABI encoding of a proof of the consensus validator set in Namada, at the requested epoch, or the next one, if no epoch is provided."
+],
+"24": [
+"namada relayer validator-set relay",
+"Relay a validator set update to Namada's Ethereum bridge smart contracts."
+],
+"25": [
+"namada client",
+"Client sub-commands."
+],
+"26": [
+"namada client ibc-transfer",
+"Send a signed IBC transfer transaction."
+],
+"27": [
+"namada client init-account",
+"Send a signed transaction to create a new established account."
+],
+"28": [
+"namada client init-proposal",
+"Create a new proposal."
+],
+"29": [
+"namada client reveal-pk",
+"Submit a tx to reveal the public key an implicit account. Typically, you don't have to do this manually and the client will detect when a tx to reveal PK is needed and submit it automatically. This will write the PK into the account's storage so that it can be used for signature verification on transactions authorized by this account."
+],
+"30": [
+"namada client transfer",
+"Send a signed transfer transaction."
+],
+"31": [
+"namada client tx",
+"Send a transaction with custom WASM code."
+],
+"32": [
+"namada client update-account",
+"Send a signed transaction to update account's validity predicate."
+],
+"33": [
+"namada client vote-proposal",
+"Vote a proposal."
+],
+"34": [
+"namada client become-validator",
+"Send a signed transaction to become a validator."
+],
+"35": [
+"namada client bond",
+"Bond tokens in PoS system."
+],
+"36": [
+"namada client change-commission-rate",
+"Change commission rate."
+],
+"37": [
+"namada client change-consensus-key",
+"Change consensus key."
+],
+"38": [
+"namada client change-metadata",
+"Change validator's metadata, including the commission rate if desired."
+],
+"39": [
+"namada client claim-rewards",
+"Claim available rewards tokens from bonds that contributed in consensus."
+],
+"40": [
+"namada client deactivate-validator",
+"Send a signed transaction to deactivate a validator."
+],
+"41": [
+"namada client init-validator",
+"Send a signed transaction to create an established account and then become a validator."
+],
+"42": [
+"namada client reactivate-validator",
+"Send a signed transaction to reactivate an inactive validator."
+],
+"43": [
+"namada client redelegate",
+"Redelegate bonded tokens from one validator to another."
+],
+"44": [
+"namada client unbond",
+"Unbond tokens from a PoS bond."
+],
+"45": [
+"namada client unjail-validator",
+"Send a signed transaction to unjail a jailed validator."
+],
+"46": [
+"namada client withdraw",
+"Withdraw tokens from previously unbonded PoS bond."
+],
+"47": [
+"namada client add-erc20-transfer",
+"Add a new transfer to the Ethereum Bridge pool."
+],
+"48": [
+"namada client resign-steward",
+"Craft a transaction to resign as a steward."
+],
+"49": [
+"namada client update-steward-rewards",
+"Update how steward commissions are split."
+],
+"50": [
+"namada client balance",
+"Query balance(s) of tokens."
+],
+"51": [
+"namada client block",
+"Query the last committed block."
+],
+"52": [
+"namada client bonded-stake",
+"Query PoS bonded stake."
+],
+"53": [
+"namada client bonds",
+"Query PoS bond(s)."
+],
+"54": [
+"namada client commission-rate",
+"Query a validator's commission rate."
+],
+"55": [
+"namada client conversions",
+"Query currently applicable conversions."
+],
+"56": [
+"namada client delegations",
+"Find PoS delegations from the given owner address."
+],
+"57": [
+"namada client epoch",
+"Query the epoch of the last committed block."
+],
+"58": [
+"namada client find-validator",
+"Find a PoS validator and its consensus key by its native address or Tendermint address."
+],
+"59": [
+"namada client masp-reward-tokens",
+"Query the tokens which can earn MASP rewards while shielded."
+],
+"60": [
+"namada client next-epoch-info",
+"Query some info to help discern when the next epoch will begin."
+],
+"61": [
+"namada client query-account",
+"Query the substorage space of a specific enstablished address."
+],
+"62": [
+"namada client query-bytes",
+"Query the raw bytes of a given storage key"
+],
+"63": [
+"namada client query-pgf",
+"Query pgf stewards and continuous funding."
+],
+"64": [
+"namada client query-proposal",
+"Query proposals."
+],
+"65": [
+"namada client query-proposal-result",
+"Query proposals result."
+],
+"66": [
+"namada client query-proposal-votes",
+"Query votes for the proposal."
+],
+"67": [
+"namada client query-protocol-parameters",
+"Query protocol parameters."
+],
+"68": [
+"namada client rewards",
+"Query the latest rewards available to claim for a given delegation (or self-bond)."
+],
+"69": [
+"namada client show-transfers",
+"Query the accepted transfers to date."
+],
+"70": [
+"namada client slashes",
+"Query PoS applied slashes."
+],
+"71": [
+"namada client status",
+"Query the node's status."
+],
+"72": [
+"namada client tx-result",
+"Query the result of a transaction."
+],
+"73": [
+"namada client validator-metadata",
+"Query a validator's metadata."
+],
+"74": [
+"namada client validator-state",
+"Query the state of a PoS validator."
+],
+"75": [
+"namada client ibc-gen-shielded",
+"Generate shielded transfer for IBC."
+],
+"76": [
+"namada client shielded-sync",
+"Sync the local shielded context with MASP notes owned by the provided viewing / spending keys up to an optional specified block height."
+],
+"77": [
+"namada client sign-tx",
+"Sign a transaction offline."
+],
+"78": [
+"namada client utils",
+"Utilities."
+],
+"79": [
+"namada client utils join-network",
+"Configure Namada to join an existing network."
+],
+"80": [
+"namada client utils fetch-wasms",
+"Ensure pre-built wasms are present"
+],
+"81": [
+"namada client utils validate-wasm",
+"Check that the provided wasm code is valid by the Namada standards."
+],
+"82": [
+"namada client utils init-network",
+"Initialize a new test network."
+],
+"83": [
+"namada client utils derive-genesis-addresses",
+"Derive account addresses from a genesis txs toml file."
+],
+"84": [
+"namada client utils genesis-bond",
+"Bond to a validator at pre-genesis."
+],
+"85": [
+"namada client utils init-genesis-established-account",
+"Initialize an established account available at genesis."
+],
+"86": [
+"namada client utils init-genesis-validator",
+"Initialize genesis validator's address, consensus key and validator account key and use it in the ledger's node. Appends validator creation and self-bond txs to a .toml file containing an established account tx."
+],
+"87": [
+"namada client utils pk-to-tm",
+"Convert a validator's consensus public key to a Tendermint address."
+],
+"88": [
+"namada client utils default-base-dir",
+"Print the default base directory that would be used if --base-dir or NAMADA_BASE_DIR were not used to set the base directory."
+],
+"89": [
+"namada client utils epoch-sleep",
+"Query for the current epoch, then sleep until the next epoch."
+],
+"90": [
+"namada client utils validate-genesis-templates",
+"Validate genesis templates."
+],
+"91": [
+"namada client utils test-genesis",
+"Dry run genesis files and get a report on problems that may be found."
+],
+"92": [
+"namada client utils sign-genesis-txs",
+"Sign genesis transaction(s)."
+],
+"93": [
+"namada wallet",
+"Wallet sub-commands."
+],
+"94": [
+"namada wallet gen",
+"In the transparent setting, generates a keypair with a given alias and derives the implicit address from its public key. The address will be stored with the same alias. In the shielded setting, generates a new spending key with a given alias. In both settings, by default, an HD-key with a default derivation path is generated, with a random mnemonic code."
+],
+"95": [
+"namada wallet derive",
+"In the transparent setting, derives a keypair from the given mnemonic code and HD derivation path and derives the implicit address from its public key. Stores the keypair and the address with the given alias. In the shielded setting, derives a spending key. A hardware wallet can be used, in which case the private key is not derivable."
+],
+"96": [
+"namada wallet gen-payment-addr",
+"Generates a payment address from the given spending key."
+],
+"97": [
+"namada wallet list",
+"In the transparent setting, list known keypairs and addresses. In the shielded setting, list known spending / viewing keys and payment addresses."
+],
+"98": [
+"namada wallet find",
+"In the transparent setting, searches for a keypair / address by a given alias, public key, or a public key hash. Looks up an alias of the given address. In the shielded setting, searches for a spending / viewing key and payment address by a given alias. Looks up an alias of the given payment address."
+],
+"99": [
+"namada wallet export",
+"Exports a transparent keypair / shielded spending key to a file."
+],
+"100": [
+"namada wallet convert",
+"Convert to tendermint priv_validator_key.json with your consensus key alias"
+],
+"101": [
+"namada wallet import",
+"Imports a transparent keypair / shielded spending key from a file."
+],
+"102": [
+"namada wallet add",
+"Adds the given key or address to the wallet."
+],
+"103": [
+"namada wallet remove",
+"Remove the given alias and all associated keys / addresses from the wallet."
+],
+"104": [
+"namada ethereum-bridge-pool",
+"Functionality for interacting with the Ethereum bridge pool. This pool holds transfers waiting to be relayed to Ethereum."
+],
+"105": [
+"namada ethereum-bridge-pool construct-proof",
+"Construct a merkle proof that the given transfers are in the pool."
+],
+"106": [
+"namada ethereum-bridge-pool query",
+"Get the contents of the Ethereum Bridge pool."
+],
+"107": [
+"namada ethereum-bridge-pool query-relayed",
+"Get the confirmation status of transfers to Ethereum."
+],
+"108": [
+"namada ethereum-bridge-pool query-signed",
+"Get the contents of the Ethereum Bridge pool with a signed Merkle root."
+],
+"109": [
+"namada ethereum-bridge-pool recommend-batch",
+"Get a recommended batch of transfers from the bridge pool to relay to Ethereum."
+],
+"110": [
+"namada ethereum-bridge-pool relay-proof",
+"Construct a merkle proof that the given transfers are in the pool and relay it to Ethereum."
+],
+"111": [
+"namada ledger",
+"Ledger node sub-commands. If no sub-command specified, defaults to run the node."
+],
+"112": [
+"namada ledger run",
+"Run Namada ledger node."
+],
+"113": [
+"namada ledger run-until",
+"Run Namada ledger node until a given height. Then halt or suspend."
+],
+"114": [
+"namada ledger reset",
+"Delete Namada ledger node's and Tendermint node's storage data."
+],
+"115": [
+"namada ledger dump-db",
+"Dump Namada ledger node's DB from a block into a file."
+],
+"116": [
+"namada ledger rollback",
+"Roll Namada state back to the previous height. This command does not create a backup of neither the Namada nor the Tendermint state before execution: for extra safety, it is recommended to make a backup in advance."
+],
+"117": [
+"namada tx",
+"Send a transaction with custom WASM code."
+],
+"118": [
+"namada transfer",
+"Send a signed transfer transaction."
+],
+"119": [
+"namada ibc-transfer",
+"Send a signed IBC transfer transaction."
+],
+"120": [
+"namada update-account",
+"Send a signed transaction to update account's validity predicate."
+],
+"121": [
+"namada init-proposal",
+"Create a new proposal."
+],
+"122": [
+"namada vote-proposal",
+"Vote a proposal."
+],
+"123": [
+"namada reveal-pk",
+"Submit a tx to reveal the public key an implicit account. Typically, you don't have to do this manually and the client will detect when a tx to reveal PK is needed and submit it automatically. This will write the PK into the account's storage so that it can be used for signature verification on transactions authorized by this account."
+],
+"124": [
+"osmosisd",
+"Start osmosis app"
+],
+"125": [
+"osmosisd add-genesis-account",
+"Add a genesis account to genesis.json. The provided account must specify the account address or key name and a list of initial coins. If a key name is given, the address will be looked up in the local Keybase. The list of initial tokens must contain valid denominations. Accounts may optionally be supplied with vesting parameters."
+],
+"126": [
+"osmosisd collect-gentxs",
+"Collect genesis txs and output a genesis.json file"
+],
+"127": [
+"osmosisd config",
+"Create or query an application CLI configuration file"
+],
+"128": [
+"osmosisd debug",
+"Tool for helping with debugging your application"
+],
+"129": [
+"osmosisd debug addr",
+"Convert an address between hex encoding and bech32. Example: $ osmosisd debug addr cosmos1e0jnq2sun3dzjh8p2xq95kk0expwmd7shwjpfg"
+],
+"130": [
+"osmosisd debug bech32-convert",
+"Convert any bech32 string to the osmo prefix Especially useful for converting cosmos addresses to osmo addresses Example: osmosisd bech32-convert cosmos1ey69r37gfxvxg62sh4r0ktpuc46pzjrmz29g45"
+],
+"131": [
+"osmosisd debug prefixes",
+"List prefixes used in Bech32 addresses."
+],
+"132": [
+"osmosisd debug proto-marshalled-bytes",
+"Convert request proto struct into proto marshalled bytes. Especially useful when debugging proto marshalled bytes or debugging stargate queries Example: osmosisd debug proto-marshalled-bytes \"/cosmos.bank.v1beta1.Query/Balance\" bank QueryBalanceRequest \"osmo1t7egva48prqmzl59x5ngv4zx0dtrwewc9m7z44\" stake"
+],
+"133": [
+"osmosisd debug pubkey",
+"Decode a pubkey from proto JSON and display it's address. Example: $ osmosisd debug pubkey '{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"AurroA7jvfPd1AadmmOvWM2rJSwipXfRf8yD6pLbA2DJ\"}'"
+],
+"134": [
+"osmosisd debug pubkey-raw",
+"Decode a pubkey from hex, base64, or bech32. Example: $ osmosisd debug pubkey-raw TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz $ osmosisd debug pubkey-raw cosmos1e0jnq2sun3dzjh8p2xq95kk0expwmd7shwjpfg"
+],
+"135": [
+"osmosisd debug raw-bytes",
+"Convert raw-bytes to hex. Example: $ osmosisd debug raw-bytes [72 101 108 108 111 44 32 112 108 97 121 103 114 111 117 110 100]"
+],
+"136": [
+"osmosisd enable-cli-autocomplete",
+"To configure your shell to load completions for each session, add to your profile: # bash example echo '. <(osmosisd enable-cli-autocomplete bash)' >> ~/.bash_profile source ~/.bash_profile # zsh example echo '. <(osmosisd enable-cli-autocomplete zsh)' >> ~/.zshrc source ~/.zshrc"
+],
+"137": [
+"osmosisd export",
+"Export state to JSON"
+],
+"138": [
+"osmosisd export-derive-balances",
+"Export a derive balances from a provided genesis export Example: osmosisd export-derive-balances ../genesis.json ../snapshot.json"
+],
+"139": [
+"osmosisd forceprune",
+"Forceprune option prunes and compacts blockstore.db and state.db. One needs to shut down chain before running forceprune. By default it keeps last 188000 blocks (approximately 2 weeks of data) blockstore and state db (validator and consensus information) and 1000 blocks of abci responses from state.db. Everything beyond these heights in blockstore and state.db is pruned. ABCI Responses are stored in index db and so redundant especially if one is running pruned nodes. As a result we are removing ABCI data from state.db aggressively by default. One can override height for blockstore.db and state.db by using -f option and for abci response by using -m option. Example: osmosisd forceprune -f 188000 -m 1000, which would keep blockchain and state data of last 188000 blocks (approximately 2 weeks) and ABCI responses of last 1000 blocks."
+],
+"140": [
+"osmosisd gentx",
+"Generate a genesis transaction that creates a validator with a self-delegation, that is signed by the key in the Keyring referenced by a given name. A node ID and Bech32 consensus pubkey may optionally be provided. If they are omitted, they will be retrieved from the priv_validator.json file. The following default parameters are included: delegation amount: 100000000stake commission rate: 0.1 commission max rate: 0.2 commission max change rate: 0.01 minimum self delegation: 1 Example: $ osmosisd gentx my-key-name 1000000stake --home=/path/to/home/dir --keyring-backend=os --chain-id=test-chain-1 \\ --moniker=\"myvalidator\" \\ --commission-max-change-rate=0.01 \\ --commission-max-rate=1.0 \\ --commission-rate=0.07 \\ --details=\"...\" \\ --security-contact=\"...\" \\ --website=\"...\""
+],
+"141": [
+"osmosisd get-env",
+"Prints the current environment Example: osmosisd get-env' Returns one of: - mainnet implying $HOME/.osmosisd - testnet implying $HOME/.osmosisd-test - localosmosis implying $HOME/.osmosisd-local - custom path"
+],
+"142": [
+"osmosisd in-place-testnet",
+"Create and start a testnet from current local state. After utilizing this command the network will start. If the network is stopped, the normal \"start\" command should be used. Re-using this command on state that has already been modified by this command could result in unexpected behavior. Additionally, the first block may take up to one minute to be committed, depending on how old the block is. For instance, if a snapshot was taken weeks ago and we want to turn this into a testnet, it is possible lots of pending state needs to be committed (expiring locks, etc.). It is recommended that you should wait for this block to be committed before stopping the daemon. If the --trigger-testnet-upgrade flag is set, the upgrade handler specified by the flag will be run on the first block of the testnet. Regardless of whether the flag is set or not, if any new stores are introduced in the daemon being run, those stores will be registered in order to prevent panics. Therefore, you only need to set the flag if you want to test the upgrade handler itself."
+],
+"143": [
+"osmosisd init",
+"Initialize validators's and node's configuration files."
+],
+"144": [
+"osmosisd keys",
+"Keyring management commands. These keys may be in any format supported by the Tendermint crypto library and can be used by light-clients, full nodes, or any other application that needs to sign with a private key. The keyring supports the following backends: os Uses the operating system's default credentials store. file Uses encrypted file-based keystore within the app's configuration directory. This keyring will request a password each time it is accessed, which may occur multiple times in a single command resulting in repeated password prompts. kwallet Uses KDE Wallet Manager as a credentials management application. pass Uses the pass command line utility to store and retrieve keys. test Stores keys insecurely to disk. It does not prompt for a password to be unlocked and it should be use only for testing purposes. kwallet and pass backends depend on external tools. Refer to their respective documentation for more information: KWallet https://github.com/KDE/kwallet pass https://www.passwordstore.org/ The pass backend requires GnuPG: https://gnupg.org/"
+],
+"145": [
+"osmosisd keys add",
+"Derive a new private key and encrypt to disk. Optionally specify a BIP39 mnemonic, a BIP39 passphrase to further secure the mnemonic, and a bip32 HD path to derive a specific account. The key will be stored under the given name and encrypted with the given password. The only input that is required is the encryption password. If run with -i, it will prompt the user for BIP44 path, BIP39 mnemonic, and passphrase. The flag --recover allows one to recover a key from a seed passphrase. If run with --dry-run, a key would be generated (or recovered) but not stored to the local keystore. Use the --pubkey flag to add arbitrary public keys to the keystore for constructing multisig transactions. You can create and store a multisig key by passing the list of key names stored in a keyring and the minimum number of signatures required through --multisig-threshold. The keys are sorted by address, unless the flag --nosort is set. Example: keys add mymultisig --multisig \"keyname1,keyname2,keyname3\" --multisig-threshold 2"
+],
+"146": [
+"osmosisd keys delete",
+"Delete keys from the Keybase backend. Note that removing offline or ledger keys will remove only the public key references stored locally, i.e. private keys stored in a ledger device cannot be deleted with the CLI."
+],
+"147": [
+"osmosisd keys export",
+"Export a private key from the local keyring in ASCII-armored encrypted format. When both the --unarmored-hex and --unsafe flags are selected, cryptographic private key material is exported in an INSECURE fashion that is designed to allow users to import their keys in hot wallets. This feature is for advanced users only that are confident about how to handle private keys work and are FULLY AWARE OF THE RISKS. If you are unsure, you may want to do some research and export your keys in ASCII-armored encrypted format."
+],
+"148": [
+"osmosisd keys import",
+"Import a ASCII armored private key into the local keybase."
+],
+"149": [
+"osmosisd keys import-hex",
+"Import hex encoded private key into the local keybase. Supported key-types can be obtained with: osmosisd list-key-types"
+],
+"150": [
+"osmosisd keys list",
+"Return a list of all public keys stored by this key manager along with their associated name and address."
+],
+"151": [
+"osmosisd keys list-key-types",
+"Return a list of all supported key types (also known as algos)"
+],
+"152": [
+"osmosisd keys migrate",
+"Migrate keys from Amino to Protocol Buffers records. For each key material entry, the command will check if the key can be deserialized using proto. If this is the case, the key is already migrated. Therefore, we skip it and continue with a next one. Otherwise, we try to deserialize it using Amino into LegacyInfo. If this attempt is successful, we serialize LegacyInfo to Protobuf serialization format and overwrite the keyring entry. If any error occurred, it will be outputted in CLI and migration will be continued until all keys in the keyring DB are exhausted. See https://github.com/cosmos/cosmos-sdk/pull/9695 for more details. It is recommended to run in 'dry-run' mode first to verify all key migration material."
+],
+"153": [
+"osmosisd keys mnemonic",
+"Create a bip39 mnemonic, sometimes called a seed phrase, by reading from the system entropy. To pass your own entropy, use --unsafe-entropy"
+],
+"154": [
+"osmosisd keys parse",
+"Convert and print to stdout key addresses and fingerprints from hexadecimal into bech32 cosmos prefixed format and vice versa."
+],
+"155": [
+"osmosisd keys rename",
+"Rename a key from the Keybase backend. Note that renaming offline or ledger keys will rename only the public key references stored locally, i.e. private keys stored in a ledger device cannot be renamed with the CLI."
+],
+"156": [
+"osmosisd keys show",
+"Display keys details. If multiple names or addresses are provided, then an ephemeral multisig key will be created under the name \"multi\" consisting of all the keys provided by name and multisig threshold."
+],
+"157": [
+"osmosisd list-env",
+"listing all available environments. Example: osmosisd list-env' Returns all EnvironmentCmd"
+],
+"158": [
+"osmosisd migrate",
+"Migrate the source genesis into the target version and print to STDOUT. Example: $ osmosisd migrate v0.36 /path/to/genesis.json --chain-id=cosmoshub-3 --genesis-time=2019-04-22T17:00:00Z"
+],
+"159": [
+"osmosisd prepare-genesis",
+"Prepare a genesis file with initial setup. Examples include: - Setting module initial params - Setting denom metadata Example: osmosisd prepare-genesis mainnet osmosis-1 - Check input genesis: file is at ~/.osmosisd/config/genesis.json"
+],
+"160": [
+"osmosisd query",
+"Querying subcommands"
+],
+"161": [
+"osmosisd query account",
+"Query for account by address"
+],
+"162": [
+"osmosisd query auth",
+"Querying commands for the auth module"
+],
+"163": [
+"osmosisd query auth account",
+"Query for account by address"
+],
+"164": [
+"osmosisd query auth accounts",
+"Query all the accounts"
+],
+"165": [
+"osmosisd query auth address-by-acc-num",
+"Query for an address by account number"
+],
+"166": [
+"osmosisd query auth module-account",
+"Query module account info by module name"
+],
+"167": [
+"osmosisd query auth module-accounts",
+"Query all module accounts"
+],
+"168": [
+"osmosisd query auth params",
+"Query the current auth parameters: $ <appd> query auth params"
+],
+"169": [
+"osmosisd query authz",
+"Querying commands for the authz module"
+],
+"170": [
+"osmosisd query authz grants",
+"Query authorization grants for a granter-grantee pair. If msg-type-url is set, it will select grants only for that msg type. Examples: $ osmosisd query authz grants cosmos1skj.. cosmos1skjwj.. $ osmosisd query authz grants cosmos1skjw.. cosmos1skjwj.. /cosmos.bank.v1beta1.MsgSend"
+],
+"171": [
+"osmosisd query authz grants-by-grantee",
+"Query authorization grants granted to a grantee. Examples: $ osmosisd q authz grants-by-grantee cosmos1skj.."
+],
+"172": [
+"osmosisd query authz grants-by-granter",
+"Query authorization grants granted by granter. Examples: $ osmosisd q authz grants-by-granter cosmos1skj.."
+],
+"173": [
+"osmosisd query bank",
+"Querying commands for the bank module"
+],
+"174": [
+"osmosisd query bank balances",
+"Query the total balance of an account or of a specific denomination. Example: $ osmosisd query bank balances [address] $ osmosisd query bank balances [address] --denom=[denom]"
+],
+"175": [
+"osmosisd query bank denom-metadata",
+"Query the client metadata for all the registered coin denominations Example: To query for the client metadata of all coin denominations use: $ osmosisd query bank denom-metadata To query for the client metadata of a specific coin denomination use: $ osmosisd query bank denom-metadata --denom=[denom]"
+],
+"176": [
+"osmosisd query bank send-enabled",
+"Query for send enabled entries that have been specifically set. To look up one or more specific denoms, supply them as arguments to this command. To look up all denoms, do not provide any arguments."
+],
+"177": [
+"osmosisd query bank spendable-balances",
+"Query for account spendable balances by address"
+],
+"178": [
+"osmosisd query bank total",
+"Query total supply of coins that are held by accounts in the chain. Example: $ osmosisd query bank total To query for the total supply of a specific coin denomination use: $ osmosisd query bank total --denom=[denom]"
+],
+"179": [
+"osmosisd query block",
+"Get verified data for the block at given height"
+],
+"180": [
+"osmosisd query concentratedliquidity",
+"Querying commands for the concentratedliquidity module"
+],
+"181": [
+"osmosisd query concentratedliquidity cfmm-pool-link-from-cl",
+"Query cfmm pool id link from concentrated pool id Example: $ osmosisd q concentratedliquidity cfmm-pool-link-from-cl 1"
+],
+"182": [
+"osmosisd query concentratedliquidity claimable-incentives",
+"Query claimable incentives Example: $ osmosisd q concentratedliquidity claimable-incentives 53"
+],
+"183": [
+"osmosisd query concentratedliquidity claimable-spread-rewards",
+"Query claimable spread rewards Example: $ osmosisd q concentratedliquidity claimable-spread-rewards 53"
+],
+"184": [
+"osmosisd query concentratedliquidity incentive-records",
+"Query incentive records for a given pool Example: $ osmosisd q concentratedliquidity incentive-records 1"
+],
+"185": [
+"osmosisd query concentratedliquidity liquidity-net-in-direction",
+"Query liquidity net in direction Example: $ osmosisd q concentratedliquidity 4 uosmo \"[-18000000]\" true \"[-9000000]\" true [poolid] [inputDenom] [start tick] [use cur tick] [bound tick] [use_no_bound] TODO: What does any of that mean...?"
+],
+"186": [
+"osmosisd query concentratedliquidity liquidity-per-tick-range",
+"Query liquidity per tick range Example: $ osmosisd q concentratedliquidity 1 [poolid]"
+],
+"187": [
+"osmosisd query concentratedliquidity params",
+"Get the params for the x/concentratedliquidity module"
+],
+"188": [
+"osmosisd query concentratedliquidity pool-accumulator-rewards",
+"Query pool accumulator rewards Example: $ osmosisd q concentratedliquidity pool-accumulator-rewards 1"
+],
+"189": [
+"osmosisd query concentratedliquidity pools",
+"Query pools Example: $ osmosisd q concentratedliquidity pools"
+],
+"190": [
+"osmosisd query concentratedliquidity position-by-id",
+"Query position by ID Example: $ osmosisd q concentratedliquidity position-by-id 53"
+],
+"191": [
+"osmosisd query concentratedliquidity tick-accumulator-trackers",
+"Query tick accumulator trackers Example: $ osmosisd q concentratedliquidity tick-accumulator-trackers 1 \"[-18000000]\""
+],
+"192": [
+"osmosisd query concentratedliquidity user-positions",
+"Query user's positions Example: $ osmosisd q concentratedliquidity user-positions osmo12smx2wdlyttvyzvzg54y2vnqwq2qjateuf7thj"
+],
+"193": [
+"osmosisd query cosmwasmpool",
+"Querying commands for the cosmwasmpool module"
+],
+"194": [
+"osmosisd query cosmwasmpool contract-info",
+"Query contract info by pool id Example: $ osmosisd q cosmwasmpool pools"
+],
+"195": [
+"osmosisd query cosmwasmpool params",
+"Get the params for the x/cosmwasmpool module"
+],
+"196": [
+"osmosisd query cosmwasmpool pools",
+"Query pools Example: $ osmosisd q cosmwasmpool pools"
+],
+"197": [
+"osmosisd query distribution",
+"Querying commands for the distribution module"
+],
+"198": [
+"osmosisd query distribution commission",
+"Query validator commission rewards from delegators to that validator. Example: $ osmosisd query distribution commission osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"199": [
+"osmosisd query distribution community-pool",
+"Query all coins in the community pool which is under Governance control. Example: $ osmosisd query distribution community-pool"
+],
+"200": [
+"osmosisd query distribution params",
+"Query distribution params"
+],
+"201": [
+"osmosisd query distribution rewards",
+"Query all rewards earned by a delegator, optionally restrict to rewards from a single validator. Example: $ osmosisd query distribution rewards osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p $ osmosisd query distribution rewards osmo1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p osmovaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj"
+],
+"202": [
+"osmosisd query distribution slashes",
+"Query all slashes of a validator for a given block range. Example: $ osmosisd query distribution slashes osmovalopervaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 0 100"
+],
+"203": [
+"osmosisd query distribution validator-distribution-info",
+"Query validator distribution info. Example: $ osmosisd query distribution validator-distribution-info osmovaloper1lwjmdnks33xwnmfayc64ycprww49n33mtm92ne"
+],
+"204": [
+"osmosisd query distribution validator-outstanding-rewards",
+"Query distribution outstanding (un-withdrawn) rewards for a validator and all their delegations. Example: $ osmosisd query distribution validator-outstanding-rewards osmovaloper1lwjmdnks33xwnmfayc64ycprww49n33mtm92ne"
+],
+"205": [
+"osmosisd query downtimedetector",
+"Querying commands for the downtimedetector module"
+],
+"206": [
+"osmosisd query downtimedetector recovered-since",
+"Queries if it has been at least <recovery-duration> since the chain was down for <downtime-duration> downtime-duration is a duration, but is restricted to a smaller set. Heres a few from the set: 30s, 1m, 5m, 10m, 30m, 1h, 3 h, 6h, 12h, 24h, 36h, 48h] Example: $ osmosisd q downtimedetector recovered-since 24h 30m"
+],
+"207": [
+"osmosisd query epochs",
+"Querying commands for the epochs module"
+],
+"208": [
+"osmosisd query epochs current-epoch",
+"Query current epoch by specified identifier. Example: $ osmosisd q epochs day"
+],
+"209": [
+"osmosisd query epochs epoch-infos",
+"Query running epoch infos. Example: $ osmosisd q epochs"
+],
+"210": [
+"osmosisd query evidence",
+"Query for specific submitted evidence by hash or query for all (paginated) evidence: Example: $ osmosisd query evidence DF0C23E8634E480F84B9D5674A7CDC9816466DEC28A3358F73260F68D28D7660 $ osmosisd query evidence --page=2 --limit=50"
+],
+"211": [
+"osmosisd query gamm",
+"Querying commands for the gamm module"
+],
+"212": [
+"osmosisd query gamm cfmm-cl-pool-links",
+"Query all concentrated pool and cfmm pool id links Example: $ osmosisd q gamm cfmm-cl-pool-links"
+],
+"213": [
+"osmosisd query gamm cl-pool-link-from-cfmm",
+"Query concentrated pool id link from cfmm pool id Example: $ osmosisd q gamm cl-pool-link-from-cfmm 1"
+],
+"214": [
+"osmosisd query gamm estimate-swap-exact-amount-in",
+"Query estimate-swap-exact-amount-in. Example: $ osmosisd q gamm estimate-swap-exact-amount-in 1 osm11vmx8jtggpd9u7qr0t8vxclycz85u925sazglr7 1000stake --swap-route-pool-ids=2 --swap-route-pool-ids=3"
+],
+"215": [
+"osmosisd query gamm estimate-swap-exact-amount-out",
+"Query estimate-swap-exact-amount-out. Example: $ osmosisd q gamm estimate-swap-exact-amount-out 1 osm11vmx8jtggpd9u7qr0t8vxclycz85u925sazglr7 1000stake --swap-route-pool-ids=2 --swap-route-pool-ids=3"
+],
+"216": [
+"osmosisd query gamm num-pools",
+"Query number of pools"
+],
+"217": [
+"osmosisd query gamm pool",
+"Query pool Example: $ osmosisd q gamm pool 1"
+],
+"218": [
+"osmosisd query gamm pool-params",
+"Query pool-params. Example: $ osmosisd query gamm pool-params 1"
+],
+"219": [
+"osmosisd query gamm pool-type",
+"Query pool type Example: $ osmosisd q gamm pool-type <pool_id>"
+],
+"220": [
+"osmosisd query gamm pools",
+"Query pools Example: $ osmosisd q gamm pools"
+],
+"221": [
+"osmosisd query gamm pools-with-filter",
+"Query pools with filter. The possible filter options are: 1. By Pool type: Either \"Balancer\" or \"Stableswap\" 2. By min pool liquidity by providing min coins Note that if both filters are to be applied, \"min_liquidity\" always needs to be provided as the first argument. Example: $ osmosisd query gamm pools-with-filter <min_liquidity> <pool_type>"
+],
+"222": [
+"osmosisd query gamm spot-price",
+"Query spot price (Legacy). Example: $ osmosisd q gamm spot-price 1 uosmo ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+],
+"223": [
+"osmosisd query gamm total-liquidity",
+"Query total-liquidity. Example: $ osmosisd q gamm total-liquidity"
+],
+"224": [
+"osmosisd query gamm total-pool-liquidity",
+"Query total-pool-liquidity. Example: $ osmosisd q gamm total-pool-liquidity 1"
+],
+"225": [
+"osmosisd query gamm total-share",
+"Query total-share. Example: $ osmosisd q gamm total-share 1"
+],
+"226": [
+"osmosisd query gov",
+"Querying commands for the governance module"
+],
+"227": [
+"osmosisd query gov deposit",
+"Query details for a single proposal deposit on a proposal by its identifier. Example: $ osmosisd query gov deposit 1 cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk"
+],
+"228": [
+"osmosisd query gov deposits",
+"Query details for all deposits on a proposal. You can find the proposal-id by running \"osmosisd query gov proposals\". Example: $ osmosisd query gov deposits 1"
+],
+"229": [
+"osmosisd query gov param",
+"Query the all the parameters for the governance process. Example: $ osmosisd query gov param voting $ osmosisd query gov param tallying $ osmosisd query gov param deposit"
+],
+"230": [
+"osmosisd query gov params",
+"Query the all the parameters for the governance process. Example: $ osmosisd query gov params"
+],
+"231": [
+"osmosisd query gov proposal",
+"Query details for a proposal. You can find the proposal-id by running \"osmosisd query gov proposals\". Example: $ osmosisd query gov proposal 1"
+],
+"232": [
+"osmosisd query gov proposals",
+"Query for a all paginated proposals that match optional filters: Example: $ osmosisd query gov proposals --depositor cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk $ osmosisd query gov proposals --voter cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk $ osmosisd query gov proposals --status (DepositPeriod|VotingPeriod|Passed|Rejected) $ osmosisd query gov proposals --page=2 --limit=100"
+],
+"233": [
+"osmosisd query gov proposer",
+"Query which address proposed a proposal with a given ID. Example: $ osmosisd query gov proposer 1"
+],
+"234": [
+"osmosisd query gov tally",
+"Query tally of votes on a proposal. You can find the proposal-id by running \"osmosisd query gov proposals\". Example: $ osmosisd query gov tally 1"
+],
+"235": [
+"osmosisd query gov vote",
+"Query details for a single vote on a proposal given its identifier. Example: $ osmosisd query gov vote 1 cosmos1skjwj5whet0lpe65qaq4rpq03hjxlwd9nf39lk"
+],
+"236": [
+"osmosisd query gov votes",
+"Query vote details for a single proposal by its identifier. Example: $ osmosisd query gov votes 1 $ osmosisd query gov votes 1 --page=2 --limit=100"
+],
+"237": [
+"osmosisd query ibc",
+"Querying commands for the IBC module"
+],
+"238": [
+"osmosisd query ibc channel",
+"IBC channel query subcommands"
+],
+"239": [
+"osmosisd query ibc channel channels",
+"Query all channels from a chain"
+],
+"240": [
+"osmosisd query ibc channel client-state",
+"Query the client state associated with a channel, by providing its port and channel identifiers."
+],
+"241": [
+"osmosisd query ibc channel connections",
+"Query all channels associated with a connection"
+],
+"242": [
+"osmosisd query ibc channel end",
+"Query an IBC channel end from a port and channel identifiers"
+],
+"243": [
+"osmosisd query ibc channel next-sequence-receive",
+"Query the next receive sequence for a given channel"
+],
+"244": [
+"osmosisd query ibc channel packet-ack",
+"Query a packet acknowledgement"
+],
+"245": [
+"osmosisd query ibc channel packet-commitment",
+"Query a packet commitment"
+],
+"246": [
+"osmosisd query ibc channel packet-commitments",
+"Query all packet commitments associated with a channel"
+],
+"247": [
+"osmosisd query ibc channel packet-receipt",
+"Query a packet receipt"
+],
+"248": [
+"osmosisd query ibc channel unreceived-acks",
+"Given a list of acknowledgement sequences from counterparty, determine if an ack on the counterparty chain has been received on the executing chain. The return value represents: - Unreceived packet acknowledgement: packet commitment exists on original sending (executing) chain and ack exists on receiving chain."
+],
+"249": [
+"osmosisd query ibc channel unreceived-packets",
+"Determine if a packet, given a list of packet commitment sequences, is unreceived. The return value represents: - Unreceived packet commitments: no acknowledgement exists on receiving chain for the given packet commitment sequence on sending chain."
+],
+"250": [
+"osmosisd query ibc client",
+"IBC client query subcommands"
+]
+}
+
+We need to mark which CLI queries are likely to be used by the user to solve his case. Create a JSON based on the provided one. Go through each id and write a 0-10 score of how likely a user is to need to know the help information on each cli query.
+
+Here is the question that requires information sourcing to answer it:
+<question>How to operate an IBC relayer?
+
+Here's an answer that isn't very good. Looks like it may be incomplete, or incorrect. Look:<poor_answer>
+
+To operate an IBC relayer, you need to follow these steps:
+
+1. **Install Hermes**
+
+Hermes is an IBC relayer developed by Informal Systems. You can install it from binaries or build it from source. The instructions are provided in the [Hermes documentation](https://hermes.informal.systems/documentation/installation.html).
+
+For example, to install from binaries:
+
+```bash
+export TAG="v1.7.4-namada-beta7"
+export ARCH="x86_64-unknown-linux-gnu" # or "aarch64-apple-darwin"
+curl -Lo /tmp/hermes.tar.gz https://github.com/heliaxdev/hermes/releases/download/${TAG}/hermes-${TAG}-${ARCH}.tar.gz
+tar -xvzf /tmp/hermes.tar.gz -C /usr/local/bin
+```
+
+2. **Configure Hermes**
+
+You need to create a `config.toml` file that describes the connections Hermes will be responsible for. An example configuration is provided in the [supplemental materials](supplemental-materials/hermes-config.toml).
+
+3. **Set up the relayer account**
+
+On each chain, you need to create a `relayer` account. For Namada, you can run:
+
+```bash
+namadaw gen --alias relayer
+```
+
+This will generate a key for the relayer account, stored in the `wallet.toml` file in the node's base directory.
+
+4. **Add the relayer key to Hermes**
+
+You need to add the relayer's key to Hermes using the `keys add` command:
+
+```bash
+hermes --config $HERMES_CONFIG keys add --chain $CHAIN_ID --key-file $WALLET_PATH
+```
+
+5. **Create IBC channel**
+
+To create an IBC channel between the two chains, run:
+
+```bash
+hermes --config $HERMES_CONFIG \
+  create channel \
+  --a-chain $CHAIN_A_ID \
+  --b-chain $CHAIN_B_ID \
+  --a-port transfer \
+  --b-port transfer \
+  --new-client-connection --yes
+```
+
+This will create the necessary IBC client connection and channel.
+
+6. **Start the relayer**
+
+Finally, you can start the relayer:
+
+```bash
+hermes --config $HERMES_CONFIG start
+```
+
+The relayer will now monitor the chains and relay IBC packets according to the events it observes.
+
+For more details on operating a relayer, you can refer to the [Hermes documentation](https://hermes.informal.systems/) and the [Namada docs on relaying](https://docs.namada.net/operators/ibc.html).
+
+</poor_answer>
+Please, answer the same following question, but better, including more sources that were lacking in this analysis:
+How to operate an IBC relayer?
+</question>
+
+Output in the form of a JSON like
+{"1":3
+,"3":0
+,"100":10
+, ..
+}
+
+Output ends after final JSON closing tag "}" without any "closing words". Don't output [] arrays or strings! Only "id":number!
