@@ -68,7 +68,7 @@ else:
 # Set the Anthropic model based on the --model argument
 if api == 'anthropic':
     if args.model == 'sonnet':
-        model = "claude-3-sonnet-20240229"
+        model = "claude-3-5-sonnet-20240620"
     elif args.model == 'opus':
         model = "claude-3-opus-20240229"
     elif args.model == 'haiku':
@@ -77,7 +77,7 @@ if api == 'anthropic':
         raise ValueError(f"Invalid model: {args.model}. Choose 'sonnet', 'opus', or 'haiku'.")
 else:  # Google API
     if args.model == 'sonnet':
-        model = "claude-3-sonnet@20240229"
+        model = "claude-3-5-sonnet-20240620"
     elif args.model == 'opus':
         model = "claude-3-opus@20240229"
     elif args.model == 'haiku':

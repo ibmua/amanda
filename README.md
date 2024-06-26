@@ -90,7 +90,7 @@ and the scripts will use your API key to perform the AI queries. AI queries cost
 
 ### Google Compute Platform
 
-Alternatively, you can use Claude indirectly via GCP. You'll need to install relevant things to use Google Vertex AI API. And you have to have a Google Compute Platform account. And then you will need to enable Claude API for a relevant model, for example Claude Sonnet here https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-sonnet or Haiku here https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku.
+Alternatively, you can use Claude indirectly via GCP. You'll need to install relevant things to use Google Vertex AI API. And you have to have a Google Compute Platform account. And then you will need to enable Claude API for a relevant model, for example Claude Sonnet here https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet.
 ```bash
 sudo apt-get update
 pip install -U anthropic[vertex]
